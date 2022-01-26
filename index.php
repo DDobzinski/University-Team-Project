@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			if (isset($email_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE email = :email";
 
- 				$stmt_login = $pdo->prepare($sql);
+ 				$stmt_login = $pdo_login->prepare($sql);
 
 				$stmt->execute([
 				 		'email_address' => $email_login
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// add the data to the database
 			$hashed_password = password_hash($join_password, PASSWORD_DEFAULT);
 
-			$sql_join = "INSERT INTO `user_info` (username, firstname, lastname, hashed_password, email_address) VALUES (:username, :firstname, :lastname, :hashed_password, :email_address)";
+			$sql_join = "INSERT INTO user_info (username, hashed_password, email_address) VALUES (:username, :hashed_password, :email_address)";
 
 			$pdo_join = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 
