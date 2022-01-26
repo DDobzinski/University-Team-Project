@@ -3,32 +3,32 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$connection = mysqli_connect("localhost", "master", "root");
+$host = "dbhost.cs.man.ac.uk";
+$username_db = "m17832wa";
+$password = "rootroot";
+$db_name = "2021_comp10120_z7";
 
-if (!$connection) {
-	die("Connection failed: " . mysqli_connect_error());
+function add_user($host, $username_db, $password, $db_name) {
+	$username = "WillAsbery";
+	$firstname = "Will";
+	$lastname = "Asbery";
+	$h_password = "unhashedpassword";
+	$email_address = "WillAsbery@gmail.com";
+
+	$sql = "INSERT INTO `user_info` (username, firstname, lastname, hashed_password, email_address) VALUES (:username, :firstname, :lastname, :hashed_password, :email_address)";
+
+	$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([
+		'username' => $username,
+		'firstname' => $firstname,
+		'lastname' => $lastname,
+		'hashed_password' => $h_password,
+		'email_address' => $email_address
+	]);
 }
 
-$user_db = 'CREATE DATABASE users';
-
-if (!mysqli_query($connection, $user_db)) {
-	die("failed to create user db");
-}
-
-$connection_user = mysqli_connect("localhost", "master", "root", "user");
-
-$user_info_table = "CREATE TABLE user_info (
-	user_id INT AUTO_INCREMENT PRIMARY KEY,
-	username CHAR,
-	hashed_password CHAR,
-	email_address CHAR,
-	phone_number CHAR
-);";
-
-if (!mysqli_query($connection_user, $user_info_table)) {
-	die("Failed to create user_info table");
-}
-
-
+add_user($host, $username_db, $password, $db_name);
 
 ?>
