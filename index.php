@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			} elseif (isset($username_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE username = :username";
 
- 				$stmt_login = $pdo->prepare($sql);
+ 				$stmt_login = $pdo->prepare($sql_login);
 
 				$stmt->execute([
 				 		'username' => $username_login
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 
-			$stmt = $pdo->prepare($sql);
+			$stmt = $pdo->prepare($sql_join);
 			$stmt->execute([
 				'username' => $join_username,
 				'hashed_password' => $hashed_password,
