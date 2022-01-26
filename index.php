@@ -38,8 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
+ 			$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE "
+
  			if (isset($email_login)) {
- 				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE email = :email";
+ 				$sql_login = $sql_login . "email = :email";
 
  				$stmt_login = $pdo_login->prepare($sql);
 
@@ -47,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				 		'email_address' => $email_login
 				]);
  			} elseif (isset($username_login)) {
- 				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE username = :username";
+ 				$sql_login = $sql_login . "username = :username";
 
  				$stmt_login = $pdo_login->prepare($sql_login);
 
