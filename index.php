@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  		if (isset($password_login) && (isset($email_login) || isset($username_login))) {
 
- 			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+ 			$pdo_login = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 
  			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
@@ -149,6 +149,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$sql_join = "INSERT INTO `user_info` (username, firstname, lastname, hashed_password, email_address) VALUES (:username, :firstname, :lastname, :hashed_password, :email_address)";
 
 			$pdo_join = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+
+			$pdo_join->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 			$stmt_join = $pdo_join->prepare($sql_join);
 			$stmt_join->execute([
