@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (preg_match($regex, $temp_username)) {
 				$error_message_join = "Username must only contain lowercase, uppercase, and digits";
 			} else {
-				$join_username = trim($username_join);
+				$join_username = trim($_POST["username_join"]);
 			}
 		}
 
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (!filter_var(trim($_POST["email_join"]), FILTER_VALIDATE_EMAIL)) {
 				$error_message_join = "Invalid email format.";
 			} else {
-				$join_email = trim($email_join);
+				$join_email = trim($_POST["email_join"]);
 			}
 		}
 
