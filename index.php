@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
- 			$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE "
+ 			$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE ";
 
  			if (isset($email_login)) {
  				$sql_login = $sql_login . "email = :email";
