@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$stmt_login->setFetchMode(PDO::FETCH_ASSOC);
 
- 			if ($row = $stmt_join->fetch()) {
+ 			if ($row = $stmt_login->fetch()) {
  				$db_user_id = $row["user_id"];
  				$db_username = $row["username"];
  				$db_email_address = $row["email_address"];
