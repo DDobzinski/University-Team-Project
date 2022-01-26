@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$stmt_login->setFetchMode(PDO::FETCH_ASSOC);
 
- 			if ($row = $stmt->fetch()) {
+ 			if ($row = $stmt_join->fetch()) {
  				$db_user_id = $row["user_id"];
  				$db_username = $row["username"];
  				$db_email_address = $row["email_address"];
@@ -141,6 +141,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		} else {
 			$error_message_join = "Please confirm your password.";
 		}
+
+		// TESTING CODE ----------------------
+		if (isset($error_message_join)) {
+			echo $error_message_join;
+		}
+		// --------------------------------
 
 		if (isset($passwords_match) && isset($join_password) && isset($join_email) && isset($join_username)) {
 			// add the data to the database
