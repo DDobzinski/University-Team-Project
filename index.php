@@ -113,17 +113,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty(trim($_POST["password_join"]))) {
 			$error_message_join = "Please enter a password.";
 		} else {
-			if (strlen(trim($_POST["password_join"])) > 8) {
+			if (strlen(trim($_POST["password_join"])) < 8) {
 				$error_message_join = "Password must be 8 characters in length";
 			} else {
-				$temp_password = $_POST["password_join"];
-				$regex = "/^(?=.[a-z])(?=.[A-Z])(?=.*\d).*$/";
+				// $temp_password = $_POST["password_join"];
+				// $regex = "/^(?=.[a-z])(?=.[A-Z])(?=.*\d).*$/";
 
-				if (!preg_match($regex, $temp_password)) {
-					$error_message_join = "This password is not secure!";
-				} else {
+				// if (!preg_match($regex, $temp_password)) {
+				// 	$error_message_join = "This password is not secure!";
+				// } else {
 					// PASSWORD IS VALID
-					$join_password = trim($_POST["password_join"]);
+				$join_password = trim($_POST["password_join"]);
 				}
 			}
 		}
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$passwords_match = 1; // this is used to validate the passwords match before adding to DB
 			}
 		} else {
-			$error_message_join = "Please confirm your password.";
+			$error_message_join = "Please confirm your password. as";
 		}
 
 		// TESTING CODE ----------------------
