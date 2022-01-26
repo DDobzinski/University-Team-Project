@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$stmt_login = $pdo->prepare($sql);
 
 				$stmt->execute([
-				 		'email' => $email_login
+				 		'email_address' => $email_login
 				]);
  			} elseif (isset($username_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE username = :username";
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				]);
  			}
 
- 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+ 			$stmt_login->setFetchMode(PDO::FETCH_ASSOC);
 
  			if ($row = $stmt->fetch()) {
  				$db_user_id = $row["user_id"];
