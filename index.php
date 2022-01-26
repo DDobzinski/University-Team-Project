@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 
- 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+ 			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
  			if (isset($email_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE email = :email";
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			} elseif (isset($username_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE username = :username";
 
- 				$stmt_login = $pdo->prepare($sql_login);
+ 				$stmt_login = $pdo_login->prepare($sql_login);
 
-				$stmt->execute([
+				$stmt_login->execute([
 				 		'username' => $username_login
 				]);
  			}
@@ -148,10 +148,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			$sql_join = "INSERT INTO `user_info` (username, firstname, lastname, hashed_password, email_address) VALUES (:username, :firstname, :lastname, :hashed_password, :email_address)";
 
-			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+			$pdo_join = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 
-			$stmt = $pdo->prepare($sql_join);
-			$stmt->execute([
+			$stmt_join = $pdo_join->prepare($sql_join);
+			$stmt_join->execute([
 				'username' => $join_username,
 				'hashed_password' => $hashed_password,
 				'email_address' => $join_email
