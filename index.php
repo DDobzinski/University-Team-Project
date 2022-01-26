@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				// } else {
 					// PASSWORD IS VALID
 				$join_password = trim($_POST["password_join"]);
-				}
+				//}
 			}
 		}
 
