@@ -3,6 +3,14 @@
 
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$host = "dbhost.cs.man.ac.uk";
+$username_db = "m17832wa";
+$password = "rootroot";
+$db_name = "2021_comp10120_z7";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST["login_button"])) { // if they are logging in
 		if (empty(trim($_POST["username_login"]))) {
@@ -26,12 +34,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  		if (isset($password_login) && (isset($email_login) || isset($username_login))) {
 
+ 			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+
+ 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
  			if (isset($email_login)) {
- 				// change the SQL statement so it checks email and password
+ 				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE email = :email";
+
+ 				$stmt_login = $pdo->prepare($sql);
+
+				$stmt->execute([
+				 		'email' => $email_login
+				]);
  			} elseif (isset($username_login)) {
- 				// change the SQL statement so it checks email and password
+ 				$sql_login = "SELECT user_id, username, hashed_password, email FROM user_info WHERE username = :username";
+
+ 				$stmt_login = $pdo->prepare($sql);
+
+				$stmt->execute([
+				 		'username' => $username_login
+				]);
+ 			}
+
+ 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+ 			if ($row = $stmt->fetch()) {
+ 				$db_user_id = $row["user_id"];
+ 				$db_username = $row["username"];
+ 				$db_email_address = $row["email_address"];
+ 				$db_hashed_password = $row["hashed_password"];
+
+ 				if (password_verify($password_login, $db_hashed_password)) {
+ 					$_SESSION["logged_in"] = true;
+ 					$_SESSION["user_id"] = $db_user_id;
+ 					$_SESSION["username"] = $db_username;
+ 					$_SESSION["email_address"] = $db_email_address;
+				} else {
+					// password error
+				}
  			} else {
- 				// error has occured
+ 				if (isset($email_login)) {
+ 					// email error
+ 				} elseif (isset($username_login)) {
+ 					// password error
+ 				} else {
+ 					// incorrect login credentials - cannot tell if email or username
+ 				}
  			}
  		}
 
@@ -46,9 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (preg_match($regex, $temp_username)) {
 				$error_message_join = "Username must only contain lowercase, uppercase, and digits";
 			} else {
-				// check if the username is in the database already
-
-				// if not in db
 				$join_username = trim("username_join");
 			}
 		}
@@ -60,9 +105,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (!filter_var(trim($_POST["email_join"]), FILTER_VALIDATE_EMAIL)) {
 				$error_message_join = "Invalid email format.";
 			} else {
-				// check if the email is in the database already
-
-				// if not in db
 				$join_email = trim("email_join");
 			}
 		}
@@ -102,6 +144,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		if (isset($passwords_match) && isset($join_password) && isset($join_email) && isset($join_username)) {
 			// add the data to the database
+			$hashed_password = password_hash($join_password, PASSWORD_DEFAULT);
+
+			$sql_join = "INSERT INTO `user_info` (username, firstname, lastname, hashed_password, email_address) VALUES (:username, :firstname, :lastname, :hashed_password, :email_address)";
+
+			$pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute([
+				'username' => $join_username,
+				'hashed_password' => $hashed_password,
+				'email_address' => $join_email
+			]);
 		}
 	}
 } 
