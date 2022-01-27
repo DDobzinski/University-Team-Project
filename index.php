@@ -13,6 +13,8 @@ $db_name = "2021_comp10120_z7";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST["login_button"])) { // if they are logging in
+		echo "user trying to login";
+
 		if (empty(trim($_POST["username_login"]))) {
 			$error_message_login = "Please enter a username or email";
 		} else {
@@ -38,10 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
- 			$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE ";
-
  			if (isset($email_login)) {
- 				$sql_login = $sql_login . "email = :email";
+ 				$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE email = :email";
 
  				$stmt_login = $pdo_login->prepare($sql_login);
 
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				 		'email_address' => $email_login
 				]);
  			} elseif (isset($username_login)) {
- 				$sql_login = $sql_login . "username = :username";
+ 				$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE username = :username";
 
  				$stmt_login = $pdo_login->prepare($sql_login);
 
@@ -93,8 +93,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  					echo "no idea what error";
  				}
  			}
+ 		} else {
+ 			echo $error_message_login;
  		}
-
 	} elseif (isset($_POST["join_button"])) { // if they are registering
 		// Validate username
 		if (empty(trim($_POST["username_join"]))) {
