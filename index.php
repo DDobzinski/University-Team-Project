@@ -77,14 +77,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  					header("homepage.php");
 				} else {
 					// password error
+					echo "password error";
 				}
  			} else {
  				if (isset($email_login)) {
  					// email error
+ 					echo "email error";
  				} elseif (isset($username_login)) {
  					// password error
+ 					echo "username error";
  				} else {
  					// incorrect login credentials - cannot tell if email or username
+ 					echo "no idea what error";
  				}
  			}
  		}
