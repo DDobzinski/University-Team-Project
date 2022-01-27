@@ -43,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			if (isset($email_login)) {
  				$sql_login = $sql_login . "email = :email";
 
- 				$stmt_login = $pdo_login->prepare($sql);
+ 				$stmt_login = $pdo_login->prepare($sql_login);
 
-				$stmt->execute([
+				$stmt_login->execute([
 				 		'email_address' => $email_login
 				]);
  			} elseif (isset($username_login)) {
@@ -67,10 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$db_hashed_password = $row["hashed_password"];
 
  				if (password_verify($password_login, $db_hashed_password)) {
+ 					session_start();
+
  					$_SESSION["logged_in"] = true;
  					$_SESSION["user_id"] = $db_user_id;
  					$_SESSION["username"] = $db_username;
  					$_SESSION["email_address"] = $db_email_address;
+
+ 					header("homepage.php");
 				} else {
 					// password error
 				}

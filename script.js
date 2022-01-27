@@ -37,3 +37,7 @@ function toggle_modal(modal_name) {
 		modal_status.style.display = "none";
 	}
 }
+
+function open_content() {
+	
+}

@@ -36,6 +36,15 @@ body {
 	cursor: pointer;
 }
 
+#navbar #profile_page_link {
+	position: relative;
+	float: right;
+	right: 1em;
+	top: 0.5em;
+	color: white;
+	font-size: 1.5em;
+}
+
 .modal {
 	display: none;
 	position: fixed;
@@ -132,4 +141,39 @@ body {
 
 #join_area {
 	margin-top: 2.5em;
+}
+
+#main_content {
+	margin: 0em;
+	display: flex;
+	flex-direction: row;
+}
+
+#navigation_pane {
+	position: relative;
+	width:  20%;
+	height: 100%;
+	border-right: 3px solid var(--dark_blue);
+	font-size: 1.1em;
+}
+
+#navigation_pane ul {
+	position: relative;
+	margin-top: 0em;
+	list-style: none;
+	padding-left: 0em;
+}
+
+#navigation_pane li {
+	margin: 0em 2em;
+	padding: 1em;
+}
+
+#current_content {
+	width: 80%;
+}
+
+#current_content h2 {
+	position: relative;
+	left: 5%;
 }
