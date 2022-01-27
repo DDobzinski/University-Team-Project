@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty(trim($_POST["password_login"]))) {
 			$error_message_login = "Please enter a password";
  		} else {
- 			$password_login = trim($_POST["password_login"]);
+ 			$password_login = password_hash($_POST["password_login"], PASSWORD_DEFAULT);
  		}
 
  		if (isset($password_login) && (isset($email_login) || isset($username_login))) {
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$db_hashed_password = $row["hashed_password"];
  				$db_email_address = $row["email_address"];
 
- 				if (password_verify($db_hashed_password, $password_login)) {
+ 				if (password_verify($password_login, $db_hashed_password)) {
  					session_start();
 
  					echo "password matches";
