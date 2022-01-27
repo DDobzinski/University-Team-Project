@@ -66,6 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$db_hashed_password = $row["hashed_password"];
  				$db_email_address = $row["email_address"];
 
+ 				echo $password_login, $db_hashed_password;
+
  				if (password_verify($password_login, $db_hashed_password)) {
  					session_start();
 
