@@ -69,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				if (password_verify($password_login, $db_hashed_password)) {
  					session_start();
 
+ 					echo "password matches";
+
  					$_SESSION["logged_in"] = true;
  					$_SESSION["user_id"] = $db_user_id;
  					$_SESSION["username"] = $db_username;
