@@ -63,10 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			if ($row = $stmt_login->fetch()) {
  				$db_user_id = $row["user_id"];
  				$db_username = $row["username"];
- 				$db_email_address = $row["email_address"];
  				$db_hashed_password = $row["hashed_password"];
+ 				$db_email_address = $row["email_address"];
 
- 				if (password_verify($password_login, $db_hashed_password)) {
+ 				if (password_verify($db_hashed_password, $password_login)) {
  					session_start();
 
  					echo "password matches";
