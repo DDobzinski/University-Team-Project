@@ -28,7 +28,7 @@ if (!isset($_SESSION["logged_in"])) {
 			<a id="profile_page_link" href="profile_page.php">Go to profile</a>
 		</div>
 
-		<div id="main_content">
+		<div id="main_content" class="main_home">
 			<div id="navigation_pane">
 				<ul>
 					<li id="gp_signup" style="padding-top: 6em;">
@@ -53,7 +53,7 @@ if (!isset($_SESSION["logged_in"])) {
 					</li>
 					<li id="student_id">
 						<a onclick="open_content('student_id')">
-							Student ID collection
+							Collect your student ID
 						</a>
 					</li>
 				</ul>
@@ -65,6 +65,26 @@ if (!isset($_SESSION["logged_in"])) {
 					<div id="completion_bar">
 
 					</div>
+				</div>
+
+				<div id="gp_signup_content" class="info" style="display:none;">
+					<h2>Sign up for a GP</h2>
+				</div>
+
+				<div id="bank_signup_content" class="info" style="display:none;">
+					<h2>Sign up for a UK bank account</h2>
+				</div>
+
+				<div id="find_accommodation_content" class="info" style="display:none;">
+					<h2>Find your accommodation</h2>
+				</div>
+
+				<div id="BRP_card_collection_content" class="info" style="display:none;">
+					<h2>Collect your BRP card</h2>
+				</div>
+
+				<div id="student_id_content" class="info" style="display:none;">
+					<h2>Collcet your student ID</h2>
 				</div>
 			</div>
 		</div>

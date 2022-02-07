@@ -6,15 +6,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$host = "dbhost.cs.man.ac.uk";
-$username_db = "m17832wa";
-$password = "rootroot";
+$host = "localhost"; // change when using ;
+$username_db = "master";
+$password = "root";
 $db_name = "2021_comp10120_z7";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST["login_button"])) { // if they are logging in
-		echo "user trying to login";
-
 		if (empty(trim($_POST["username_login"]))) {
 			$error_message_login = "Please enter a username or email";
 		} else {
@@ -31,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty(trim($_POST["password_login"]))) {
 			$error_message_login = "Please enter a password";
  		} else {
- 			$password_login = password_hash($_POST["password_login"], PASSWORD_DEFAULT);
+ 			$password_login = trim($_POST["password_login"]);
  		}
 
  		if (isset($password_login) && (isset($email_login) || isset($username_login))) {
@@ -41,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  			$pdo_login->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
  			if (isset($email_login)) {
- 				$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE email = :email";
+ 				$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE email_address = :email";
 
  				$stmt_login = $pdo_login->prepare($sql_login);
 
@@ -66,12 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$db_hashed_password = $row["hashed_password"];
  				$db_email_address = $row["email_address"];
 
- 				echo $password_login, $db_hashed_password;
-
  				if (password_verify($password_login, $db_hashed_password)) {
  					session_start();
-
- 					echo "password matches";
 
  					$_SESSION["logged_in"] = true;
  					$_SESSION["user_id"] = $db_user_id;

@@ -145,6 +145,11 @@ body {
 
 #main_content {
 	margin: 0em;
+	/* display: flex; */
+	/* flex-direction: row; */
+}
+
+.main_home {
 	display: flex;
 	flex-direction: row;
 }
@@ -169,6 +174,10 @@ body {
 	padding: 1em;
 }
 
+#navigation_pane ul li a {
+	cursor: pointer;
+}
+
 #current_content {
 	width: 80%;
 }
@@ -176,4 +185,15 @@ body {
 #current_content h2 {
 	position: relative;
 	left: 5%;
+}
+
+#current_content .info h2 {
+	padding-bottom: 0.2em;
+	text-decoration: underline;
+}
+
+.info {
+	margin: 2em 4em 4em 4em;
+	padding: 1em 0em 0em 0em;
+	border: 0.1em solid var(--dark_blue);
 }
