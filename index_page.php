@@ -72,25 +72,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  					$_SESSION["username"] = $db_username;
  					$_SESSION["email_address"] = $db_email_address;
 
- 					header("homepage.php");
+ 					header("Location: homepage.php");
 				} else {
 					// password error
-					echo "password error";
+					$error_message_login = "Password was entered incorrectly.";
 				}
  			} else {
  				if (isset($email_login)) {
- 					// email error
- 					echo "email error";
+ 					$error_message_login = "Email not found.";
  				} elseif (isset($username_login)) {
- 					// password error
- 					echo "username error";
+ 					$error_message_login = "Username not found.";
  				} else {
  					// incorrect login credentials - cannot tell if email or username
- 					echo "no idea what error";
+ 					$error_message_login = "Username or email could not be verified.";
  				}
  			}
- 		} else {
- 			echo $error_message_login;
  		}
 	} elseif (isset($_POST["join_button"])) { // if they are registering
 		// Validate username
@@ -100,8 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$temp_username = trim($_POST["username_join"]);
 			$regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/";
 
-			if (preg_match($regex, $temp_username)) {
-				$error_message_join = "Username must only contain lowercase, uppercase, and digits";
+			if (!preg_match($regex, $temp_username)) {
+				$error_message_join = "Username must only contain lowercase, uppercase, and digits.";
 			} else {
 				$join_username = trim($_POST["username_join"]);
 			}
@@ -148,14 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$passwords_match = 1; // this is used to validate the passwords match before adding to DB
 			}
 		} else {
-			$error_message_join = "Please confirm your password. as";
+			$error_message_join = "Please confirm your password.";
 		}
-
-		// TESTING CODE ----------------------
-		if (isset($error_message_join)) {
-			echo $error_message_join;
-		}
-		// --------------------------------
 
 		if (isset($passwords_match) && isset($join_password) && isset($join_email) && isset($join_username)) {
 			// add the data to the database
@@ -196,11 +186,23 @@ Also when you're adding images please can you use an alt tag just in case the im
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="check_modals();">
 
 	<div id="main">
 		<div id="navbar">
-			<button id="login_button" onclick="toggle_modal('login');">Login</button>
+			<?php
+
+			if (isset($_SESSION["logged_in"])) {
+				if ($_SESSION["logged_in"] == true) {
+					echo '<button id="profile_page_button" onclick="window.location.href = `profile_page.php`;">Go to profile</button>';
+				} else {
+					echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
+				}
+			} else {
+				echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
+			}
+
+			?>
 
 			<div id="login_modal" class="modal">
 				<div class="modal_content modal_animate">
@@ -208,6 +210,13 @@ Also when you're adding images please can you use an alt tag just in case the im
 						<p onclick="toggle_modal('login');" class="close" title="login_modal_close">&times;</p>
 
 						<h3>Login</h3>
+						
+						<?php
+						if (isset($error_message_login)) {
+							echo "<label class='error_message' for='login'>" .$error_message_login . "</label>";
+						}
+						?>
+
 						<label for="username_login">Username / email:</label>
 						<input type="text" name="username_login" placeholder="Enter your password:" autocomplete="off">
 
@@ -219,6 +228,7 @@ Also when you're adding images please can you use an alt tag just in case the im
 					</form>
 				</div>
 			</div>
+
 
 			<!-- If logged in change login button to profile button -->
 		</div>
@@ -247,6 +257,13 @@ Also when you're adding images please can you use an alt tag just in case the im
 						<p onclick="toggle_modal('join');" class="close" title="join_modal_close">&times;</p>
 
 						<h3>Join</h3>
+
+						<?php
+						if (isset($error_message_join)) {
+							echo "<label class='error_message' for='join'>" .$error_message_join . "</label>";
+						}
+						?>
+
 						<label for="username_join">Username</label>
 						<input type="text" name="username_join" placeholder="Enter your password:" autocomplete="off">
 

@@ -2,8 +2,37 @@
 
 session_start();
 
+$host = "localhost"; // change when using ;
+$username_db = "master";
+$password = "root";
+$db_name = "2021_comp10120_z7";
+
 if (!isset($_SESSION["logged_in"])) {
 	header("index.php");
+}
+
+if (isset($_POST["logout_button"])) {
+	$_SESSION = array();
+	session_destroy();
+	header("location: index_page.php");
+}
+
+function get_gp_forum() {
+	global $host, $username_db, $password, $db_name;
+
+	$pdo_get_gp_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+	$pdo_get_gp_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	$sql_get_gp_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
+	$stmt_get_gp_forum = $pdo_get_gp_forum->prepare($sql_get_gp_forum);
+	$stmt_get_gp_forum->execute(['category' => 'gp']);
+
+	$stmt_get_gp_forum->setFetchMode(PDO::FETCH_ASSOC);
+
+	if ($row = $stmt_get_gp_forum->fetch()) {
+		return "results";
+	} else {
+		return "";
+	}
 }
 
 ?>
@@ -20,18 +49,19 @@ if (!isset($_SESSION["logged_in"])) {
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="open_content('gp_signup');">
 	<div id="main">
 		<div id="navbar">
-			<!-- button array -->
-			<!-- profile page link -->
+			<form method="post" id="logout_form">
+				<input id="logout_button" type="submit" name="logout_button" value="Logout">
+			</form>
 			<a id="profile_page_link" href="profile_page.php">Go to profile</a>
 		</div>
 
 		<div id="main_content" class="main_home">
 			<div id="navigation_pane">
 				<ul>
-					<li id="gp_signup" style="padding-top: 6em;">
+					<li id="gp_signup" style="margin-top: 6em;">
 						<a onclick="open_content('gp_signup')">
 							Sign up for GP
 						</a>
@@ -69,6 +99,22 @@ if (!isset($_SESSION["logged_in"])) {
 
 				<div id="gp_signup_content" class="info" style="display:none;">
 					<h2>Sign up for a GP</h2>
+					<hr align="center" class="divider">
+					<div id="gp_forum">
+						<h3>See what others are saying</h3>
+						<?php 
+						if (get_gp_forum() == "") {
+							echo "<p>There are no posts yet on this forum, would you like to add one?</p>";
+						}
+						?>
+
+						<form method="post">
+							<label for="text_box">Add a post to the forum:</label>
+							<textarea name="text_box" type="text" id="text_box"></textarea>
+							<input type="submit" name="add_forum_post" value="Submit post">
+						</form>
+						
+					</div>
 				</div>
 
 				<div id="bank_signup_content" class="info" style="display:none;">
@@ -84,7 +130,7 @@ if (!isset($_SESSION["logged_in"])) {
 				</div>
 
 				<div id="student_id_content" class="info" style="display:none;">
-					<h2>Collcet your student ID</h2>
+					<h2>Collect your student ID</h2>
 				</div>
 			</div>
 		</div>

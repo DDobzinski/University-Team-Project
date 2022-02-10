@@ -1,27 +1,46 @@
 window.onclick = function(event) {
 	var current_location = event.target;
 
-	if (document.getElementById("login_modal").style.display == "block") {
-		if (current_location.id != "modal_content" & current_location.id != "login_button" & current_location.id == "login_modal") {
-			while (current_location.class !== "modal") {
-				current_location = current_location.parentElement;
+	if (document.getElementById("login_modal")) {
+		if (document.getElementById("login_modal").style.display == "block") {
+			if (current_location.id != "modal_content" & current_location.id != "login_button" & current_location.id == "login_modal") {
+				while (current_location.class !== "modal") {
+					current_location = current_location.parentElement;
 
-				if (current_location == null) {
-					document.getElementById("login_modal").style.display = "none";
-					break;
+					if (current_location == null) {
+						document.getElementById("login_modal").style.display = "none";
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	if (document.getElementById("join_modal")) {
+		if (document.getElementById("join_modal").style.display == "block") {
+			if (current_location.id != "modal_content" & current_location.id != "join_button" & current_location.id == "join_modal") {
+				while (current_location.class !== "modal") {
+					current_location = current_location.parentElement;
+
+					if (current_location == null) {
+						document.getElementById("join_modal").style.display = "none";
+						break;
+					}
 				}
 			}
 		}
 	}
 
-	if (document.getElementById("join_modal").style.display == "block") {
-		if (current_location.id != "modal_content" & current_location.id != "join_button" & current_location.id == "join_modal") {
-			while (current_location.class !== "modal") {
-				current_location = current_location.parentElement;
+	if (document.getElementById("hobbies_modal")) {
+		if (document.getElementById("hobbies_modal").style.display == "block") {
+			if (current_location.id != "modal_content_hobbies" & current_location.id == "hobbies_modal") {
+				while (current_location.class !== "modal") {
+					current_location = current_location.parentElement;
 
-				if (current_location == null) {
-					document.getElementById("join_modal").style.display = "none";
-					break;
+					if (current_location == null) {
+						document.getElementById("hobbies_modal").style.display = "none";
+						break;
+					}
 				}
 			}
 		}
@@ -45,8 +64,25 @@ function open_content(section) {
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {
 			document.getElementById(sections[i] + "_content").style.display = "none";
+			document.getElementById(sections[i]).style.backgroundColor = "white";
+			document.getElementById(sections[i]).children[0].style.color = "black";
 		} else {
 			current.style.display = "block";
+			document.getElementById(sections[i]).style.backgroundColor = "#63B4CF";
+			document.getElementById(sections[i]).children[0].style.color = "white";
+		}
+	}
+}
+
+function check_modals() {
+	if (document.getElementsByClassName("error_message")) {
+		var error_messages = document.getElementsByClassName("error_message");
+		var for_value = error_messages[0].getAttribute('for');
+
+		if (for_value == "join") {
+			return document.getElementById("join_modal").style.display = "block";
+		} else if (for_value == "login") {
+			return document.getElementById("login_modal").style.display = "block";
 		}
 	}
 }

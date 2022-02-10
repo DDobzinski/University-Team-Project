@@ -11,6 +11,7 @@ var() around the name such as var(--grey) in place of any colour. */
 
 body {
 	font-family: "DM Sans", sans-serif;
+	font-size: 15px;
 	margin: 0px;
 }
 
@@ -23,7 +24,34 @@ body {
 	background-color: var(--dark_blue);
 }
 
-#navbar #login_button {
+#navbar #login_button, #navbar #logout_button, #profile_page_link {
+	position: relative;
+	float: right;
+	margin: 0.2em 1.5em;
+	width: 5em;
+	height: 80%;
+	font-family: "DM Sans", sans-serif;
+	font-size: 20px;
+	background-color: var(--light_blue);
+	color: white;
+	border: 1px solid var(--light_blue);
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+#navbar #logout_button {
+	height: 2.2em;
+}
+
+#profile_page_link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	text-decoration: none;
+	width: 7em;
+}
+
+#navbar #profile_page_button {
 	position: absolute;
 	right: 2%;
 	top: 0.25em;
@@ -34,15 +62,6 @@ body {
 	color: white;
 	border: 0px;
 	cursor: pointer;
-}
-
-#navbar #profile_page_link {
-	position: relative;
-	float: right;
-	right: 1em;
-	top: 0.5em;
-	color: white;
-	font-size: 1.5em;
 }
 
 .modal {
@@ -89,13 +108,19 @@ body {
 	padding: 20px;
 }
 
-.modal .modal_content p {
+.modal .modal_content .close {
 	position: absolute;
 	right: 3%;
 	top: 1.5%;
 	margin: 0px;
 	font-size: 30px;
 	cursor: pointer;
+}
+
+.error_message {
+	display: block;
+	margin: 1em 0em;
+	color: red;
 }
 
 .modal .modal_content form input:not(input[type=submit]) {
@@ -145,8 +170,6 @@ body {
 
 #main_content {
 	margin: 0em;
-	/* display: flex; */
-	/* flex-direction: row; */
 }
 
 .main_home {
@@ -178,6 +201,10 @@ body {
 	cursor: pointer;
 }
 
+#navigation_pane ul li a:active {
+	color: var(--light_blue);
+}
+
 #current_content {
 	width: 80%;
 }
@@ -197,3 +224,128 @@ body {
 	padding: 1em 0em 0em 0em;
 	border: 0.1em solid var(--dark_blue);
 }
+
+/* Profile page styling */
+#navbar #homepage_link {
+	position: absolute;
+	left: 2%;
+	top: 0.25em;
+	height: 80%;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	padding: 0.5em;
+	background-color: var(--light_blue);
+	border: 1px solid var(--light_blue);
+	border-radius: 3px;
+}
+
+#homepage_link a {
+	text-decoration: none;
+	color: white;
+}
+
+#change_profile_form {
+	margin: 10em 20em;
+	display: flex;
+	flex-direction: row;
+}
+
+#change_profile_form input[type=text] {
+	box-sizing: border-box;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #E8E8E8;
+	border: none;
+	width: 60%;
+}
+
+#change_profile_form select {
+	box-sizing: border-box;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #E8E8E8;
+	border: none;
+	width: 60%;
+	cursor: pointer;
+}
+
+#hobbies_button {
+	font-family: "DM Sans", sans-serif;
+	background-color: var(--light_blue);
+	font-size: 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 1.2em;
+	padding: 0.3em;
+	width: 60%;
+}
+
+#save_changes_button {
+	width: 60%;
+	padding: 1em;
+	color: white;
+	border: none;
+	background-color: var(--dark_blue);
+}
+
+#biography {
+	box-sizing: border-box;
+	height: 18vh;
+	width: 60%;
+	padding: 1em;
+	border: none;
+	background-color: #E8E8E8;
+	font-family: "DM Sans", sans-serif;
+	font-size: 13px;
+}
+
+#change_profile_form .child {
+	width: 50%;
+	height: 100vh;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.profile_page_error {
+	color: red;
+}
+
+.modal_content_hobbies {
+	display: flex;
+	flex-direction: row;
+	padding: 2em;
+}
+
+.hobbies_child {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.hobbies_child input {
+	width: 80%;
+	height: 100%;
+	margin: 5%;
+}
+
+.dividier {
+	text-align: center;
+	width: 90%;
+	background-color: var(--dark_blue);
+}
+
+/*#hobbies_modal {
+	top: none;
+	left: none;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+#hobbies_modal .hobbies_child input {
+	width: 80%;
+	margin: 5%;
+}*/
