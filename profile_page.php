@@ -2,10 +2,7 @@
 
 session_start();
 
-$host = "localhost"; // change when using ;
-$username_db = "master";
-$password = "root";
-$db_name = "2021_comp10120_z7";
+require("config.php");
 
 if (!isset($_SESSION["logged_in"])) {
 	header("index.php");
