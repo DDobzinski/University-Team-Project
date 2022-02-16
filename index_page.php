@@ -3,13 +3,11 @@
 
 <?php
 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$host = "localhost"; // change when using ;
-$username_db = "master";
-$password = "root";
-$db_name = "2021_comp10120_z7";
+require("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST["login_button"])) { // if they are logging in
