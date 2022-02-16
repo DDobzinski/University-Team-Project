@@ -31,7 +31,7 @@ function get_gp_forum() {
 	if ($row = $stmt_get_gp_forum->fetch()) {
 		return "results";
 	} else {
-		return "";
+		return "no results";
 	}
 }
 
