@@ -91,14 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty(trim($_POST["username_join"]))) {
 			$error_message_join = "Please enter a username.";
 		} else {
-			$temp_username = trim($_POST["username_join"]);
-			$regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/";
+			// $temp_username = trim($_POST["username_join"]);
+			// $regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/";
 
-			if (!preg_match($regex, $temp_username)) {
-				$error_message_join = "Username must only contain lowercase, uppercase, and digits.";
-			} else {
-				$join_username = trim($_POST["username_join"]);
-			}
+			// if (!preg_match($regex, $temp_username)) {
+			// 	$error_message_join = "Username must only contain lowercase, uppercase, and digits.";
+			// } else {
+			// 	$join_username = trim($_POST["username_join"]);
+			// }
+
+			$join_username = trim($_POST["username_join"]);
 		}
 
 		// Validate email
@@ -173,13 +175,13 @@ Also when you're adding images please can you use an alt tag just in case the im
 -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling.css">
-	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styling/styling.css">
+	<script type="text/javascript" src="js/script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">

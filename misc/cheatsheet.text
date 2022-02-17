@@ -1,0 +1,64 @@
+Command for starting localhost apache2 on ubuntu:
+    systemctl start apache2
+    Restart: systemctl restart apache2
+
+URL for localhost file store:
+    https://localhost/www
+
+URL for localhost phpmyadmin:
+    https://localhost/www/phpmyadmin/index.php
+
+URL for the shared hosting site:
+    https://web.cs.manchester.ac.uk/dashboard/login
+
+URL for the shared hosting phpmyadmin:
+    https://dbhost.cs.man.ac.uk/phpMyAdmin/
+
+Starting with GIT:
+    Install the .deb from the visual studio code website
+    Install the git graph extension
+    Go to open a folder and open the folder you cloned when you got the first group project files
+    Now go to the source control section of vscode - its on the left hand side bar
+    From here you need to open the git graph its the icon next to the 3 dots that let you push/pull etc
+    Git graph should open
+    Go to the master branch
+    On the grey text right click and create branch
+    name the branch "<your name>_files"
+    now push this branch by right clicking the box it is in
+    your branch should now be on gitlab
+    To add any files PLEASE make sure you are on your own branch, you can do this by double clicking your branch, if the text is in bold you are in this branch.
+    To add files, find them on the source control section, hover over the file and press the '+' icon, this stages a commit
+    To fully commit them, type a message in the message box and press "control+enter" (windows) / "command+enter" (mac) 
+    Now you have committed them to your local branch, you need to push them, to do this, right click the emboldened branch, and push branch, this should push them to the remote branch (this is the git repo we can all see)
+
+
+Installing PHP my admin:
+    Open up a terminal
+    Type in "sudo apt install update"
+    Next type in "sudo apt-get install phpmyadmin"
+    Type in "systemctl restart apache2" or "systemctl start apache2" if its not already on
+    Type "sudo ln -s /usr/share/phpmyadmin /var/www/html"
+    Restart apache2 service
+    Open a new web browser and try "localhost/phpmyadmin/index.php" and it should open the php my admin landing page - if this doesnt work send your error to whatsapp chat
+    You will have set the details when you did the MySQL lab, if you can't remember them try "newuser" & "password", if these dont work you have to reset the details which you can do if you follow mySql lab again
+    
+
+Open PHP my admin:
+	start apache2, or the local webserver you are using
+	type in "localhost/phpmyadmin/index.php"
+	enter your login details you set in the MySQL lab
+	here you can see all your databases
+
+
+Opening PHP my admin:
+	Pull all the files from the git repo - you can do this if you open the folder and then navigate to source control and press the 3 dots, here you will see pull, click this
+    Go to the config files (IN YOUR FILES WHEN YOU PULL) and place the values you used in the MySQL lab for the login details in the username 
+    and password section
+    Go to "localhost/phpmyadmin/index.php"
+    Once you're logged into phpmyadmin, create a new database by going on the left hand side clicking new, and call this database "2021_comp10120_z7" this is CASE SENSITIVE so please all lowercase
+    Next, click this DB, you will now see a page where it lets you create tables and stuff
+    From here, go to import, the file you need to select is the .sql file in the repo
+    Leave all other options and just press go at the bottom of the page
+    You should now have all the tables from the database, if any changes are made to the structure of the tables please let someone know so we can all make the changes
+    You should now be able to run the files from "localhost/www/index_page.php" and create new users and stuff, you can first try login with the details "will" and "rootroot" this is the record in the "user_info" table.
+    If it doesn't work send me the error, you will probably have your username or password incorrectly entered.
