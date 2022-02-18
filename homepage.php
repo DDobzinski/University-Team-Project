@@ -102,6 +102,7 @@ function get_gp_forum() {
 				<input id="logout_button" type="submit" name="logout_button" value="Logout">
 			</form>
 			<a id="profile_page_link" href="profile_page.php">Go to profile</a>
+			<a id="chat_room_link" href="chat_room.php">Chatroom</a>
 		</div>
 
 		<div id="main_content" class="main_home">

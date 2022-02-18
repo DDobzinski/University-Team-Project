@@ -24,7 +24,7 @@ body {
 	background-color: var(--dark_blue);
 }
 
-#navbar #login_button, #navbar #logout_button, #profile_page_link {
+#navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
 	position: relative;
 	float: right;
 	margin: 0.2em 1.5em;
@@ -226,7 +226,7 @@ body {
 }
 
 /* Profile page styling */
-#navbar #homepage_link {
+/*#navbar #homepage_link {
 	position: absolute;
 	left: 2%;
 	top: 0.25em;
@@ -238,7 +238,7 @@ body {
 	background-color: var(--light_blue);
 	border: 1px solid var(--light_blue);
 	border-radius: 3px;
-}
+}*/
 
 #homepage_link a {
 	text-decoration: none;
@@ -436,4 +436,13 @@ body {
 .forum_box .text_content {
 	margin-top: 0;
 	margin-left: 2em;
+}
+
+#chat_room_link, #homepage_link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	text-decoration: none;
+	width: 7em;
+	color:  white;
 }

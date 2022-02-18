@@ -128,9 +128,7 @@ if (!isset($_SESSION["logged_in"])) {
 		<div id="navbar">
 			<!-- button array -->
 			<!-- homepage link !-->
-			<button id="homepage_link">
-				<a href="homepage.php">Go to homepage</a>
-			</button>
+			<a id="homepage_link" href="homepage.php">Homepage</a>
 			<!-- logout button !-->
 			<form method="post" id="logout_form">
 				<input id="logout_button" type="submit" name="logout_button" value="Logout">
