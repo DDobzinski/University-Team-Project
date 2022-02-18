@@ -10,7 +10,7 @@ session_start();
 require("config.php");
 
 if (!isset($_SESSION["logged_in"])) {
-	header("index.php");
+	header("Location: index.php");
 } else {
 	// get all the information on the user
 	$user_id = $_SESSION["user_id"];

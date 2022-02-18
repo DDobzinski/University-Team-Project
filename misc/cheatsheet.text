@@ -62,3 +62,7 @@ Opening PHP my admin:
     You should now have all the tables from the database, if any changes are made to the structure of the tables please let someone know so we can all make the changes
     You should now be able to run the files from "localhost/www/index_page.php" and create new users and stuff, you can first try login with the details "will" and "rootroot" this is the record in the "user_info" table.
     If it doesn't work send me the error, you will probably have your username or password incorrectly entered.
+
+Errors with pushing:
+    Make sure you are using SSH
+    Make sure that you
