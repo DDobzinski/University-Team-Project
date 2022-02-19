@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 17, 2022 at 09:17 AM
+-- Generation Time: Feb 19, 2022 at 08:01 PM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -34,27 +34,18 @@ CREATE TABLE `chat_log` (
   `category` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `log_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `text_content` varchar(1023) DEFAULT NULL
+  `text_content` varchar(1023) DEFAULT NULL,
+  `reply_to` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `chat_log`
 --
 
-INSERT INTO `chat_log` (`chat_id`, `user_id`, `category`, `username`, `log_date`, `text_content`) VALUES
-(1, 1, 'gp', 'will', '2022-02-16 22:05:37', 'yoo'),
-(2, 1, 'gp', 'will', '2022-02-16 22:21:19', 'Where is the recent news coming from?'),
-(3, 1, 'gp', 'will', '2022-02-16 22:21:47', 'Where is the recent news coming from?'),
-(4, 1, 'gp', 'will', '2022-02-16 22:22:08', 'Where is the recent news coming from?'),
-(5, 1, 'gp', 'will', '2022-02-16 22:22:15', 'Where is the recent news coming from?'),
-(6, 1, 'gp', 'will', '2022-02-16 22:22:41', 'Where is the recent news coming from?'),
-(7, 1, 'gp', 'will', '2022-02-16 22:22:59', 'Where is the recent news coming from?'),
-(8, 1, 'gp', 'will', '2022-02-16 22:23:09', 'Where is the recent news coming from?'),
-(9, 1, 'gp', 'will', '2022-02-16 22:23:39', 'Where is the recent news coming from?'),
-(10, 1, 'gp', 'will', '2022-02-16 22:23:52', 'Where is the recent news coming from?'),
-(11, 1, 'gp', 'will', '2022-02-16 22:24:04', 'Where is the recent news coming from?'),
-(12, 1, 'gp', 'will', '2022-02-16 22:24:20', 'Where is the recent news coming from?'),
-(13, 1, 'gp', 'will', '2022-02-16 22:24:31', 'Where is the recent news coming from?');
+INSERT INTO `chat_log` (`chat_id`, `user_id`, `category`, `username`, `log_date`, `text_content`, `reply_to`) VALUES
+(1, 1, 'gp_topic', 'will', '2022-02-18 17:27:24', 'Parent comment', NULL),
+(2, 1, 'gp_topic', 'will', '2022-02-18 17:27:33', 'Child comment', 1),
+(3, 1, 'gp_topic', 'will', '2022-02-18 17:27:47', 'Child child comment', 2);
 
 -- --------------------------------------------------------
 
@@ -142,7 +133,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `chat_log`
 --
 ALTER TABLE `chat_log`
-  MODIFY `chat_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `chat_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_info`

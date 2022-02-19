@@ -88,6 +88,8 @@ function check_modals() {
 }
 
 function open_topic(section) {
+	document.getElementById("basic_content").style.display = "none";
+
 	var current = document.getElementById(section + "_content");
 	var sections = ["gp_topic", "brp_topic"];
 
@@ -102,5 +104,9 @@ function open_topic(section) {
 			document.getElementById(sections[i]).children[0].style.color = "white";
 		}
 	}
+}
+
+function open_reply(chat_id) {
+	document.getElementById("reply_box_" + chat_id).style.display = "block";
 }
 
