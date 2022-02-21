@@ -16,12 +16,28 @@ if (!isset($_SESSION["logged_in"])) {
 	header("Location: index_page.php");
 }
 
+function buildTree(array $elements, $parentId = null) {
+    $branch = array();
+
+    foreach ($elements as $element) {
+        if ($element['reply_to'] == $parentId) {
+            $children = buildTree($elements, $element['chat_id']);
+            if ($children) {
+                $element['children'] = $children;
+            }
+            $branch[] = $element[]['text_content'];
+        }
+    }
+
+    return $branch[];
+}
+
 function get_topic($category) {
 	global $host, $username_db, $password, $db_name, $rand;
 
 	$pdo_get_topic = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 	$pdo_get_topic->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	$sql_get_topic = "SELECT chat_id, username, log_date, text_content, reply_to FROM chat_log WHERE category = :category ORDER BY log_date ASC";
+	$sql_get_topic = "SELECT chat_id, username, log_date, text_content, reply_to FROM chat_log WHERE category = :category ORDER BY log_date DESC";
 	$stmt_get_topic = $pdo_get_topic->prepare($sql_get_topic);
 	$stmt_get_topic->execute(['category' => $category]);
 
@@ -29,20 +45,9 @@ function get_topic($category) {
 
 	$data = $stmt_get_topic->fetchAll();
 
-	$chat_posts = "";
+	$tree = buildTree($data);
 
-	$threads = array();
-	foreach($data as $row) {
-  		if($row['reply_to'] === null) {
-    		$threads[$row['chat_id']] = array(
-      			'replies' => array()
-    		);
-  		} else {
-    		$threads[$row['reply_to']]['replies'][] = $row['chat_id'];
-  		}
-	}
-
-	print_r($threads);
+	print_r($tree);
 
 	// $parents = array();
 	// $replies = array();
