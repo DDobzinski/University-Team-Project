@@ -25,11 +25,19 @@ function buildTree(array $elements, $parentId = null) {
             if ($children) {
                 $element['children'] = $children;
             }
-            $branch[] = $element[]['text_content'];
+
+            $branch = $element;
+            // $branch = array([
+            // 	'chat_id' => $element['chat_id'],
+            // 	'username' => $element['username'], 
+            // 	'text_content' => $element['text_content'], 
+            // 	'reply_to' => $element['reply_to'],
+
+            // ]);
         }
     }
 
-    return $branch[];
+    return $branch;
 }
 
 function get_topic($category) {
@@ -47,7 +55,8 @@ function get_topic($category) {
 
 	$tree = buildTree($data);
 
-	print_r($tree);
+	// print_r($tree);
+	var_dump($tree);
 
 	// $parents = array();
 	// $replies = array();
