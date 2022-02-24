@@ -10,14 +10,7 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 // some files will require
 // session_start() 
 // if the user needs to be logged in
-$date = "2022-02-16 21:35:11";
 
-$date_year = substr($date, 2, 2);
-$date_month = substr($date, 5, 2);
-$date_day = substr($date, 8, 2);
-$date_time = substr($date, 11, 5);
-
-echo substr($date, 5, 2) ."-". substr($date, 8, 2) ."-". substr($date, 2, 2) . " ". substr($date, 11, 5);;
 
 ?>
 

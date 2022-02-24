@@ -41,18 +41,18 @@ if (isset($_POST["add_forum_post_gp"])) {
 }
 
 
-function get_gp_forum() {
+function get_forum($category) {
 	global $host, $username_db, $password, $db_name;
 
-	$pdo_get_gp_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_gp_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	$sql_get_gp_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
-	$stmt_get_gp_forum = $pdo_get_gp_forum->prepare($sql_get_gp_forum);
-	$stmt_get_gp_forum->execute(['category' => 'gp']);
+	$pdo_get_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+	$pdo_get_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	$sql_get_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
+	$stmt_get_forum = $pdo_get_forum->prepare($sql_get_forum);
+	$stmt_get_forum->execute(['category' => $category]);
 
-	$stmt_get_gp_forum->setFetchMode(PDO::FETCH_ASSOC);
+	$stmt_get_forum->setFetchMode(PDO::FETCH_ASSOC);
 
-	$data = $stmt_get_gp_forum->fetchAll();
+	$data = $stmt_get_forum->fetchAll();
 
 	$forum_posts = "";
 
@@ -102,6 +102,7 @@ function get_gp_forum() {
 				<input id="logout_button" type="submit" name="logout_button" value="Logout">
 			</form>
 			<a id="profile_page_link" href="profile_page.php">Go to profile</a>
+			<a id="chat_room_link" href="chat_room.php">Chatroom</a>
 		</div>
 
 		<div id="main_content" class="main_home">
@@ -109,7 +110,7 @@ function get_gp_forum() {
 				<ul>
 					<li id="gp_signup" style="margin-top: 6em;">
 						<a onclick="open_content('gp_signup')">
-							Sign up for GP
+							Sign up for a General Practitioner 
 						</a>
 					</li>
 					<li id="bank_signup">
@@ -144,7 +145,8 @@ function get_gp_forum() {
 				</div>
 
 				<div id="gp_signup_content" class="info" style="display:none;">
-					<h2>Sign up for a GP</h2>
+					<h2>Sign up for a General practitioner (GP)</h2>
+					<h3>Signing up enables you to access healthcare services. Any healthcare or mentalcare related concerns will be directed to your local GP.  For international students, ensure that you have your Immigration Health Surcharge(IHS) number ready as well as any supporting medical documents. This <a href="https://www.nhs.uk/service-search/find-a-gp">link</a> will help you locate the nearest one to you.</h3>
 					<!--<hr align="center" class="divider">!-->
 					<div id="gp_forum" class="forum">
 						<h2>Forum</h2>
@@ -156,7 +158,7 @@ function get_gp_forum() {
 						<h3 class="forum_h3">See what others are saying:</h3>
 						<div class="forum_section">
 							<?php 
-							echo get_gp_forum();
+							echo get_forum("gp");
 							?>
 						</div>						
 					</div>
@@ -164,6 +166,41 @@ function get_gp_forum() {
 
 				<div id="bank_signup_content" class="info" style="display:none;">
 					<h2>Sign up for a UK bank account</h2>
+					<h3>Setting up a bank account allows you to arrange for interest free overdrafts which will be beneficial for your daily expenses. It also helps you manage your spending and budgetting. List below are recommended banks for students with their respective benefits:</h3>
+					<h4>
+						<ul>
+  							<li>
+  								<a href="https://www.barclays.co.uk/">Barclays</a><br>
+  								<p>No hidden charges for student banking<br>
+  								App provided to keep tabs on spending <br>
+  								Overdraft of up to £1,500</p> 
+  							</li>
+  							<li>
+  								<a href="https://www.nationwide.co.uk/">Nationwide</a><br>
+  								<p>No monthly fees to maintain account<br>
+  								Flexible bank in option via Internet bank or banking app<br>
+  								Up to £3,000 arranged overdraft limit while you study</p> 
+  							</li>
+  							<li>
+  								<a href="https://www.lloydsbank.com/">Lloyds</a><br>
+  								<p>Manage subscriptions easily with app provided <br>
+  								Earn cashbacks up to 15% from selected retailers<br>
+  								Overdraft of up to £1,500 in Years 1 to 3 and up to £2,000 in years 4 to 6</p>
+  							</li>
+  							<li>
+  								<a href="https://www.hsbc.co.uk/">HSBC</a><br>
+  								<p>Instant notifications to alert spending activity<br>
+								Easy mobile and online banking<br>
+  								Interest-free overdraft limit of up to £1,000 in your first year, which could rise to £3,000 by year 3</p> 
+  							</li>
+  							<li>
+  								<a href="https://www.santander.co.uk/">Saintanders</a><br>
+  								<p>A free 4-year Santander 16-25 Railcard to save 1/3 on rail travel in Great Britain<br>
+								Earn up to 15% cashback with Retailer Offers<br>
+  								interest-free arranged overdraft of £1,500 in years 1-3, £1,800 in year 4 and £2,000 if you stay on to year 5</p> 
+  							</li>
+						</ul>
+					</h4>
 				</div>
 
 				<div id="find_accommodation_content" class="info" style="display:none;">
