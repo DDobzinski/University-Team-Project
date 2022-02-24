@@ -41,18 +41,18 @@ if (isset($_POST["add_forum_post_gp"])) {
 }
 
 
-function get_gp_forum() {
+function get_forum($category) {
 	global $host, $username_db, $password, $db_name;
 
-	$pdo_get_gp_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_gp_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	$sql_get_gp_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
-	$stmt_get_gp_forum = $pdo_get_gp_forum->prepare($sql_get_gp_forum);
-	$stmt_get_gp_forum->execute(['category' => 'gp']);
+	$pdo_get_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+	$pdo_get_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	$sql_get_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
+	$stmt_get_forum = $pdo_get_forum->prepare($sql_get_forum);
+	$stmt_get_forum->execute(['category' => $category]);
 
-	$stmt_get_gp_forum->setFetchMode(PDO::FETCH_ASSOC);
+	$stmt_get_forum->setFetchMode(PDO::FETCH_ASSOC);
 
-	$data = $stmt_get_gp_forum->fetchAll();
+	$data = $stmt_get_forum->fetchAll();
 
 	$forum_posts = "";
 
@@ -158,7 +158,7 @@ function get_gp_forum() {
 						<h3 class="forum_h3">See what others are saying:</h3>
 						<div class="forum_section">
 							<?php 
-							echo get_gp_forum();
+							echo get_forum("gp");
 							?>
 						</div>						
 					</div>
