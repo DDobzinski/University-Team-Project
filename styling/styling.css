@@ -159,6 +159,12 @@ body {
 	cursor: pointer;
 }
 
+.logo_image {
+	width: 20%;
+	margin-top: 5em;
+	margin-bottom: 3em;
+}
+
 #main_information {
 	background-color: var(--dark_blue);
 	color: white;

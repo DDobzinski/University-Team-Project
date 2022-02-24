@@ -82,7 +82,7 @@ Also when you're adding images please can you use an alt tag just in case the im
 			<!-- This is the main page so here we can include the explanation of linkuni and then the join button -->
 
 			<!-- Can insert an image here of the logo -->
-			<img src="images/linkuni_logo.png" alt="Logo image">
+			<img class="logo_image" src="images/linkuni_logo.png" alt="Logo image">
 
 			<h1>Welcome</h1>
 
