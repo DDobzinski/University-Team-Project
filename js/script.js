@@ -91,7 +91,15 @@ function open_topic(section) {
 	document.getElementById("basic_content").style.display = "none";
 
 	var current = document.getElementById(section + "_content");
-	var sections = ["gp_topic", "brp_topic"];
+	console.log(current);
+	var sections = [];
+	var children = document.getElementById("topics_list").children;
+
+	for (var i = 0; i < children.length; i++) {
+		sections.push(children[i].id);
+	}
+
+	console.log(sections);
 
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {

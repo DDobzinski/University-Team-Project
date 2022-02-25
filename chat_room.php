@@ -11,18 +11,10 @@ session_start();
 
 require("fake_login_init.php");
 
-$rand = rand();
-$_SESSION['rand_check']= $rand;
-
 if (!isset($_SESSION["logged_in"])) {
 	header("Location: index_page.php");
 } else {
-	require("php/topic_functions.php");
-}
-
-
-if (isset($_POST["add_chat_reply_gp"])) {
-	add_topic_post("gp_topic", $_POST["text_box"], true, $_POST["chat_id"]);
+	require("php/chat_functions.php");
 }
 
 ?>
@@ -55,13 +47,11 @@ if (isset($_POST["add_chat_reply_gp"])) {
 		<h2>Topics</h2>
 		<form method="post" id="add_topic">
 			<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-			<input type="submit" name="add_topic">
+			<input type="submit" name="add_topic" value="Create new topic">
 		</form>
-		<ul>
-			<li id="gp_topic"><a onclick="open_topic('gp_topic')">GP</a></li>
-			<li id="brp_topic"><a onclick="open_topic('brp_topic')">BRP</a></li>
+		<ul id="topics_list">
 			<?php
-			display_categories();
+				echo display_topics();
 			?>
 		</ul>
 	</div>
@@ -69,33 +59,10 @@ if (isset($_POST["add_chat_reply_gp"])) {
 		<div id="basic_content">
 			<h3>Pick a topic</h3>
 		</div>
-		
-		<div id="gp_topic_content" style="display:none;" class="forum chat">
-			<form method="post"> 
-				<input type="hidden" name="rand_check_gp" value="<?php echo $rand;   ?>">
-				<label for="text_box">Add a post to the chat:</label>
-				<textarea name="text_box" type="text" id="text_box"></textarea>
-				<input type="submit" name="add_chat_topic_gp" value="Submit post">
-			</form>
-			<div class="forum_section chat_section">
 			<?php
-			echo get_topic("gp_topic");
+				echo display_content_divs();
 			?>
-			</div>
 		</div>
-		<div id="brp_topic_content" style="display:none;" class="forum chat">
-			<form method="post">
-				<label for="text_box">Add a post to the chat:</label>
-				<textarea name="text_box" type="text" id="text_box"></textarea>
-				<input type="submit" name="add_chat_topic_brp" value="Submit post">
-			</form>
-			<div class="forum_section">
-			<?php
-			echo get_topic("brp_topic");
-			?>
-			</div>
-		</div>
-	</div>
 	</div>
 </div>
 

@@ -8,7 +8,6 @@ var() around the name such as var(--grey) in place of any colour. */
 	--white: #FFFFFF;
 }
 
-
 body {
 	font-family: "DM Sans", sans-serif;
 	font-size: 15px;
@@ -493,4 +492,29 @@ body {
 	float: right;
 	width: 90%;
 	margin-bottom: 1em;
+}
+
+#add_topic {
+	display: flex;
+	flex-direction: column;
+	margin: 2em;
+	padding: 1em;
+	border: 3px solid var(--dark_blue);
+	border-radius: 5px;
+}
+
+#add_topic textarea {
+	font-family: "DM Sans", sans-serif;
+	font-size: 1em;
+}
+
+#add_topic input[type=submit] {
+	width: 100%;
+	margin-top: 1em;
+	padding: 0.25em;
+	font-family: "DM Sans", sans-serif;
+	background-color: var(--dark_blue);
+	color: white;
+	border: 1px solid var(--dark_blue);
+	border-radius: 3px;
 }
