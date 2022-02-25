@@ -53,9 +53,16 @@ if (isset($_POST["add_chat_reply_gp"])) {
 	<div id="main_content" class="main_home">
 	<div id="navigation_pane">
 		<h2>Topics</h2>
+		<form method="post" id="add_topic">
+			<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
+			<input type="submit" name="add_topic">
+		</form>
 		<ul>
 			<li id="gp_topic"><a onclick="open_topic('gp_topic')">GP</a></li>
 			<li id="brp_topic"><a onclick="open_topic('brp_topic')">BRP</a></li>
+			<?php
+			display_categories();
+			?>
 		</ul>
 	</div>
 	<div id="current_content">

@@ -1,11 +1,57 @@
 <?php
 
+get_categories();
+
+if(isset($_POST["add_topic"])) {
+	$name = str_replace(" ", "_", $_POST["add_topic_name"]) . ":topic";
+	add_category($name);
+}
+function add_category($category_name){
+	global $host, $username_db, $password, $db_name, $rand;
+
+	$pdo_add_category = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+	$pdo_add_category->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	$sql_add_category = "INSERT INTO categories (category_name) VALUES (:category_name)";
+
+	$stmt_add_category = $pdo_add_category->prepare($sql_add_category);
+
+	$stmt_add_category->execute(["category_name"=>$category_name]); 
+
+}
+
+function get_categories() {
+	global $host, $username_db, $password, $db_name, $rand;
+
+	$pdo_get_categories = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+	$pdo_get_categories->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+	$sql_get_categories = "SELECT category_name FROM categories WHERE category_name LIKE '%:topic'";
+
+	$stmt_get_category = $pdo_get_categories->prepare($sql_get_categories);
+
+	$stmt_get_category->execute();
+
+	$data = $stmt_get_category->fetchAll();
+	$categories = array();
+
+	foreach($data as $data_element){
+		$categories[] = str_replace(":topic", "", $data_element["category_name"]);		
+	}
+
+	return $categories;
+}	
+
+function display_topics() {
+	$topics = get_categories();
+	var_dump($topics);
+}
+
 function get_topic_names() {
 	global $host, $username_db, $password, $db_name, $rand;
 
 	$pdo_get_topics = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 	$pdo_get_topics->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	$sql_get_topics = "SELECT category FROM chat_log WHERE 1";
+	$sql_get_topics = "SELECT category_id FROM chat_log WHERE 1";
 	$stmt_get_topics = $pdo_get_topics->prepare($sql_get_topics);
 	$stmt_get_topics->execute();
 
@@ -13,7 +59,17 @@ function get_topic_names() {
 	$topics = array();
 
 	foreach ($data as $data_element) {
-		$current_topic = $data_element['category'];
+		$current_topic = $data_element['category_id'];
+
+		// if the current topic ends in _topic then it must be a topic
+		//		strip _topic
+		if (substr($current_topic, -5) == "topic") {
+
+		}
+
+
+		// else continue
+
 		$trimmed_current_topic = str_replace("_topic", "", $current_topic);
 
 		if (!in_array($trimmed_current_topic, $topics)) {
