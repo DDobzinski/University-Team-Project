@@ -7,6 +7,8 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 
 session_start();
 
+require("fake_login_init.php");
+
 require("config.php");
 
 if (!isset($_SESSION["logged_in"])) {
