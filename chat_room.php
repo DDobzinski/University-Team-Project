@@ -9,6 +9,8 @@ require("config.php");
 
 session_start();
 
+require("fake_login_init.php");
+
 $rand = rand();
 $_SESSION['rand_check']= $rand;
 
