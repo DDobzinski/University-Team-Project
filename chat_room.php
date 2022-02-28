@@ -1,5 +1,5 @@
 <!-- 
-The *insert name of page* page of our first year group project from tutorial group Z7
+The chat room page of our first year group project from tutorial group Z7
 Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Almuhaythif, Will Asbery, and Yuyao Chen 
 !-->
 
@@ -60,11 +60,15 @@ if (!isset($_SESSION["logged_in"])) {
 			<h3>Pick a topic</h3>
 		</div>
 			<?php
-				echo display_content_divs();
+				 echo display_content_divs();
 			?>
 		</div>
 	</div>
 </div>
+
+<?php
+	include("php/reopen_content.php");
+?>
 
 </body>
 </html>

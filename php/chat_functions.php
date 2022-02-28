@@ -2,7 +2,12 @@
 
 if(isset($_POST["add_topic"])) {
 	$name = str_replace(" ", "_", $_POST["add_topic_name"]) . ":topic";
-	add_topic($name);
+
+	if ($name == ":topic") {
+		echo "<script>alert('Topic name cannot be empty');</script>";
+	} else {
+		add_topic($name);
+	}
 }
 
 function add_topic($topic_name){
@@ -210,8 +215,13 @@ function get_topic($topic_id) {
 		$log_time = substr($log_date_from_db, 11, 5);
 		$log_date = substr($log_date_from_db, 5, 2) ."/". substr($log_date_from_db, 8, 2) ."/". substr($log_date_from_db, 2, 2);
 
-		$html_chat_box = "
-		<div class='forum_box' id='chat_box_$chat_id_from_db'>
+		$html_chat_box = "<div class='forum_box";
+
+		if (!$reply_val_from_db == null) {
+			$html_chat_box .= " reply";
+		}
+
+		$html_chat_box .= "' id='chat_box_$chat_id_from_db'>
 			<div class='forum_box_details'> 
 				<h3>$username_from_db</h3>
 				<p>&nbsp@ $log_time</p>

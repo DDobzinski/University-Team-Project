@@ -91,16 +91,13 @@ function open_topic(section) {
 	document.getElementById("basic_content").style.display = "none";
 
 	var current = document.getElementById(section + "_content");
-	console.log(current);
 	var sections = [];
 	var children = document.getElementById("topics_list").children;
 
 	for (var i = 0; i < children.length; i++) {
 		sections.push(children[i].id);
 	}
-
-	console.log(sections);
-
+	
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {
 			document.getElementById(sections[i] + "_content").style.display = "none";
@@ -115,6 +112,10 @@ function open_topic(section) {
 }
 
 function open_reply(chat_id) {
-	document.getElementById("reply_box_" + chat_id).style.display = "block";
+	var reply = document.getElementById("reply_box_" + chat_id);
+	if (reply.style.display == "none" | reply.style.display == "") {
+		reply.style.display = "block";
+	} else {
+		reply.style.display = "none";
+	}
 }
-
