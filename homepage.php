@@ -7,9 +7,10 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 
 session_start();
 
-require("fake_login_init.php");
-
+require("fake_login_init.php"); // used for creating a fake login when all the files are not merged to master - testing purposes
 require("config.php");
+
+include("php/homepage_functions.php");
 
 if (!isset($_SESSION["logged_in"])) {
 	header("index.php");
@@ -20,68 +21,6 @@ if (isset($_POST["logout_button"])) {
 	session_destroy();
 	header("location: index_page.php");
 } 
-
-if (isset($_POST["add_forum_post_gp"])) {
-	if (!empty($_POST["text_box"])) {
-		$log_date = date("d/m/Y H:i");
-
-		$add_forum_post = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-		$add_forum_post->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-		$sql_add_forum_post = "INSERT INTO chat_log (user_id, category, username, text_content) VALUES (:user_id, :category, :username, :text_content)";
-
-		$stmt_add_forum_post = $add_forum_post->prepare($sql_add_forum_post);
-		$stmt_add_forum_post->execute([
-			'user_id' => $_SESSION["user_id"],
-			'category'=> "gp",
-			'username' => $_SESSION["username"],
-			'text_content' => trim($_POST["text_box"])
-		]);
-	} else if (empty($_POST["text_box"])) {
-		echo "No empty text box";
-	}
-}
-
-
-function get_forum($category) {
-	global $host, $username_db, $password, $db_name;
-
-	$pdo_get_forum = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_forum->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	$sql_get_forum = "SELECT username, log_date, text_content FROM chat_log WHERE category = :category";
-	$stmt_get_forum = $pdo_get_forum->prepare($sql_get_forum);
-	$stmt_get_forum->execute(['category' => $category]);
-
-	$stmt_get_forum->setFetchMode(PDO::FETCH_ASSOC);
-
-	$data = $stmt_get_forum->fetchAll();
-
-	$forum_posts = "";
-
-	foreach ($data as $row) {
-		$username_from_db = $row["username"];
-		$log_date_from_db = $row["log_date"];
-		$text_content_from_db = $row["text_content"];
-
-		// 2022-02-16 21:35:11
-		$log_time = substr($log_date_from_db, 11, 5);
-		$log_date = substr($log_date_from_db, 5, 2) ."/". substr($log_date_from_db, 8, 2) ."/". substr($log_date_from_db, 2, 2);
-
-		$html_forum_box = "
-		<div class='forum_box'>
-			<div class='forum_box_details'> 
-				<h3>$username_from_db</h3>
-				<p>&nbsp@ $log_time</p>
-				<p class='date'>$log_date</p>
-			</div>
-			<p class='text_content'>$text_content_from_db</p>
-		</div>";
-
-		$forum_posts .= $html_forum_box;
-	}
-
-	return $forum_posts;
-}
 
 ?>
 
@@ -155,12 +94,12 @@ function get_forum($category) {
 						<form method="post">
 							<label for="text_box">Add a post to the forum:</label>
 							<textarea name="text_box" type="text" id="text_box"></textarea>
-							<input type="submit" name="add_forum_post_gp" value="Submit post">
+							<input type="submit" name="gp_add_post" value="Submit post">
 						</form>
 						<h3 class="forum_h3">See what others are saying:</h3>
 						<div class="forum_section">
 							<?php 
-							echo get_forum("gp");
+							echo get_forum_posts("gp");
 							?>
 						</div>						
 					</div>
@@ -203,18 +142,74 @@ function get_forum($category) {
   							</li>
 						</ul>
 					</h4>
+					<div id="bank_signup_forum" class="forum">
+						<h2>Forum</h2>
+						<form method="post">
+							<label for="text_box">Add a post to the forum:</label>
+							<textarea name="text_box" type="text" id="text_box"></textarea>
+							<input type="submit" name="bank_signup_add_post" value="Submit post">
+						</form>
+						<h3 class="forum_h3">See what others are saying:</h3>
+						<div class="forum_section">
+							<?php 
+							echo get_forum_posts("bank_signup");
+							?>
+						</div>						
+					</div>
 				</div>
 
 				<div id="find_accommodation_content" class="info" style="display:none;">
 					<h2>Find your accommodation</h2>
+					<div id="find_accom_forum" class="forum">
+						<h2>Forum</h2>
+						<form method="post">
+							<label for="text_box">Add a post to the forum:</label>
+							<textarea name="text_box" type="text" id="text_box"></textarea>
+							<input type="submit" name="find_accom_add_post" value="Submit post">
+						</form>
+						<h3 class="forum_h3">See what others are saying:</h3>
+						<div class="forum_section">
+							<?php 
+							echo get_forum_posts("find_accom");
+							?>
+						</div>						
+					</div>
 				</div>
 
 				<div id="BRP_card_collection_content" class="info" style="display:none;">
 					<h2>Collect your BRP card</h2>
+					<div id="collect_brp_forum" class="forum">
+						<h2>Forum</h2>
+						<form method="post">
+							<label for="text_box">Add a post to the forum:</label>
+							<textarea name="text_box" type="text" id="text_box"></textarea>
+							<input type="submit" name="collect_brp_add_post" value="Submit post">
+						</form>
+						<h3 class="forum_h3">See what others are saying:</h3>
+						<div class="forum_section">
+							<?php 
+							echo get_forum_posts("collect_brp");
+							?>
+						</div>						
+					</div>
 				</div>
 
 				<div id="student_id_content" class="info" style="display:none;">
 					<h2>Collect your student ID</h2>
+					<div id="student_id_forum" class="forum">
+						<h2>Forum</h2>
+						<form method="post">
+							<label for="text_box">Add a post to the forum:</label>
+							<textarea name="text_box" type="text" id="text_box"></textarea>
+							<input type="submit" name="student_id_add_post" value="Submit post">
+						</form>
+						<h3 class="forum_h3">See what others are saying:</h3>
+						<div class="forum_section">
+							<?php 
+							echo get_forum_posts("student_id");
+							?>
+						</div>						
+					</div>
 				</div>
 			</div>
 		</div>
