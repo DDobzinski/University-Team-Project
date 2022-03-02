@@ -59,7 +59,8 @@ function toggle_modal(modal_name) {
 
 function open_content(section) {
 	var current = document.getElementById(section + "_content");
-	var sections = ["gp_signup", "bank_signup", "find_accommodation", "BRP_card_collection", "student_id"]
+	console.log(current)
+	var sections = ["gp_signup", "bank_signup", "find_accommodation", "BRP_card_collection", "student_id"];
 
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {
