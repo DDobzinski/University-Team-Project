@@ -158,6 +158,7 @@ for ($j = 0; $j < sizeof($topics); $j++) {
 			]);
 		}
 	}
+	unset($_POST);
 }
 
 // added for loop for adding data to the database on the topics
@@ -171,6 +172,7 @@ for ($k = 0; $k < sizeof($topics); $k++) {
 			add_topic_post($topics[$k]["id"], $_POST["text_box"]);
 		}
 	}
+	unset($_POST);
 }
 
 // added for loop for adding replies to the database
@@ -182,6 +184,7 @@ for ($l = 0; $l < sizeof($topics); $l++) {
 			add_topic_post($topics[$l]["id"], $_POST["text_box"], true, $_POST["chat_id"]);
 		}
 	}	
+	unset($_POST);
 }
 
 function get_topic($topic_id) {

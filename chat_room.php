@@ -35,11 +35,12 @@ if (!isset($_SESSION["logged_in"])) {
 
 <div id="main">
 	<div id="navbar">
+		<img src="" alt="">
 		<form method="post" id="logout_form">
 			<input id="logout_button" type="submit" name="logout_button" value="Logout">
 		</form>
-		<a id="profile_page_link" href="profile_page.php">Go to profile</a>
-		<a id="homepage_link" href="homepage.php">Homepage</a>
+		<a id="profile_page_link" class="navbar_link" href="profile_page.php">Go to profile</a>
+		<a id="homepage_link" class="navbar_link">Homepage</a>
 	</div>
 
 	<div id="main_content" class="main_home">

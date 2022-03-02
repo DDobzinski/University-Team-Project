@@ -97,6 +97,8 @@ function open_topic(section) {
 	for (var i = 0; i < children.length; i++) {
 		sections.push(children[i].id);
 	}
+
+	console.log(sections);
 	
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {
