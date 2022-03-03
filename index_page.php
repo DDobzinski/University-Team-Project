@@ -1,4 +1,4 @@
-<!-- The main index page of our first year group project from tutorial group Z7 -->
+<!-- The main index page of our first year group project from tutorial Group Z7 -->
 <!-- Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Almuhaythif, Will Asbery, and Yuyao Chen -->
 
 <?php
