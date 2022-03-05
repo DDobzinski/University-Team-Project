@@ -13,21 +13,23 @@ body{
     min-height: 100vh;
     width: 100%;
     /*overflow: hidden;*/
-    position: absolute;
+    display: flex;
+    flex-direction: column;
 
 }
-header #navbar{
-    position: fixed;
+
+#navbar{
+    position: sticky;
     top: 0px;
     left: 0px;
-    width: 100%;
-    height: 3.5em;
+    height: 6vh;
     background-color: #202A45;
     z-index: 1;
+    display: flex;
+    flex-direction: row-reverse;
 }
-header #navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
-    position: relative;
-    float: right;
+
+#navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
     margin: 0.2em 1.5em;
     width: 5em;
     height: 80%;
@@ -37,20 +39,22 @@ header #navbar #login_button, #navbar #logout_button, #homepage_link, #profile_p
     border-radius: 20px;
     cursor: pointer;
 }
-header #navbar #logout_button {
+
+#navbar #logout_button {
     height: 2.2em;
     background-color: #63B4CF;
     border: 1px solid #63B4CF;
 }
 
-header #profile_page_link , #chat_room_link{
+#profile_page_link , #chat_room_link{
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
     text-decoration: none;
     width: 7em;
 }
-header #navbar #profile_page_button {
+
+#navbar #profile_page_button {
     position: absolute;
     right: 2%;
     top: 0.25em;
@@ -63,22 +67,25 @@ header #navbar #profile_page_button {
     cursor: pointer;
 }
 
-.sidebar{
-    margin-top: 40px;
-    position: fixed;
-    top: 0;
-    left: 0;
+#main {
+    display: flex;
+    flex-direction: row;
     height: 100%;
-    width: 70px;
+}
+
+.sidebar{
+    width: 5%;
+    height: 94vh;
     background: #202A45;
     padding: 6px 14px;
     transition: all 0.5s ease;
+}
 
-}
 .sidebar.active{
-    width: 240px;
+    width: 15%;
 }
-.sidebar .logo_content .logo{
+
+/*.sidebar .logo_content .logo{
     color: #fff;
     display: flex;
     padding-top: 200px;
@@ -88,45 +95,46 @@ header #navbar #profile_page_button {
     opacity: 1;
     pointer-events: auto;
 }
+
 .sidebar.active .logo_content .logo{
     opacity: 1;
     pointer-events: auto;
 }
+
 .logo_content .logo i{
     font-size: 28px;
     margin-right: 5px;
 }
+
 .logo_content .logo .logo_name{
     font-size: 20px;
     font-weight: 400;
+}*/
+
+.sidebar #nav_list {
+    margin-left: 1em;
 }
+
 .sidebar #btn{
-    position: absolute;
+    margin-left: 2em;
     color: #fff;
-    left: 50%;
-    top: 6px;
     font-size: 20px;
     height: 50px;
     width: 50px;
-    text-align: center;
+    cursor: pointer;
     line-height: 50px;
     transform: translateX(-50%);
-     white-space: nowrap;
+    white-space: nowrap;
 }
-.sidebar.active #btn{
-    left: 90%;
-}
-.sidebar ul{
-    margin-top: 250px;
-}
+
 .sidebar ul li{
-    position: relative;
     height: 50px;
     width: 100%;
-    margin: 10px 10px 30px 0px;
+    margin-top: 1em;
     list-style: none;
     line-height: 50px;
 }
+
 .sidebar ul li .tooltip{
     position: absolute;
     height: 35px;
@@ -143,11 +151,13 @@ header #navbar #profile_page_button {
     opacity: 0;
     pointer-events: none;
 }
+
 .sidebar ul li:hover .tooltip{
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 }
+
 .sidebar ul li a{
     color: transparent;
     display: flex;
@@ -157,6 +167,7 @@ header #navbar #profile_page_button {
     border-radius: 12px;
     white-space: nowrap;
 }
+
 .sidebar.active ul li a{
     color: #fff;
     display: flex;
@@ -175,10 +186,10 @@ header #navbar #profile_page_button {
     border-radius: 12px;
 }
 
-
 .sidebar.active ul li a:hover{
     /*background: #fff;*/
     color: #63B4CF;
+    cursor: pointer;
 }
 .sidebar ul li a i{
     height: 50px;
@@ -188,35 +199,25 @@ header #navbar #profile_page_button {
     text-align: center;
     cursor: pointer;
 }
+
 .sidebar .links_name .links_GP .links_Bank .links_accom .links_BRP{
     opacity: 0;
 }
+
 .sidebar.active .links_name .links_GP .links_Bank .links_accom .links_BRP{
     opacity: 1;
 }
 
-
-.home_content{
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 240px);
-    left: 240px;
-}
-.home_content .text{
-    font-size: 40px;
-    font-weight: 500;
-    color: black;
-    margin: 15px;
-}
-/*.info {
-    margin-top: 180px;
-    margin-right: 20px;
-    margin-left: 200px;
-
-}*/
+/* Main page styling for homepage and chatroom */
 
 #current_content {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+#current_content.active {
+    width: 95%;
 }
 
 #current_content h2 {
@@ -225,7 +226,7 @@ header #navbar #profile_page_button {
 }
 
 #current_content .info {
-    padding-left: 3em;
+    padding: 2em 8em;
 }
 
 #current_content .info h2 {
@@ -233,52 +234,59 @@ header #navbar #profile_page_button {
     text-decoration: underline;
 }
 
-.info {
-    margin: 130px 20px 150px 150px;
-    /*padding: 16px 0px 0px 150px;*/
-    
-}
-.progress{
-    margin: 100px 20px 150px 700px;
+#progress_bar {
     position: sticky;
-    width: 700px;
-    height: 40px;
+    width: 100%;
+    display: flex;
+    height: 10vh;
+    padding-top: 5vh;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#progress_bar span {
+    font-size: 20px;
+    margin: auto 0;
+    margin-right: 1em;
+}
+
+.progress{
+    /*margin: 100px 20px 150px 700px;*/
+    width: 25em;
     background: #8ac7db ;
     border-radius: 25px;
 
 }
+
 .progress_fill{
+    position: absolute;
     border-radius: 25px;
-    height: 100%;
+    height: 5vh;
     background: #63B4CF;
     transition: width 0.5s;
     
 }
+
 .progress_value{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 25em;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
 }
+
 .inside_content{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-    width: 700px;
-    height: 300px;
-    margin-left: 500px;
-    margin-right: 10px;
     border-color: #202A45;
-    position: static;
-
 }
+
 .card_img{
     width: 50%;
     display: block;
-
-
 }
+
 .text_content{
     line-height: 1.5;
     font-size: 0.9em;

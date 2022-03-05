@@ -31,12 +31,13 @@ if (isset($_POST["logout_button"])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/styling.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="js/script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 </head>
-<body onload="open_content('gp_signup');">
+<body onload="open_content('gp_signup');in_progess.setValue(0);">
 	<div id="main">
 		<div id="navbar">
 			<form method="post" id="logout_form">
@@ -46,7 +47,61 @@ if (isset($_POST["logout_button"])) {
 			<a id="chat_room_link" href="chat_room.php">Chatroom</a>
 		</div>
 
-		<div id="main_content" class="main_home">
+		<div class="sidebar active">
+			<div class="logo_content">
+				<div class="logo">
+				
+					<div class="logo_name">
+						<i class='bx bx-menu' id = "btn"></i>
+					</div>
+					<ul class="nav_list">
+						<li> <a onclick="open_content('_0')">
+							<i class='bx bx-clinic'></i>
+							<span class="links_GP">GP</span>
+							
+						</a> 
+						<span class="tooltip"> GP</span>
+						</li>
+						<li> <a onclick="open_content('_1')">
+							<i class='bx bx-money'></i>
+							<span class="links_Bank">Bank</span>
+							
+						</a> 
+						<span class="tooltip"> Bank</span>
+						</li>
+						<li> <a onclick="open_content('_2')">
+							<i class='bx bx-building-house'></i>
+							<span class="links_accom">accomodation</span>
+							
+						</a> 
+						<span class="tooltip"> accomodation</span>
+						</li>
+						<li> <a onclick="open_content('_3')">
+							<i class='bx bxs-id-card'></i>
+							<span class="links_BRP">BRP</span>
+							
+						</a> 
+						<span class="tooltip"> BRP</span>
+						</li>
+						<li> <a onclick="open_content('_3')">
+							<i class='bx bxs-shield'></i>
+							<span class="links_name">Police Registration</span>
+
+						</a> 
+						<span class="tooltip"> Register with the police</span>
+						</li>
+						<li> <a href="#">
+							<i class='bx bxs-credit-card'></i>
+							<span class="links_name">Student ID</span>
+						</a> 
+						<span class="tooltip"> Student ID collection</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="main_content" class="main_home">
 			<div id="navigation_pane">
 				<ul>
 					<li id="gp_signup" style="margin-top: 6em;">
@@ -75,7 +130,7 @@ if (isset($_POST["logout_button"])) {
 						</a>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 
 			<div id="current_content">
 				<div id="completion_section">
