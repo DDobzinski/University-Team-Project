@@ -30,7 +30,7 @@
 			
 		</div>
 
-		<div class="sidebar">
+		<div class="sidebar active">
 			<div class="logo_content">
 				<div class="logo">
 				
@@ -38,13 +38,16 @@
 						<i class='bx bx-menu' id = "btn"></i>
 					</div>
 					<ul class="nav_list">
+
+
 						<li> <a onclick="open_content('_0')">
 							<i class='bx bx-clinic'></i>
-							<span class="links_GP">GP</span>
+							<span class="links_GP">General Practitioner</span>
 							
 						</a> 
-						<span class="tooltip"> GP</span>
+						<span class="tooltip"> General Practitioner Registration</span>
 						</li>
+
 						<li> <a onclick="open_content('_1')">
 							<i class='bx bx-money'></i>
 							<span class="links_Bank">Bank</span>
@@ -54,31 +57,63 @@
 						</li>
 						<li> <a onclick="open_content('_2')">
 							<i class='bx bx-building-house'></i>
-							<span class="links_accom">accomodation</span>
+							<span class="links_accom">Accomodation</span>
 							
 						</a> 
-						<span class="tooltip"> accomodation</span>
+						<span class="tooltip"> Accomodation</span>
 						</li>
+
 						<li> <a onclick="open_content('_3')">
 							<i class='bx bxs-id-card'></i>
-							<span class="links_BRP">BRP</span>
+							<span class="links_BRP">BRP </span>
 							
 						</a> 
-						<span class="tooltip"> BRP</span>
+						<span class="tooltip"> Biometric Residence Pass</span>
 						</li>
-						<li> <a onclick="open_content('_3')">
+
+						<li> <a onclick="open_content('_4')">
 							<i class='bx bxs-shield'></i>
 							<span class="links_name">Police Registration</span>
-
 						</a> 
 						<span class="tooltip"> Register with the police</span>
 						</li>
-						<li> <a href="#">
+
+						<li> <a onclick="open_content('_5')">
 							<i class='bx bxs-credit-card'></i>
 							<span class="links_name">Student ID</span>
 						</a> 
 						<span class="tooltip"> Student ID collection</span>
 						</li>
+
+
+						<li> <a onclick="open_content('_6')">
+							<i class='bx bxs-group' ></i>
+							<span class="links_name">Join Society</span>
+						</a> 
+						<span class="tooltip"> Join a society</span>
+						</li>
+
+						<li> <a onclick="open_content('_7')">
+							<i class='bx bx-buildings'></i>
+							<span class="links_name">Tour Campus</span>
+						</a> 
+						<span class="tooltip"> Tour Campus</span>
+						</li>
+
+						<li> <a onclick="open_content('_8')">
+							<i class='bx bxs-book-content'></i>
+							<span class="links_name">Blackboard setup</span>
+						</a> 
+						<span class="tooltip"> Setting up Blackboard</span>
+						</li>
+
+						<li> <a onclick="open_content('_9')">
+							<i class='bx bx-money-withdraw'></i>
+							<span class="links_name">Tuition Fees</span>
+						</a> 
+						<span class="tooltip"> Set up payment for tuiton fees</span>
+						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -157,16 +192,63 @@
 				</div>
 				
 				</div>
-			</div>
+				</div>
 			</div>
 
 			<div id="content_2" class="info" style="display:none;">
-				<h2>Find your accommodation</h2>
+				
+				<div class="inside_content"><!-- card -->
+				<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
+				<div class="text_content"> <!-- card content -->
+					<h2>Find your accommodation</h2>
+					<h3>Student accomodation can be categorised into private student halls and the university's own student halls</h3>
+					<h2><b>Student Halls</b></h3>
+					<h4>The University of Manchester provides over 20 different halls for you to choose from 3 different areas(City Centre,Fallowfield and Victoria Park). There is a room guaratee for first year undergraduates who have made an application by the 31st August of the year of entry.This <a href="https://www.accommodation.manchester.ac.uk/ouraccommodation/hallsofresidence/">link </a>will take you to the university's official website to filter out your prefered student hall.  </h4>
+
+					<h2><b>Private student accomodaton</b></h3>
+
+				</div>
+				
+				
+				<!--<hr align="center" class="divider">!-->
+				<div class="card_info">
+					<label class="checkbox" for="myCheckboxId">
+						<input onclick="in_progress.update_value(0)" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+						Done!
+					</label>
+				</div>
+				</div>
 			</div>
 
 			<div id="content_3" class="info" style="display:none;">
 				<h2>Collect your BRP card</h2>
 			</div>
+
+			<div id="content_4" class="info" style="display:none;">
+				<h2>Register with the police</h2>
+			</div>
+
+
+			<div id="content_5" class="info" style="display:none;">
+				<h2>Student ID</h2>
+			</div>
+
+			<div id="content_6" class="info" style="display:none;">
+				<h2>Society</h2>
+			</div>
+
+			<div id="content_7" class="info" style="display:none;">
+				<h2>Getting familiar with campus</h2>
+			</div>
+
+			<div id="content_8" class="info" style="display:none;">
+				<h2>Blackboard setup</h2>
+			</div>
+
+			<div id="content_9" class="info" style="display:none;">
+				<h2>Tuition Fee payment</h2>
+			</div>
+
 		</div>
 
 
@@ -193,7 +275,7 @@
 				var el;
 				var prefix = 'content_';
 				for(var i = 0; el = document.getElementById(prefix + i); i++) {
-				  if(i<5) {
+				  if(i<10) {
 				    el.style.display = 'none';
 				  }
 				}
@@ -228,11 +310,11 @@
 				update_value(id){
 					let cb = document.getElementById('content_' + id).querySelector('#myCheckboxId');
 					if (cb.checked){
-						this.value +=25;
+						this.value +=10;
 
 					}
 					else if (!cb.checked){
-						this.value -=25;
+						this.value -=10;
 					}
 
 					this.update();
