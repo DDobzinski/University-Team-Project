@@ -340,13 +340,25 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-
-.hobbies_child input {
-	width: 80%;
-	height: 100%;
-	margin: 5%;
+/* sets how uselected hobbie looks like*/
+input[type=checkbox] + label {
+	display:block;
+	width:80%;
+	border:2px solid #000;
+	background:#f7f7f7;
+	border-radius:2px;
+	text-align: center;
+  	padding: 3px 0;
+ 	display: block;
 }
-
+input[type="checkbox"]
+{
+  opacity: 0;
+}
+/* sets how selected hobbie is modified*/
+.hobbies_checkbox:checked + label {
+	border-color: rgb(0, 140, 255);
+  }
 .dividier {
 	text-align: center;
 	width: 90%;
