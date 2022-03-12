@@ -42,7 +42,7 @@ if (isset($_POST["save_changes_button"])) {
 	// this second foreach loop will only run if no errors occured.		
 	if ($value != "" && !isset($email_address_error) && !isset($firstname_error) && !isset($lastname_error) && !isset($phone_number_error)) {
 		foreach ($_POST as $name => $value) {
-			if ($name == "save_changes_button") {
+			if ($name == "save_changes_button" || $name == "users_hobbies") {
 				continue;
 			} else {
 				$sql_change_info = "UPDATE user_info SET $name = :value WHERE user_id = :user_id";
@@ -54,6 +54,26 @@ if (isset($_POST["save_changes_button"])) {
 				header("refresh: 0");
 			}
 		}
+		if(isset($_POST['users_hobbies'])) //if some hobbies are selected
+		{
+			$hobbies_string = "";
+			foreach($_POST['users_hobbies'] as $hobby)
+			{
+				$hobbies_string .= $hobby . ",";
+			}
+			$hobbies_string = substr_replace($hobbies_string, "", -1);
+		}
+		else //if hobbies are not selected
+		{
+			$hobbies_string = NULL;
+		}
+
+		$sql_change_info = "UPDATE user_info SET hobbies = :value WHERE user_id = :user_id";
+
+		$stmt_change_info = $pdo_change_info->prepare($sql_change_info);
+
+		$stmt_change_info->execute(['value' => $hobbies_string, 'user_id' => $user_id]);
+		header("refresh: 0");
 	}
 }
 

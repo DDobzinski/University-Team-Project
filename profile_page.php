@@ -315,61 +315,60 @@ if (isset($_POST["logout_button"])) {
 					<div id="hobbies_modal" class="modal">
 						<div class="modal_content modal_animate modal_content_hobbies">
 							<p onclick="toggle_modal('hobbies');" class="close" title="login_modal_close">&times;</p>
-							<form method="post" >
 									<div class='hobbies_child'>
 											<!-- Hobbies checkboxes, php part checks if user had this hobby in his database, look more in get_hobbies.php-->
-											<input class="hobbies_checkbox" type="checkbox" id="hobbies_sports" name='hobbies_sports' value='1' <?php echo ($hobbies_user_array['1'] == '1') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type="checkbox" id="hobbies_sports" name='users_hobbies[]' value='1' <?php echo ($hobbies_user_array['1'] == '1') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_sports">Sports</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_baking' name='hobbies_baking' value='2' <?php echo ($hobbies_user_array['2'] == '2') ? 'checked="checked"' : '';?>> 
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_baking' name='users_hobbies[]' value='2' <?php echo ($hobbies_user_array['2'] == '2') ? 'checked="checked"' : '';?>> 
 											<label for="hobbies_baking">Baking</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_art' name='hobbies_art' value='3' <?php echo ($hobbies_user_array['3'] == '3') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_art' name='users_hobbies[]' value='3' <?php echo ($hobbies_user_array['3'] == '3') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_art">Art</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_gaming' name='hobbies_gaming' value='4' <?php echo ($hobbies_user_array['4'] == '4') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_gaming' name='users_hobbies[]' value='4' <?php echo ($hobbies_user_array['4'] == '4') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_gaming">Gaming</label>
 										</div>
 									<div class='hobbies_child'>
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_music' name='hobbies_music' value='5' <?php echo ($hobbies_user_array['5'] == '5') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_music' name='users_hobbies[]' value='5' <?php echo ($hobbies_user_array['5'] == '5') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_music">Music</label>
 
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_dance' name='hobbies_dance' value='6' <?php echo ($hobbies_user_array['6'] == '6') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_dance' name='users_hobbies[]' value='6' <?php echo ($hobbies_user_array['6'] == '6') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_dance">Dance</label>
 
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_photography' name='hobbies_photography' value='7' <?php echo ($hobbies_user_array['7'] == '7') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_photography' name='users_hobbies[]' value='7' <?php echo ($hobbies_user_array['7'] == '7') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_photography">Photography</label>
 
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_singing' name='hobbies_singing' value='8' <?php echo ($hobbies_user_array['8'] == '8') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_singing' name='users_hobbies[]' value='8' <?php echo ($hobbies_user_array['8'] == '8') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_singing">Singing</label>
 										</div>
 									<div class='hobbies_child'>
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_electronics' name='hobbies_electronics' value='9' <?php echo ($hobbies_user_array['9'] == '9') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_electronics' name='users_hobbies[]' value='9' <?php echo ($hobbies_user_array['9'] == '9') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_electronics">Electronics</label>
 
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_biking' name='hobbies_biking' value='10' <?php echo ($hobbies_user_array['10'] == '10') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_biking' name='users_hobbies[]' value='10' <?php echo ($hobbies_user_array['10'] == '10') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_biking">Biking</label>
 
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_reading' name='hobbies_reading' value='11' <?php echo ($hobbies_user_array['11'] == '11') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_reading' name='users_hobbies[]' value='11' <?php echo ($hobbies_user_array['11'] == '11') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_reading">Reading</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_fishing' name='hobbies_fishing' value='12' <?php echo ($hobbies_user_array['12'] == '12') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_fishing' name='users_hobbies[]' value='12' <?php echo ($hobbies_user_array['12'] == '12') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_fishing">Fishing</label>
 										</div>
 									<div class='hobbies_child'>
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_traveling' name='hobbies_traveling' value='13' <?php echo ($hobbies_user_array['13'] == '13') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_traveling' name='users_hobbies[]' value='13' <?php echo ($hobbies_user_array['13'] == '13') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_traveling">Traveling</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_cars' name='hobbies_cars' value='14' <?php echo ($hobbies_user_array['14'] == '14') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_cars' name='users_hobbies[]' value='14' <?php echo ($hobbies_user_array['14'] == '14') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_cars">Cars</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_yoga' name='hobbies_yoga' value='15' <?php echo ($hobbies_user_array['15'] == '15') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_yoga' name='users_hobbies[]' value='15' <?php echo ($hobbies_user_array['15'] == '15') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_yoga">Yoga</label>
 											
-											<input class="hobbies_checkbox" type='checkbox' id='hobbies_hiking' name='hobbies_hiking' value='16' <?php echo ($hobbies_user_array['16'] == '16') ? 'checked="checked"' : '';?>>
+											<input class="hobbies_checkbox" type='checkbox' id='hobbies_hiking' name='users_hobbies[]' value='16' <?php echo ($hobbies_user_array['16'] == '16') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_hiking">Hiking</label>
 										</div>
-							</form>
+							
 						</div>
 					</div>
 					<!-- make a modal here !-->
