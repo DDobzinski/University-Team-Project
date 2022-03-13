@@ -383,6 +383,26 @@ if (isset($_POST["logout_button"])) {
 								} 
 							?>
 						</option>
+						<option value="ashburne Hall">Ashburne Hall</option>
+						<option value="brook Hall">Brook Hall</option>
+						<option value="burkhardt House">Burkhardt House</option>
+						<option value="canterbury Court">Canterbury Court</option>
+						<option value="dalton-Ellis Hall">Dalton-Ellis Hall</option>
+						<option value="denmark Road">Denmark Road</option>
+						<option value="george Kenyon Hall">George Kenyon Hall</option>
+						<option value="horniman House">Horniman House</option>
+						<option value="hulme Hall">Hulme Hall</option>
+						<option value="oak House">Oak House</option>
+						<option value="richmond Park">Richmond Park</option>
+						<option value="rusholme Place">Rusholme Place</option>
+						<option value="sheavyn House">Sheavyn House</option>
+						<option value="st Anselm Hall">St Anselm Hall</option>
+						<option value="unsworth Park">Unsworth Park</option>
+						<option value="uttley House">Uttley House</option>
+						<option value="weston Hall">Weston Hall</option>
+						<option value="whitworth Park">Whitworth Park</option>
+						<option value="wilmslow Park">Wilmslow Park</option>
+						<option value="woolton Hall">Woolton Hall</option>
 					</select><br>
 
 					<label for="biography">Bio:</label><br>
