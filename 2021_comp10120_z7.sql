@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2022 at 06:47 PM
+-- Generation Time: Mar 15, 2022 at 12:20 AM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -92,7 +92,7 @@ CREATE TABLE `user_info` (
   `course` varchar(255) DEFAULT NULL,
   `accommodation` varchar(255) DEFAULT NULL,
   `biography` varchar(511) DEFAULT NULL,
-  `private` tinyint(1) NOT NULL DEFAULT '0',
+  `private_account` tinyint(1) NOT NULL DEFAULT '0',
   `hobbies` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -100,8 +100,8 @@ CREATE TABLE `user_info` (
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`user_id`, `username`, `firstname`, `lastname`, `hashed_password`, `email_address`, `phone_number`, `nationality`, `course`, `accommodation`, `biography`, `private`, `hobbies`) VALUES
-(1, 'will', 'will', 'asbery', '$2y$10$EftjUdsv6E.91dx.HrbJE.NkFFy6XkkLUdkNcn8cIxFdjPvuuW5em', 'willasbery@gmail.com', '+44785812313', 'british', '', '', 'Hi, my name is Will and I study Computer Science at the University of Manchester. I am testing the software.', 0, '1,2'),
+INSERT INTO `user_info` (`user_id`, `username`, `firstname`, `lastname`, `hashed_password`, `email_address`, `phone_number`, `nationality`, `course`, `accommodation`, `biography`, `private_account`, `hobbies`) VALUES
+(1, 'will', 'will', 'asbery', '$2y$10$EftjUdsv6E.91dx.HrbJE.NkFFy6XkkLUdkNcn8cIxFdjPvuuW5em', 'willasbery@gmail.com', '+44785812313', 'british', '', 'dalton-Ellis Hall', 'Hi, my name is Will and I study Computer Science at the University of Manchester. I am testing the software.', 1, NULL),
 (2, 'admin', 'admin', 'admin', '$2y$10$a0OYu2O/J.GWVgw3XKYNDeN9li5kfbVXGFNOnDgJfFx7NAWWotpli', 'admin@gmail.com', '', 'afghan', '', '', '', 0, NULL),
 (4, 'euan', NULL, NULL, '$2y$10$aVpORXJuR4Js80lwiJThaedmYAcF/VED86TkZ3iZZFqobg6dY7ejy', 'euan@gmail.com', NULL, NULL, NULL, NULL, NULL, 0, NULL);
 

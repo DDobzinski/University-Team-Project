@@ -341,7 +341,7 @@ body {
 	flex-direction: column;
 }
 /* sets how uselected hobbie looks like*/
-input[type=checkbox] + label {
+.hobbies_checkbox + label {
 	display:block;
 	width:80%;
 	border:2px solid #000;
@@ -351,7 +351,7 @@ input[type=checkbox] + label {
   	padding: 3px 0;
  	display: block;
 }
-input[type="checkbox"]
+.hobbies_checkbox
 {
   opacity: 0;
 }

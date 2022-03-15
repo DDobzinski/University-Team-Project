@@ -6,7 +6,7 @@ $pdo_get_info = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db
 
 $pdo_get_info->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-$get_info_sql = "SELECT user_id, username, hashed_password, email_address, firstname, lastname, phone_number, nationality, course, accommodation, biography FROM user_info WHERE user_id = :user_id";
+$get_info_sql = "SELECT user_id, username, hashed_password, email_address, firstname, lastname, phone_number, nationality, course, accommodation, biography, private_account FROM user_info WHERE user_id = :user_id";
 
 $stmt_get_info = $pdo_get_info->prepare($get_info_sql);
 
@@ -27,7 +27,8 @@ if ($row = $stmt_get_info->fetch()) {
 		'nationality' => $row["nationality"],
 		'course' => $row["course"],
 		'accommodation' => $row["accommodation"],
-		'biography' => $row["biography"]
+		'biography' => $row["biography"],
+		'private_account' => $row["private_account"]
 	);
 }
 

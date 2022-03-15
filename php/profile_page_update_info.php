@@ -48,12 +48,28 @@ if (isset($_POST["save_changes_button"])) {
 				$sql_change_info = "UPDATE user_info SET $name = :value WHERE user_id = :user_id";
 
 				$stmt_change_info = $pdo_change_info->prepare($sql_change_info);
-
-				$stmt_change_info->execute(['value' => $value, 'user_id' => $user_id]);
+				if($name != "private_account")
+				{
+					$stmt_change_info->execute(['value' => $value, 'user_id' => $user_id]);
+				}elseif(isset($_POST["private_account"]))
+				{
+					$stmt_change_info->execute(['value' => intval($value), 'user_id' => $user_id]);
+				}
+				
 
 				header("refresh: 0");
 			}
 		}
+		if(!isset($_POST["private_account"]))
+				{
+					$sql_change_info = "UPDATE user_info SET private_account = :value WHERE user_id = :user_id";
+
+					$stmt_change_info = $pdo_change_info->prepare($sql_change_info);
+
+					$stmt_change_info->execute(['value' => 0, 'user_id' => $user_id]);
+
+					header("refresh: 0");
+				}
 		if(isset($_POST['users_hobbies'])) //if some hobbies are selected
 		{
 			$hobbies_string = "";

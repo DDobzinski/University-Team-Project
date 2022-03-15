@@ -297,6 +297,9 @@ if (isset($_POST["logout_button"])) {
 						<option value="zambian">Zambian</option>
 						<option value="zimbabwean">Zimbabwean</option>
 					</select>
+					<br>
+					<input type="checkbox" name="private_account" value='1' id="private_account" <?php echo ($data['private_account'] == 1) ? 'checked="checked"' : '';?>>
+					<label for="private_account">Private</label>
 				</div>
 				<div class="child">
 					<label for="course">Course:</label><br>
