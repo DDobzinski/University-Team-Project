@@ -3,7 +3,7 @@ The home page of our first year group project from tutorial group Z7
 Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Almuhaythif, Will Asbery, and Yuyao Chen 
 !-->
 
-<!-- <?php
+<?php
 
 session_start();
 
@@ -22,7 +22,7 @@ if (isset($_POST["logout_button"])) {
 	header("location: index_page.php");
 } 
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@ if (isset($_POST["logout_button"])) {
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/homepage.css">
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-	<script type="text/javascript" src="js/merged_script.js"></script>
+	<script type="text/javascript" src="js/homepage.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel>
