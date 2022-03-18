@@ -9,7 +9,7 @@ require("config.php");
 
 session_start();
 
-require("fake_login_init.php");
+// require("fake_login_init.php");
 
 if (!isset($_SESSION["logged_in"])) {
 	header("Location: index_page.php");
@@ -25,8 +25,9 @@ if (!isset($_SESSION["logged_in"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/styling.css">
-	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styling/master.css">
+	<link rel="stylesheet" type="text/css" href="styling/chat_room.css">
+	<script type="text/javascript" src="js/chat_room.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
@@ -58,7 +59,13 @@ if (!isset($_SESSION["logged_in"])) {
 	</div>
 	<div id="current_content">
 		<div id="basic_content">
+			<p>This page is dedicated to help you communicate with other students who are in your situation.</p>
+			<p>The table below allows you to click on a topic, or, if none of these topics interest you, you can create your own topic here:</p>
+			<p>Please be respectful to other users</p>
 			<h3>Pick a topic</h3>
+			<?php
+				echo display_topic_table();
+			?>
 		</div>
 			<?php
 				 echo display_content_divs();

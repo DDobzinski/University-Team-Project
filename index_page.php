@@ -25,7 +25,8 @@ Also when you're adding images please can you use an alt tag just in case the im
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/styling.css">
+	<link rel="stylesheet" type="text/css" href="styling/master.css">
+	<link rel="stylesheet" type="text/css" href="styling/index_page.css">
 	<script type="text/javascript" src="js/script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

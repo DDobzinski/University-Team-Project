@@ -534,3 +534,16 @@ body {
 	border: 1px solid var(--dark_blue);
 	border-radius: 3px;
 }
+
+#topics_table {
+	border: 1px solid var(--dark_blue);
+	margin: auto;
+	width: 80%;
+}
+
+#topics_table td {
+	padding: 1em 0em;
+	justify-content: space-around;
+	width: 80%;
+	border-bottom: 1px solid var(--dark_blue);
+}

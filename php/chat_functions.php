@@ -281,28 +281,19 @@ function add_topic_post($topic, $text_content, $reply = false, $chat_id = null) 
 	}
 }
 
-// function buildTree(array $elements, $parentId = null) {
-//     $branch = array();
+function display_topic_table() {
+	global $topics;
 
-//     foreach ($elements as $element) {
-//         if ($element['reply_to'] == $parentId) {
-//             $children = buildTree($elements, $element['chat_id']);
-//             if ($children) {
-//                 $element['children'] = $children;
-//             }
+	$html = "<table id='topics_table'>";
 
-//             $branch = $element;
-//             // $branch = array([
-//             // 	'chat_id' => $element['chat_id'],
-//             // 	'username' => $element['username'], 
-//             // 	'text_content' => $element['text_content'], 
-//             // 	'reply_to' => $element['reply_to'],
+	foreach ($topics as $topic) {
+		$id = $topic["id"];
+		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "</td></tr>";
+	}
 
-//             // ]);
-//         }
-//     }
+	$html .= "</table>";
 
-//     return $branch;
-// }
+	return $html;
+}
 
 ?>

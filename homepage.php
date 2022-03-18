@@ -7,7 +7,7 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 
 session_start();
 
-require("fake_login_init.php"); // used for creating a fake login when all the files are not merged to master - testing purposes
+// require("fake_login_init.php"); // used for creating a fake login when all the files are not merged to master - testing purposes
 require("config.php");
 
 include("php/homepage_functions.php");
@@ -30,7 +30,8 @@ if (isset($_POST["logout_button"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/merged_styling.css">
+	<link rel="stylesheet" type="text/css" href="styling/master.css">
+	<link rel="stylesheet" type="text/css" href="styling/homepage.css">
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="js/merged_script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">

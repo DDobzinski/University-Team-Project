@@ -8,7 +8,6 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 session_start();
 
 require("config.php");
-require("fake_login_init.php");
 // if (!isset($_SESSION["logged_in"])) {
 // 	header("Location: index_page.php");
 // } else {
@@ -33,7 +32,8 @@ if (isset($_POST["logout_button"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/styling.css">
+	<link rel="stylesheet" type="text/css" href="styling/master.css">
+	<link rel="stylesheet" type="text/css" href="styling/profile_page.css">
 	<script type="text/javascript" src="js/script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
