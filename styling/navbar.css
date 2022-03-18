@@ -1,0 +1,36 @@
+
+
+body {
+	min-height: 1000px;
+	min-width: 1000px;
+}
+
+ul {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #202A45;
+}
+
+li {
+	list-style: none;
+	float: left;
+}
+
+li a {
+	display: block;
+	width: 100px;
+	color: white;
+	text-align: center;
+	padding: 20px 0px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #63B4CF;
+}
