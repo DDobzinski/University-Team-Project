@@ -1,0 +1,34 @@
+----- to do list -----
+
+index page:
+	add the description of the site when written
+	add the logo
+
+home page:
+	write all the details for the individual tasks
+	complete the completion bar
+	re-instate password validation - currently disabled to make it easier to test
+	find a way of indicating when tasks are done - add progress tracking table to db
+
+profile page:
+	add validation of username, firstname, lastname, phone number
+	add logout button
+	add navbar buttons to go to homepage
+	sort out the layout in css
+	maybe add some more stuff, could upload images?
+
+styling:
+	general styling
+	media for devices - later down the line
+
+could add a forum page?
+	can divide into tasks
+	uni life
+	finding friends
+	stuff to do
+
+db:
+	hobbies table
+	progress tracking
+	chat log table - further down the line
+ 
