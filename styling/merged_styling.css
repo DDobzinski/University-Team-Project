@@ -140,8 +140,7 @@ body{
     height: 35px;
     width: 250px;
     left: 122px;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-110%);
     border-radius: 6px;
     background: #63B4CF;
     line-height: 35px;
@@ -155,7 +154,6 @@ body{
 .sidebar ul li:hover .tooltip{
     transition: all 0.5s ease;
     opacity: 1;
-    top: 50%;
 }
 
 .sidebar ul li a{
