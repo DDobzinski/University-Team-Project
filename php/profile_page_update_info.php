@@ -57,7 +57,7 @@ if (isset($_POST["save_changes_button"])) {
 				}
 				
 
-				header("refresh: 0");
+				
 			}
 		}
 		if(!isset($_POST["private_account"]))
@@ -68,7 +68,7 @@ if (isset($_POST["save_changes_button"])) {
 
 					$stmt_change_info->execute(['value' => 0, 'user_id' => $user_id]);
 
-					header("refresh: 0");
+					
 				}
 		if(isset($_POST['users_hobbies'])) //if some hobbies are selected
 		{
@@ -91,6 +91,7 @@ if (isset($_POST["save_changes_button"])) {
 		$stmt_change_info->execute(['value' => $hobbies_string, 'user_id' => $user_id]);
 		header("refresh: 0");
 	}
+	
 }
 
 ?>

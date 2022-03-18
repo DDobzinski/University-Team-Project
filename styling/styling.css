@@ -304,6 +304,7 @@ body {
 	color: white;
 	border: none;
 	background-color: var(--dark_blue);
+	cursor: pointer;
 }
 
 #biography {
