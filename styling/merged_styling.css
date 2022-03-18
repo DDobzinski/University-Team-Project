@@ -22,7 +22,7 @@ body{
     position: sticky;
     top: 0px;
     left: 0px;
-    height: 6vh;
+    height: 8vh;
     background-color: #202A45;
     z-index: 1;
     display: flex;
@@ -75,7 +75,7 @@ body{
 
 .sidebar{
     width: 5%;
-    height: 94vh;
+    height: 100vh;
     background: #202A45;
     padding: 6px 14px;
     transition: all 0.5s ease;
@@ -252,7 +252,7 @@ body{
 
 .progress{
     /*margin: 100px 20px 150px 700px;*/
-    width: 25em;
+    width: 50em;
     background: #8ac7db ;
     border-radius: 25px;
 
@@ -269,7 +269,7 @@ body{
 
 .progress_value{
     position: absolute;
-    width: 25em;
+    width: 50em;
     height: 5vh;
     display: flex;
     align-items: center;

@@ -62,8 +62,16 @@ class progressBar{
 		this.update();
 	}
 
-	update(){
-		this.fillElem.style.width = (this.value / 10) + "em";
-		this.valueElem.textContent = this.value + '%';
-	}
+	// update(){
+	// 	this.fillElem.style.width = (this.value / 10) + "em";
+	// 	this.valueElem.textContent = this.value + '%';
+	// }
+		update(){
+			const precentage = this.value + '%';
+			this.fillElem.style.width = (this.value/2) + 'em';
+			this.valueElem.textContent = precentage;
+		}
+
+
 }
+

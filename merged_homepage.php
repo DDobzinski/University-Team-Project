@@ -139,8 +139,9 @@ if (isset($_POST["logout_button"])) {
 			<div id="progress_bar">
 				<span>Completion Rate:</span>
 				<div class="progress">
+					<div class="progress_fill">
 					<div class="progress_value">65%</div>
-					<div class="progress_fill"></div>
+					</div>
 				</div>
 			</div>
 
@@ -245,17 +246,75 @@ if (isset($_POST["logout_button"])) {
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
 						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value(0)" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+							<input onclick="in_progress.update_value('accommodation')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
 							Done!
 						</label>
 					</div>
 				</div>
 			</div>
 			<div id="content_brp" class="info" style="display:none;">
-				
+				<div class="inside_content"><!-- card -->
+					<h2>Find your accommodation</h2>
+					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
+					<div class="text_content"> <!-- card content -->
+						<h2>Find your accommodation</h2>
+
+						<h3>Student accomodation can be categorised into private student halls and the university's own student halls</h3>
+
+						<h2>
+							<b>Student Halls</b>
+						</h2>
+						<h4>
+							The University of Manchester provides over 20 different halls for you to choose from 3 different areas (City Centre, Fallowfield, and Victoria Park). There is a room guaratee for first year undergraduates who have made an application by the 31st August of the year of entry. This 
+							<a href="https://www.accommodation.manchester.ac.uk/ouraccommodation/hallsofresidence/">link</a>will take you to the university's official website to filter out your prefered student hall.  
+						</h4>
+
+						<h2>
+							<b>Private student accomodaton</b>
+						</h2>
+					</div>
+					
+					
+					<!--<hr align="center" class="divider">!-->
+					<div class="card_info">
+						<label class="checkbox" for="myCheckboxId">
+							<input onclick="in_progress.update_value('brp')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+							Done!
+						</label>
+					</div>
+				</div>
 			</div>
 			<div id="content_police" class="info" style="display:none;">
-				
+				<div class="inside_content"><!-- card -->
+					<h2>Find your accommodation</h2>
+					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
+					<div class="text_content"> <!-- card content -->
+						<h2>Find your accommodation</h2>
+
+						<h3>Student accomodation can be categorised into private student halls and the university's own student halls</h3>
+
+						<h2>
+							<b>Student Halls</b>
+						</h2>
+						<h4>
+							The University of Manchester provides over 20 different halls for you to choose from 3 different areas (City Centre, Fallowfield, and Victoria Park). There is a room guaratee for first year undergraduates who have made an application by the 31st August of the year of entry. This 
+							<a href="https://www.accommodation.manchester.ac.uk/ouraccommodation/hallsofresidence/">link</a>will take you to the university's official website to filter out your prefered student hall.  
+						</h4>
+
+						<h2>
+							<b>Private student accomodaton</b>
+						</h2>
+					</div>
+					
+					
+					<!--<hr align="center" class="divider">!-->
+					<div class="card_info">
+						<label class="checkbox" for="myCheckboxId">
+							<input onclick="in_progress.update_value('police')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+							Done!
+						</label>
+					</div>
+				</div>
 			</div>
 			<div id="content_studentid" class="info" style="display:none;">
 				
