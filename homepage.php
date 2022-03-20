@@ -152,9 +152,9 @@ if (isset($_POST["logout_button"])) {
 			</div>
 			<div id="content_gp" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
+				<h1>Sign up for a General Practitioner (GP)</h1>
+				<img src="images/gp.jpg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
-						<h1>Sign up for a General Practitioner (GP)</h1>
-						<img src="images/registration-1-1024x684.jpeg" alt="" class="card_img">
 						<h3>Signing up enables you to access healthcare services. Any healthcare or mentalcare related concerns will be directed to your local GP.  For international students, ensure that you have your Immigration Health Surcharge(IHS) number ready as well as any supporting medical documents. This <a href="https://www.nhs.uk/service-search/find-a-gp">link</a> will help you locate the nearest one to you.</h3>
 					</div>
 					
@@ -172,11 +172,11 @@ if (isset($_POST["logout_button"])) {
 			</div>
 			<div id="content_bank" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
+					<h1>
+						Sign up for a UK bank account
+					</h1>
+					<img src="images/bank.jpg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
-						<h1>
-							Sign up for a UK bank account
-						</h1>
-						<img src="images/Bank-logos-footer-final.png" alt="" class="card_img">
 						<h3>
 							Setting up a bank account allows you to arrange for interest free overdrafts which will be beneficial for your daily expenses. It also helps you manage your spending and budgetting. List below are recommended banks for students with their respective benefits:
 						</h3>
@@ -387,7 +387,7 @@ if (isset($_POST["logout_button"])) {
 			<div id="content_society" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
 					<h1>Join Societies!</h1>
-					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
+					<img src="images/society.jpg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
 						<h3>
 							The University of Manchester's <a href="https://manchesterstudentsunion.com">Student's Union</a>, run by students for students, is the biggest in the UK.
@@ -395,7 +395,7 @@ if (isset($_POST["logout_button"])) {
 							There are over <a href="https://manchesterstudentsunion.com/activities">400 societies</a> at the Student's Union, it's guaranteed for you to find at least one thing you'll be interested in. 
 							And even if you can't find one, you can always start your own society!
 							<br><br>
-							You can apply for societies through the SU website, or the SU app on <a href="https://apps.apple.com/gb/app/students-union/id1549685999">IOS</a> and <a href="https://play.google.com/store/apps/details?id=com.studentsunionapp&hl=en_GB&gl=US">Android</a>.
+							You can apply for societies through the SU website, or the SU app on <a href="https://apps.apple.com/gb/app/students-union/id1549685999">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.studentsunionapp&hl=en_GB&gl=US">Android</a>.
 							<br><br>
 							<b>This is the time to try something new, get involved, develop new skills, meet new people and broaden your connections!</b>
 						</h3>
@@ -443,9 +443,15 @@ if (isset($_POST["logout_button"])) {
 			<div id="content_blackboard_setup" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
 					<h1>Setting Up Blackboard</h1>
-					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
+					<img src="images/blackboard.png" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
-						
+						<h3> 
+							To access Blackboard, go to <a href="https://my.manchester.ac.uk">MyManchester</a> and go to Tools > Blackboard. 
+							You first need to log in using your university username and password, followed by a 2-factor authentication step on Duo Mobile. 
+							To authenticate via Duo, you first need to install the app mobile. Here is a <a href="https://video.manchester.ac.uk/faculties/57c95baa8724ecd507c66f70087b1d46/81a8be88-9684-4b9f-8ffd-8366c1eac7ae?loginv">tutorial</a> and <a href="https://documents.manchester.ac.uk/protected/display.aspx?DocID=58478">steps</a> to set up 2-factor authentication from Duo.
+							<br><br>
+							Once you are logged into Blackboard, you can navigate through your courses and your department community. Refer to this <a href="https://documents.manchester.ac.uk/display.aspx?DocID=15211">document</a> for anything unclear.
+						</h3>
 						
 					</div>
 					
@@ -463,10 +469,15 @@ if (isset($_POST["logout_button"])) {
 			</div>
 			<div id="content_tuition_fees" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
-					<h1>Collect Your Student ID</h1>
+					<h1>Set Up Tuition Fees Payment</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
-						
+						<h3>
+							If you choose to pay your tuition fee by instalment, you need to set up Direct Debit to pay the rest of your tuition fees. Otherwise, if you have paid for all at once, you have completed this step.
+							You can set up Direct Debit to pay your outstanding fees through <a href="https://sts.ds.man.ac.uk/adfs/ls/?wtrealm=http%3a%2f%2fuomscmmprd%2f&wctx=WsFedOwinState%3dgYYTEjoYIyjH0Rlt_0_lTpPbaKbP_mzwSufR59l1u6ZkdIjqRO9Ac-MewEDtJcZHJ39dQkdvScN3Fga6LKrBM5sK17MMP4i0cQLlkeIH_0_rUqMYssfhcUP3IJqPPREFWoGv9aHOkx7URaFz4QqeBrrHsbwgIhfskreZST8GITPjeE_dfIQtebS91llRmqRNa4nxLAsngslEhZGIQlXGjg&wa=wsignin1.0&wreply=https%3a%2f%2fmy.manchester.ac.uk%2flogin"> your MyManchester account</a> or go to MyManchester Home > My financials.
+							However, you need to have a UK Bank account to set up Direct Debit. Next, just follow instruction on MyManchester and fill in all your card details or fill in the form. <br>
+							In a few working days, the school will notify you through email that you have successfully set up Direct Debit.
+						</h3>
 					</div>
 					
 					

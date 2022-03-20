@@ -222,7 +222,7 @@ body {
 }
 
 #current_content {
-	width: 80%;
+	width: 100%;
 }
 
 #current_content h2 {
@@ -510,7 +510,7 @@ body {
 	to {top: 0px;}
 }
 
-#add_topic {
+.add_topic {
 	display: flex;
 	flex-direction: column;
 	margin: 2em;
@@ -519,12 +519,12 @@ body {
 	border-radius: 5px;
 }
 
-#add_topic textarea {
+.add_topic textarea {
 	font-family: "DM Sans", sans-serif;
 	font-size: 1em;
 }
 
-#add_topic input[type=submit] {
+.add_topic input[type=submit] {
 	width: 100%;
 	margin-top: 1em;
 	padding: 0.25em;
@@ -535,15 +535,50 @@ body {
 	border-radius: 3px;
 }
 
+.add_topic_intro {
+	margin: 2em auto;
+	width: 60%;
+}
+
+#intro_content {
+	margin: 0em 5em;
+}
+
+#intro_content h3 {
+	margin: 1em 7em 0em 7em;
+	font-size: 20px;
+}
+
+#topics_table_div {
+	height: 40vh;
+	overflow-y: scroll;
+}
+
 #topics_table {
-	border: 1px solid var(--dark_blue);
 	margin: auto;
 	width: 80%;
+	border-spacing: 0em 1em;
 }
 
 #topics_table td {
 	padding: 1em 0em;
-	justify-content: space-around;
-	width: 80%;
-	border-bottom: 1px solid var(--dark_blue);
+	width: 100%;
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	display: inline-block;
+}
+
+#topics_table td:hover {
+	background-color: var(--light_blue);
+	color: white;
+	cursor: pointer;
+}
+
+#topics_table td a {
+	margin-left: 1em;
+}
+
+#topics_table td p {
+	float: right;
+	margin: 0em 1em;
 }
