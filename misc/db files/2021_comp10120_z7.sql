@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 15, 2022 at 12:20 AM
+-- Generation Time: Mar 20, 2022 at 05:15 PM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -71,8 +71,16 @@ CREATE TABLE `hobbies` (
 
 CREATE TABLE `topics` (
   `topic_id` int NOT NULL,
-  `topic_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `topic_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`topic_id`, `topic_name`, `date_created`) VALUES
+(1, 'Hallo:topic', '2022-03-20 17:14:35');
 
 -- --------------------------------------------------------
 
@@ -93,17 +101,19 @@ CREATE TABLE `user_info` (
   `accommodation` varchar(255) DEFAULT NULL,
   `biography` varchar(511) DEFAULT NULL,
   `private_account` tinyint(1) NOT NULL DEFAULT '0',
-  `hobbies` varchar(128) DEFAULT NULL
+  `hobbies` varchar(128) DEFAULT NULL,
+  `tasks` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`user_id`, `username`, `firstname`, `lastname`, `hashed_password`, `email_address`, `phone_number`, `nationality`, `course`, `accommodation`, `biography`, `private_account`, `hobbies`) VALUES
-(1, 'will', 'will', 'asbery', '$2y$10$EftjUdsv6E.91dx.HrbJE.NkFFy6XkkLUdkNcn8cIxFdjPvuuW5em', 'willasbery@gmail.com', '+44785812313', 'british', '', 'dalton-Ellis Hall', 'Hi, my name is Will and I study Computer Science at the University of Manchester. I am testing the software.', 1, NULL),
-(2, 'admin', 'admin', 'admin', '$2y$10$a0OYu2O/J.GWVgw3XKYNDeN9li5kfbVXGFNOnDgJfFx7NAWWotpli', 'admin@gmail.com', '', 'afghan', '', '', '', 0, NULL),
-(4, 'euan', NULL, NULL, '$2y$10$aVpORXJuR4Js80lwiJThaedmYAcF/VED86TkZ3iZZFqobg6dY7ejy', 'euan@gmail.com', NULL, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `user_info` (`user_id`, `username`, `firstname`, `lastname`, `hashed_password`, `email_address`, `phone_number`, `nationality`, `course`, `accommodation`, `biography`, `private_account`, `hobbies`, `tasks`) VALUES
+(1, 'will', 'will', 'asbery', '$2y$10$EftjUdsv6E.91dx.HrbJE.NkFFy6XkkLUdkNcn8cIxFdjPvuuW5em', 'willasbery@gmail.com', '+44785812313', 'british', 'computer Science', 'denmark Road', 'Hi, my name is Will and I study Computer Science at the University of Manchester. I am testing the software.', 0, '5,12', NULL),
+(2, 'admin', 'admin', 'admin', '$2y$10$a0OYu2O/J.GWVgw3XKYNDeN9li5kfbVXGFNOnDgJfFx7NAWWotpli', 'admin@gmail.com', '', 'afghan', '', '', '', 0, NULL, NULL),
+(4, 'euan', NULL, NULL, '$2y$10$aVpORXJuR4Js80lwiJThaedmYAcF/VED86TkZ3iZZFqobg6dY7ejy', 'euan@gmail.com', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL),
+(5, 'Daniel', NULL, NULL, '$2y$10$4JJQneoppU3oV/9gRqzYwe9FfezKLfPHM/fU.o/R19IwObmPf5Dfu', 'daniel@gmail.com', NULL, NULL, NULL, NULL, NULL, 0, NULL, '2,4,5,6,7,8,9,10');
 
 --
 -- Indexes for dumped tables
@@ -150,13 +160,13 @@ ALTER TABLE `chat_log`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `topic_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `topic_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
