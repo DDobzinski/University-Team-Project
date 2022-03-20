@@ -27,7 +27,7 @@ Also when you're adding images please can you use an alt tag just in case the im
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/index_page.css">
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/index_page.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
