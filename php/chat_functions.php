@@ -28,7 +28,7 @@ function get_topics() {
 	$pdo_get_topics = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 	$pdo_get_topics->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-	$sql_get_topics = "SELECT topic_id, topic_name FROM topics WHERE topic_name LIKE '%:topic'";
+	$sql_get_topics = "SELECT topic_id, topic_name, date_created FROM topics WHERE topic_name LIKE '%:topic' ORDER BY date_created DESC";
 
 	$stmt_get_topic = $pdo_get_topics->prepare($sql_get_topics);
 
@@ -40,7 +40,8 @@ function get_topics() {
 	foreach($data as $data_element) {
 		$topics[] = array(
 			"id" => $data_element["topic_id"],
-			"topic" => str_replace(":topic", "", $data_element["topic_name"])
+			"topic" => str_replace(":topic", "", $data_element["topic_name"]),
+			"date" => $data_element["date_created"]
 		);		
 	}
 	return $topics;
@@ -287,8 +288,13 @@ function display_topic_table() {
 	$html = "<table id='topics_table'>";
 
 	foreach ($topics as $topic) {
-		$id = $topic["id"];
-		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "</td></tr>";
+		$id = $topic["topic"] . "_topic";
+		$date = $topic["date"];
+
+		$log_time = substr($date, 11, 5);
+		$log_date = substr($date, 5, 2) ."/". substr($date, 8, 2) ."/". substr($date, 2, 2);
+
+		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "<p>$log_date @ $log_time</p></a></td></tr>";
 	}
 
 	$html .= "</table>";

@@ -27,6 +27,7 @@ if (!isset($_SESSION["logged_in"])) {
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/chat_room.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/chat_room.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +46,9 @@ if (!isset($_SESSION["logged_in"])) {
 	</div>
 
 	<div id="main_content" class="main_home">
-	<div id="navigation_pane">
+	<div id="navigation_pane" style="display:none">
 		<h2>Topics</h2>
-		<form method="post" id="add_topic">
+		<form method="post" class="add_topic" id="add_topic">
 			<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
 			<input type="submit" name="add_topic" value="Create new topic">
 		</form>
@@ -59,13 +60,25 @@ if (!isset($_SESSION["logged_in"])) {
 	</div>
 	<div id="current_content">
 		<div id="basic_content">
-			<p>This page is dedicated to help you communicate with other students who are in your situation.</p>
-			<p>The table below allows you to click on a topic, or, if none of these topics interest you, you can create your own topic here:</p>
-			<p>Please be respectful to other users</p>
-			<h3>Pick a topic</h3>
-			<?php
-				echo display_topic_table();
-			?>
+			<div id="intro_content">
+				<span align="center">
+					<h1>Welcome to the chatroom!</h1>
+					<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
+					<p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p>
+					<form method="post" class="add_topic add_topic_intro">
+						<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
+						<input type="submit" name="add_topic" value="Create new topic">
+					</form>
+					<hr>
+				</span>
+
+				<h3>Topics:</h3>
+				<div id="topics_table_div">
+					<?php
+						echo display_topic_table();
+					?>
+				</div>
+			</div>
 		</div>
 			<?php
 				 echo display_content_divs();
