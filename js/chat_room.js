@@ -143,5 +143,5 @@ $(document).ready(function() {
 				$("#text_area_add_topic").val("");
 			}
 		});
-	});
+	})
 )});
