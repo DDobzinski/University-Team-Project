@@ -1,3 +1,19 @@
+$(document).ready(function(){
+$(".checkbox__input").on('click', function(){
+	
+	var checked = $(this).attr('checked');
+	
+	var value = $(this).val();
+	
+		$.ajax({
+			url: "php/homepage_update_info.php",
+			type: "POST",
+			data:{"task":value}
+		  });
+	
+	});
+});
+
 window.onload = function(){ 
     let btn = document.querySelector("#btn");
 	let sidebar = document.querySelector(".sidebar");
@@ -9,7 +25,8 @@ window.onload = function(){
 
 	}
 	window.in_progress =  new progressBar(document.querySelector('.progress'),0);
-	window.in_progress.setValue(0)
+	var checked_checkboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
+	window.in_progress.setValue(checked_checkboxes * 10);
 };
 
 function open_content(section) {
@@ -50,7 +67,7 @@ class progressBar{
 	}
 
 	update_value(id){
-		let cb = document.getElementById('content_' + id).querySelector('#myCheckboxId');
+		let cb = document.getElementById('content_' + id).querySelector('#check_' + id);
 		if (cb.checked){
 			this.value +=10;
 

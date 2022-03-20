@@ -9,6 +9,7 @@ session_start();
 
 // require("fake_login_init.php"); // used for creating a fake login when all the files are not merged to master - testing purposes
 require("config.php");
+require("php/get_tasks.php");
 
 include("php/homepage_functions.php");
 
@@ -33,6 +34,10 @@ if (isset($_POST["logout_button"])) {
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/homepage.css">
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	var loaded_progress = "<?php echo $loaded_progress; ?>";
+</script>
 	<script type="text/javascript" src="js/homepage.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,7 +150,6 @@ if (isset($_POST["logout_button"])) {
 					</div>
 				</div>
 			</div>
-
 			<div id="content_gp" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
 				<h1>Sign up for a General Practitioner (GP)</h1>
@@ -157,14 +161,15 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('gp')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_gp">
+								<input onclick="in_progress.update_value('gp')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" value="1" id="check_gp" <?php echo ($tasks_array['1'] == '1') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
-
 			<div id="content_bank" class="info" style="display:none;">
 				<div class="inside_content"><!-- card -->
 					<h1>
@@ -213,10 +218,12 @@ if (isset($_POST["logout_button"])) {
 						
 						<!--<hr align="center" class="divider">!-->
 						<div class="card_info">
-							<label class="checkbox" for="myCheckboxId">
-								<input onclick="in_progress.update_value('bank')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-								Done!
-							</label>
+							
+								<label class="checkbox" for="check_bank">
+									<input onclick="in_progress.update_value('bank')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" value="2" id="check_bank" <?php echo ($tasks_array['2'] == '2') ? 'checked="checked"' : '';?>>
+									Done!
+								</label>
+							
 						</div>
 					</div>
 				</div>
@@ -255,10 +262,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('accommodation')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_accommodation">
+								<input onclick="in_progress.update_value('accommodation')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" value="3" id="check_accommodation" <?php echo ($tasks_array['3'] == '3') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -290,10 +299,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('brp')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_brp">
+								<input onclick="in_progress.update_value('brp')" class="checkbox__input" type="checkbox" name="myCheckboxName[]"  value="4" id="check_brp" <?php echo ($tasks_array['4'] == '4') ? 'checked="checked"' : '';?>> 
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -331,10 +342,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('police')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_police">
+								<input onclick="in_progress.update_value('police')" class="checkbox__input" type="checkbox" name="myCheckboxName[]"  value="5" id="check_police" <?php echo ($tasks_array['5'] == '5') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -362,10 +375,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('studentid')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_studentid">
+								<input onclick="in_progress.update_value('studentid')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" value="6" id="check_studentid" <?php echo ($tasks_array['6'] == '6') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -389,10 +404,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('society')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_society">
+								<input onclick="in_progress.update_value('society')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" value="7" id="check_society" <?php echo ($tasks_array['7'] == '7') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+							
 					</div>
 				</div>
 			</div>
@@ -414,10 +431,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('tour_campus')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_tour_campus">
+								<input onclick="in_progress.update_value('tour_campus')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" onchange="this.form.submit()" value="8" id="check_tour_campus" <?php echo ($tasks_array['8'] == '8') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -439,10 +458,12 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('blackboard_setup')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_blackboard_setup">
+								<input onclick="in_progress.update_value('blackboard_setup')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" onchange="this.form.submit()" value="9" id="check_blackboard_setup" <?php echo ($tasks_array['9'] == '9') ? 'checked="checked"' : '';?>>
+								Done!
+							</label>
+						
 					</div>
 				</div>
 			</div>
@@ -462,10 +483,13 @@ if (isset($_POST["logout_button"])) {
 					
 					<!--<hr align="center" class="divider">!-->
 					<div class="card_info">
-						<label class="checkbox" for="myCheckboxId">
-							<input onclick="in_progress.update_value('tuition_fees')" class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
-							Done!
-						</label>
+						
+							<label class="checkbox" for="check_tuition_fees">
+								<input onclick="in_progress.update_value('tuition_fees')" class="checkbox__input" type="checkbox" name="myCheckboxName[]" onchange="this.form.submit()" value="10" id="check_tuition_fees" <?php echo ($tasks_array['10'] == '10') ? 'checked="checked"' : '';
+								?>>
+								Done!
+							</label>
+							
 					</div>
 				</div>
 			</div>
