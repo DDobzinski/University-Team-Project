@@ -89,7 +89,7 @@ Also when you're adding images please can you use an alt tag just in case the im
 
 			<div id="main_information">
 				<h2> What is linkuni about?</h2>
-				<p>Lorem ipsum... </p>
+				<p>Linkuni is a social platform which aims to connect University of Manchester students across the globe</p>
 			</div>
 
 			<div id="join_area">

@@ -6,6 +6,9 @@
     font-family: "DM Sans", sans-serif;
     /*scroll-behavior: smooth;*/
 }
+
+
+
 html { overflow-y: scroll; }
 
 body{
@@ -184,7 +187,7 @@ body{
     border-radius: 12px;
 }
 
-.sidebar.active ul li a:hover{
+.sidebar.active ul li a:hover{https://stackoverflow.com/questions/21751868/delete-a-database-in-phpmyadmin
     /*background: #fff;*/
     color: #63B4CF;
     cursor: pointer;
@@ -275,10 +278,42 @@ body{
     font-weight: bold;
 }
 
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .inside_content{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     border-color: #202A45;
 }
+
+.inside_content_animate{
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+
 
 .card_img{
     width: 50%;

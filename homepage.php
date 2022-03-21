@@ -151,7 +151,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_gp" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content  inside_content_animate"><!-- card -->
 				<h1>Sign up for a General Practitioner (GP)</h1>
 				<img src="images/gp.jpg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
@@ -171,7 +171,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_bank" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>
 						Sign up for a UK bank account
 					</h1>
@@ -229,7 +229,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_accommodation" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Find your accommodation</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
@@ -272,7 +272,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_brp" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content  inside_content_animate"><!-- card -->
 					<h1>Collect Your Biometric Residence Permit (BRP) Card</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
@@ -309,7 +309,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_police" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Police Registration</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
@@ -352,7 +352,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_studentid" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Collect Your Student ID</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
@@ -385,7 +385,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_society" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Join Societies!</h1>
 					<img src="images/society.jpg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
@@ -414,7 +414,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_tour_campus" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Tour Campus</h1>
 					<img src="images/manchester.jpeg" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
@@ -441,7 +441,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_blackboard_setup" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Setting Up Blackboard</h1>
 					<img src="images/blackboard.png" alt="" class="card_img">
 					<div class="text_content"> <!-- card content -->
@@ -468,7 +468,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 			<div id="content_tuition_fees" class="info" style="display:none;">
-				<div class="inside_content"><!-- card -->
+				<div class="inside_content inside_content_animate"><!-- card -->
 					<h1>Set Up Tuition Fees Payment</h1>
 					<!-- <img src="images/registration-1-1024x684.jpeg" alt="" class="card_img"> -->
 					<div class="text_content"> <!-- card content -->
