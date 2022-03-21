@@ -1,5 +1,27 @@
 <?php
 
+$pdo= new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+$hobby_convert_arr = [
+	"1" => "sports",
+	"2" => "baking",
+	"3" => "art",
+	"4" => "gaming",
+	"5" => "music",
+	"6" => "dance",
+	"7" => "photography",
+	"8" => "singing",
+	"9" => "electronics",
+	"10" => "biking",
+	"11" => "reading",
+	"12" => "fishing",
+	"13" => "traveling",
+	"14" => "cars",
+	"15" => "yoga",
+	"16" => "hiking"
+];
+
 if(isset($_POST["add_topic"])) {
 	$name = str_replace(" ", "_", $_POST["add_topic_name"]) . ":topic";
 
@@ -7,30 +29,26 @@ if(isset($_POST["add_topic"])) {
 		echo "<script>alert('Topic name cannot be empty');</script>";
 	} else {
 		add_topic($name);
+		echo "adding topic";
 	}
 }
 
 function add_topic($topic_name){
-	global $host, $username_db, $password, $db_name, $rand;
+	global $pdo;
 
-	$pdo_add_topic = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_add_topic->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	$sql_add_topic = "INSERT INTO topics (topic_name) VALUES (:topic_name)";
 
-	$stmt_add_topic = $pdo_add_topic->prepare($sql_add_topic);
+	$stmt_add_topic = $pdo->prepare($sql_add_topic);
 
 	$stmt_add_topic->execute(["topic_name"=>$topic_name]); 
 }
 
 function get_topics() {
-	global $host, $username_db, $password, $db_name, $rand;
-
-	$pdo_get_topics = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_topics->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	global $pdo;
 
 	$sql_get_topics = "SELECT topic_id, topic_name, date_created FROM topics WHERE topic_name LIKE '%:topic' ORDER BY date_created DESC";
 
-	$stmt_get_topic = $pdo_get_topics->prepare($sql_get_topics);
+	$stmt_get_topic = $pdo->prepare($sql_get_topics);
 
 	$stmt_get_topic->execute();
 
@@ -74,6 +92,10 @@ function display_content_divs() {
 		$form_name = "add_chat_topic_" . $topics[$i]['topic'];
 		$topic_get_return = get_topic($topics[$i]["id"]);
 
+		if ($topic_get_return == "") {
+			$topic_get_return = "<h3>There are no posts, add the first above!</h3>";
+		}
+
 		$html .= "
 		<div id='$content_id' style='display:none;' class='forum chat'>
 			<form method='post'> 
@@ -91,12 +113,10 @@ function display_content_divs() {
 }
 
 function get_topic_names() {
-	global $host, $username_db, $password, $db_name, $rand;
+	global $pdo;
 
-	$pdo_get_topics = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_topics->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	$sql_get_topics = "SELECT topic_id FROM chat_log WHERE 1";
-	$stmt_get_topics = $pdo_get_topics->prepare($sql_get_topics);
+	$stmt_get_topics = $pdo->prepare($sql_get_topics);
 	$stmt_get_topics->execute();
 
 	$data = $stmt_get_topics->fetchAll();
@@ -125,7 +145,6 @@ function get_topic_names() {
 	return $topics;
 }
 
-// this for loop checks if 
 $topics = get_topic_names();
 
 for ($i = 0; $i < sizeof($topics); $i++) {
@@ -136,30 +155,6 @@ for ($i = 0; $i < sizeof($topics); $i++) {
 			add_topic_post($topic, $_POST["text_box"]);
 		}
 	}
-}
-
-//add for loop for adding forum posts
-for ($j = 0; $j < sizeof($topics); $j++) {
-	$add_val = "add_forum_post_" . $topics[$j];
-
-	if (isset($_POST[$add_val])) {
-		if (!empty($_POST["text_box"])) {
-			$log_date = date("d/m/Y H:i");
-
-			$add_forum_post = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-			$add_forum_post->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-			$sql_add_forum_post = "INSERT INTO chat_log (user_id, category, text_content) VALUES (:user_id, :category, :text_content)";
-
-			$stmt_add_forum_post = $add_forum_post->prepare($sql_add_forum_post);
-			$stmt_add_forum_post->execute([
-				'user_id' => $_SESSION["user_id"],
-				'category'=> $topic[$j],
-				'text_content' => trim($_POST["text_box"])
-			]);
-		}
-	}
-	unset($_POST);
 }
 
 // added for loop for adding data to the database on the topics
@@ -173,7 +168,6 @@ for ($k = 0; $k < sizeof($topics); $k++) {
 			add_topic_post($topics[$k]["id"], $_POST["text_box"]);
 		}
 	}
-	unset($_POST);
 }
 
 // added for loop for adding replies to the database
@@ -185,25 +179,63 @@ for ($l = 0; $l < sizeof($topics); $l++) {
 			add_topic_post($topics[$l]["id"], $_POST["text_box"], true, $_POST["chat_id"]);
 		}
 	}	
-	unset($_POST);
+}
+
+$user_info_arr = array();
+
+function get_user_info() {
+	global $pdo, $user_info_arr;
+
+	$sql_get_user_info = "SELECT username, firstname, lastname, nationality, course, accommodation, biography, private_account, hobbies FROM user_info WHERE 1";
+
+	$stmt_get_user_info = $pdo->prepare($sql_get_user_info);
+	$stmt_get_user_info->execute();
+
+	$stmt_get_user_info->setFetchMode(PDO::FETCH_ASSOC);
+	$data = $stmt_get_user_info->fetchAll();
+
+	foreach ($data as $row) {
+		$username = $row["username"];
+
+		if ($row["private_account"] == 1) {
+			$user_info_arr[$username] = array("private_account" => 1);
+		} else {
+			$firstname = $row["firstname"];
+			$lastname = $row["lastname"];
+			$nationality = $row["nationality"];
+			$course = $row["course"];
+			$accommodation = $row["accommodation"];
+			$biography = $row["biography"];
+			$hobbies = $row["hobbies"];
+
+			$user_info_arr[$username] = array(
+				"firstname" => $firstname, 
+				"lastname" => $lastname, 
+				"nationality" => $nationality, 
+				"course" => $course, 
+				"accommodation" => $accommodation, 
+				"biography" => $biography, 
+				"hobbies" => $hobbies);
+		}		
+	}
 }
 
 function get_topic($topic_id) {
-	global $host, $username_db, $password, $db_name, $rand;
+	global $pdo, $user_info_arr, $hobby_convert_arr;
 
-	$pdo_get_topic = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$pdo_get_topic->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	$sql_get_topic = "
-		SELECT c.chat_id, c.log_date, c.text_content, c.reply_to, u.username, t.topic_name 
+		SELECT c.chat_id, c.user_id, c.log_date, c.text_content, c.reply_to, u.username, t.topic_name 
 		FROM ((chat_log AS c INNER JOIN topics AS t ON (t.topic_name = t.topic_name)) INNER JOIN user_info AS u ON (u.username = u.username)) 
-		WHERE c.topic_id = :topic_id AND t.topic_id = :topic_id AND u.user_id = :user_id ORDER BY log_date ASC";
+		WHERE c.topic_id = :topic_id AND t.topic_id = :topic_id AND u.user_id = c.user_id ORDER BY log_date ASC";
 
-	$stmt_get_topic = $pdo_get_topic->prepare($sql_get_topic);
-	$stmt_get_topic->execute(['topic_id' => $topic_id, 'user_id' => $_SESSION["user_id"]]);
+	$stmt_get_topic = $pdo->prepare($sql_get_topic);
+	$stmt_get_topic->execute(['topic_id' => $topic_id]);
 
 	$stmt_get_topic->setFetchMode(PDO::FETCH_ASSOC);
 
 	$data = $stmt_get_topic->fetchAll();
+
+	get_user_info();
 
 	$chat_posts = "";
 
@@ -214,6 +246,42 @@ function get_topic($topic_id) {
 		$log_date_from_db = $row["log_date"];
 		$text_content_from_db = $row["text_content"];
 		$reply_val_from_db = $row["reply_to"];
+
+		// this stores all the data about the person whos chat it is
+		$user_data = $user_info_arr[$username_from_db];	
+		$user_info = "";
+
+
+		if (isset($user_data["private_account"])) {
+			$user_info = "<p>This account is private.</p>";
+		} else {
+			$firstname = mb_convert_case($user_data["firstname"], MB_CASE_TITLE, 'UTF-8');
+			$lastname = mb_convert_case($user_data["lastname"], MB_CASE_TITLE, 'UTF-8');
+			$nationality = mb_convert_case($user_data["nationality"], MB_CASE_TITLE, 'UTF-8');
+			$course = mb_convert_case($user_data["course"], MB_CASE_TITLE, 'UTF-8');
+			$accommodation = mb_convert_case($user_data["accommodation"], MB_CASE_TITLE, 'UTF-8');
+			$biography = $user_data["biography"];
+
+			$hobbies_arr = explode(",", $user_data["hobbies"]);
+			$hobbies = "";
+
+			foreach($hobbies_arr as $hobby) {
+				if ($hobby != null) {
+					$hobbies .= $hobby_convert_arr[$hobby] . ", ";
+				}
+			}
+
+			$hobbies = substr($hobbies, 0, -2);
+
+			$user_info = "
+			<p>Name: $firstname $lastname</p>
+			<p>Nationality: $nationality</p>
+			<p>Course: $course</p>
+			<p>Accommodation: $accommodation</p>
+			<p>Biography: $biography</p>
+			<p>Hobbies: $hobbies</p>
+			";
+		}
 
 		// 2022-02-16 21:35:11
 		$log_time = substr($log_date_from_db, 11, 5);
@@ -227,7 +295,7 @@ function get_topic($topic_id) {
 
 		$html_chat_box .= "' id='chat_box_$chat_id_from_db'>
 			<div class='forum_box_details'> 
-				<h3>$username_from_db</h3>
+				<h3 class='username_h3'>$username_from_db<span class='profile_info'>$user_info</span></h3>
 				<p>&nbsp@ $log_time</p>
 				<p class='date'>$log_date</p>
 			</div>
@@ -237,7 +305,6 @@ function get_topic($topic_id) {
 		<div id='reply_box_$chat_id_from_db' class='reply_box'>
 			<form method='post'>
 				<input type='hidden' name='chat_id' value='$chat_id_from_db'>
-				<input type='hidden' name='rand_check_gp' value='<?php echo $rand;   ?>'>
 				<label for='text_box'>Add a reply to this chat:</label>
 				<textarea name='text_box' type='text' id='text_box'></textarea>
 				<input type='submit' name='add_chat_reply_$topic_name_from_db' value='Submit post'>
@@ -251,17 +318,14 @@ function get_topic($topic_id) {
 }
 
 function add_topic_post($topic, $text_content, $reply = false, $chat_id = null) {
-	global $host, $username_db, $password, $db_name;
+	global $pdo;
 
 	$log_date = date("d/m/Y H:i");
-
-	$add_topic_post = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
-	$add_topic_post->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 	if ($reply == false && $chat_id == null) {
 		$sql_add_topic_post = "INSERT INTO chat_log (user_id, topic_id, text_content) VALUES (:user_id, :topic_id, :text_content)";
 
-		$stmt_add_topic_post = $add_topic_post->prepare($sql_add_topic_post);
+		$stmt_add_topic_post = $pdo->prepare($sql_add_topic_post);
 
 		$stmt_add_topic_post->execute([
 			'user_id' => $_SESSION["user_id"],
@@ -271,7 +335,7 @@ function add_topic_post($topic, $text_content, $reply = false, $chat_id = null) 
 	} else {
 		$sql_add_topic_post = "INSERT INTO chat_log (user_id, topic_id, text_content, reply_to) VALUES (:user_id, :topic_id, :text_content, :reply_to)";
 
-		$stmt_add_topic_post = $add_topic_post->prepare($sql_add_topic_post);
+		$stmt_add_topic_post = $pdo->prepare($sql_add_topic_post);
 
 		$stmt_add_topic_post->execute([
 			'user_id' => $_SESSION["user_id"],
@@ -294,7 +358,7 @@ function display_topic_table() {
 		$log_time = substr($date, 11, 5);
 		$log_date = substr($date, 5, 2) ."/". substr($date, 8, 2) ."/". substr($date, 2, 2);
 
-		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "<p>$log_date @ $log_time</p></a></td></tr>";
+		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "<p>Created: $log_date @ $log_time</p></a></td></tr>";
 	}
 
 	$html .= "</table>";

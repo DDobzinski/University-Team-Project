@@ -432,7 +432,7 @@ body {
 	border-radius: 3px;
 	width: 80%;
 	background-color: white;
-	z-index: 5;
+	/*z-index: 5;*/
 }
 
 .forum_box_details {
@@ -456,8 +456,8 @@ body {
 }
 
 .forum_box .text_content {
-	margin-top: 0;
-	margin-left: 2em;
+	margin: 0 2em 0em 2em;
+	overflow-wrap: anywhere;
 }
 
 /* Chat room styling  */
@@ -581,4 +581,25 @@ body {
 #topics_table td p {
 	float: right;
 	margin: 0em 1em;
+}
+
+.username_h3 span {
+	display:  none;
+	position: absolute;
+	z-index: 0;
+	width: 20em;
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	/*margin: 1em 1em 0em 0em;*/
+	background-color: white;
+}
+
+.username_h3 span p {
+	font-size: 15px;
+	margin-left: 1em;
+}
+
+.username_h3:hover span {
+	display:  block;
+	z-index: 100;
 }
