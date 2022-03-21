@@ -226,7 +226,7 @@ function get_topic($topic_id) {
 	$sql_get_topic = "
 		SELECT c.chat_id, c.user_id, c.log_date, c.text_content, c.reply_to, u.username, t.topic_name 
 		FROM ((chat_log AS c INNER JOIN topics AS t ON (t.topic_name = t.topic_name)) INNER JOIN user_info AS u ON (u.username = u.username)) 
-		WHERE c.topic_id = :topic_id AND t.topic_id = :topic_id AND u.user_id = c.user_id ORDER BY log_date ASC";
+		WHERE (c.topic_id = :topic_id AND t.topic_id = :topic_id AND u.user_id = c.user_id) ORDER BY log_date ASC, c.reply_to ASC;";
 
 	$stmt_get_topic = $pdo->prepare($sql_get_topic);
 	$stmt_get_topic->execute(['topic_id' => $topic_id]);
@@ -234,18 +234,63 @@ function get_topic($topic_id) {
 	$stmt_get_topic->setFetchMode(PDO::FETCH_ASSOC);
 
 	$data = $stmt_get_topic->fetchAll();
+	$new_data = array();
+
+	foreach ($data as $element) {
+		if ($element["reply_to"] == null) {
+			$element_to_add = $element;
+			$element_to_add["indent"] = 0;
+
+			$new_data[] = $element_to_add;
+			$index_to_remove = array_search($element, $data);
+			unset($data[$index_to_remove]);
+		}
+	}
+
+	// i used for the indent counter
+	$i = 0;
+	// while there are still elements in the array
+	while (sizeof($data) != 0) {
+		$i++;
+
+		// for each element in the new_data array
+		foreach($new_data as $new_data_el) {
+
+			$chat_id = $new_data_el["chat_id"];
+			// counter to hold the number of items added to the replies
+			$added = 1;
+
+			// for each element in the old data array
+			foreach ($data as $old_data_el) {
+				// if its reply_to value is the same as chat id of the current element we are looking at
+				if ($old_data_el["reply_to"] == $chat_id) {
+					// copy array and add indent key, idk why but without copying it its very slow
+					$old_data_el_add = $old_data_el;
+					$old_data_el_add["indent"] = $i;
+
+					// add the reply in after the position of the new element in the array
+					array_splice($new_data, array_search($new_data_el, $new_data) + $added, 0, array($old_data_el_add));
+					$index_to_remove_2 = array_search($old_data_el, $data);
+					unset($data[$index_to_remove_2]);
+
+					$added++;
+				}
+			}
+		}	
+	}
 
 	get_user_info();
 
 	$chat_posts = "";
 
-	foreach ($data as $row) {
+	foreach ($new_data as $row) {
 		$chat_id_from_db = $row["chat_id"];
 		$topic_name_from_db = str_replace(":topic", "", $row["topic_name"]);
 		$username_from_db = $row["username"];
 		$log_date_from_db = $row["log_date"];
 		$text_content_from_db = $row["text_content"];
 		$reply_val_from_db = $row["reply_to"];
+		$indent_val = $row["indent"];
 
 		// this stores all the data about the person whos chat it is
 		$user_data = $user_info_arr[$username_from_db];	
@@ -290,7 +335,7 @@ function get_topic($topic_id) {
 		$html_chat_box = "<div class='forum_box";
 
 		if (!$reply_val_from_db == null) {
-			$html_chat_box .= " reply";
+			$html_chat_box .= " reply$indent_val";
 		}
 
 		$html_chat_box .= "' id='chat_box_$chat_id_from_db'>

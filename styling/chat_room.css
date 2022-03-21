@@ -479,8 +479,28 @@ body {
 }
 
 .chat .reply {
-	margin-left: 5%;
-	width: 75%;
+	margin-left: 3%;
+	width: 77%;
+}
+
+.chat .reply1 {
+	margin-left: 6%;
+	width: 74%;
+}
+
+.chat .reply2 {
+	margin-left: 9%;
+	width: 71%;
+}
+
+.chat .reply3 {
+	margin-left: 12%;
+	width: 68%;
+}
+
+.chat .reply4 {
+	margin-left: 15;
+	width: 65%;
 }
 
 .reply_link {
