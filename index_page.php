@@ -64,10 +64,10 @@ Also when you're adding images please can you use an alt tag just in case the im
 						?>
 
 						<label for="username_login">Username / email:</label>
-						<input type="text" name="username_login" placeholder="Enter your password:" autocomplete="off">
+						<input type="text" name="username_login" placeholder="Enter your username:" autocomplete="off">
 
 						<label for="password_login">Password:</label>
-						<input type="password" name="password_login" placeholder="Enter your username:" autocomplete="off">
+						<input type="password" name="password_login" placeholder="Enter your password:" autocomplete="off">
 						<a href="forgot_password.php">Forgot your password?</a>
 
 						<input type="submit" value="Login" name="login_button">
@@ -111,13 +111,13 @@ Also when you're adding images please can you use an alt tag just in case the im
 						?>
 
 						<label for="username_join">Username</label>
-						<input type="text" name="username_join" placeholder="Enter your password:" autocomplete="off">
+						<input type="text" name="username_join" placeholder="Enter your username:" autocomplete="off">
 
 						<label for="email_join">Email</label>
 						<input type="text" name="email_join" placeholder="Enter your email:" autocomplete="off">
 
 						<label for="password_join">Password:</label>
-						<input type="password" name="password_join" placeholder="Enter your username:" autocomplete="off">
+						<input type="password" name="password_join" placeholder="Enter your password:" autocomplete="off">
 
 						<label for="password_confirm_join">Confirm your password:</label>
 						<input type="password" name="password_confirm_join" placeholder="Confirm your password:" autocomplete="off">
