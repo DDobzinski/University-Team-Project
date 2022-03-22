@@ -185,7 +185,7 @@ body {
     border-radius: 12px;
 }
 
-.sidebar.active ul li a:hover{https://stackoverflow.com/questions/21751868/delete-a-database-in-phpmyadmin
+.sidebar.active ul li a:hover{
     /*background: #fff;*/
     color: #63B4CF;
     cursor: pointer;

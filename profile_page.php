@@ -35,6 +35,7 @@ if (isset($_POST["logout_button"])) {
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/profile_page.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="js/profile_page.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,19 +45,34 @@ if (isset($_POST["logout_button"])) {
 	
 	<div id="main">
 		
-		<div id="navbar">
-			<!-- button array -->
-			<!-- homepage link !-->
-			<a id="homepage_link" href="homepage.php">Homepage</a>
-			<!-- logout button !-->
-			<form method="post" id="logout_form">
-				<input id="logout_button" type="submit" name="logout_button" value="Logout">
-			</form>
-		</div>
-
-		<div id="main_content">
-			<form method="post" id="change_profile_form">
-				<div class="child">
+	<div id="navbar">
+		<form method="post" id="logout_form">
+			<input id="logout_button" type="submit" name="logout_button" value="Logout">
+		</form>
+		<a id="profile_page_link" href="profile_page.php">Go to profile</a>
+		<a id="chat_room_link" href="chat_room.php">Chatroom</a>
+		<a id="homepage_link" href="homepage.php">homepage</a>
+	</div>
+	<form method="post" id="change_profile_form">
+		<div class="container">
+			<div class="left_box">
+				<nav>
+					<a onclick="tabs(0)" class="tab active">
+						<i class='bx bxs-user'></i>
+					</a>
+					<a onclick="tabs(1)" class="tab">
+						<i class='bx bx-book-content'></i>
+						<p>bio and additional info</p>
+					</a>
+					<a onclick="tabs(2)" class="tab">
+						<i class='bx bx-question-mark' ></i>
+						<p>keep/delete</p>
+					</a>
+				</nav>
+			</div>
+			<div class="right_box">
+				<div class="profile tabShow" id="profile">
+					<h1>Personal Information</h1>
 					<?php 
 					if (isset($email_address_error)) {
 						echo "<label for='email_address' class='profile_page_error'>Invalid email address.</label><br>";
@@ -302,7 +318,7 @@ if (isset($_POST["logout_button"])) {
 					<input type="checkbox" name="private_account" value='1' id="private_account" <?php echo ($data['private_account'] == 1) ? 'checked="checked"' : '';?>>
 					<label for="private_account">Private</label>
 				</div>
-				<div class="child">
+				<div class="bio tabShow">
 					<label for="course">Course:</label><br>
 					<select name="course">
 						<option value="<?php echo $data['course'] ?>" selected>
@@ -515,5 +531,57 @@ if (isset($_POST["logout_button"])) {
 			</form>
 		</div>
 	</div>
+	<div id="footer">
+		<div class="footer_container">
+			<div class="row">
+				<div class="footer_col">
+					<h4>z7</h4>
+					<ul>
+						<li><a href="#"><img src="images/linkuni_logo_white.png" class="logo_footer"></a></li>
+						<!-- <li><a href="#">z7</a></li> -->
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Need help?</h4>
+					<ul>
+						<li><a href="#">william.asbery@student.manchester.ac.uk</a></li>
+						<li><a href="#">daniel.dobzinski@student.manchester.ac.uk</a></li>
+						<li><a href="#">frenciel.anggi@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Any suggestions</h4>
+					<ul>
+						<li><a href="#">sarah.almuhaythif@student.manchester.ac.uk</a></li>
+						<li><a href="#">amy.leigh-hyer@student.manchester.ac.uk</a></li>
+						<li><a href="#">euan.liew@student.manchester.ac.uk</a></li>
+						<li><a href="#">yuyao.chen@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Follow us</h4>
+					<div class="social_links">
+						<a href="#"><i class='bx bxl-instagram'></i></a>
+						<a href="#"><i class='bx bxl-twitter'></i></a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+<script src="jquery.js"></script>
+<script>
+	const tabBtn = document.querySelectorAll(".tab");
+	const tab = document.querySelectorAll(".tabShow");
+
+	function tabs(panelIndex){
+		tab.forEach(function(node){
+			node.style.display = "none";
+
+		})
+		tab[panelIndex].style.display = "block";
+	}
+	tabs(0);
+</script>
 </body>
 </html>

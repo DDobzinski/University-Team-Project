@@ -83,7 +83,7 @@ Also when you're adding images please can you use an alt tag just in case the im
 			<!-- This is the main page so here we can include the explanation of linkuni and then the join button -->
 
 			<!-- Can insert an image here of the logo -->
-			<img class="logo_image" src="images/linkuni_logo.png" alt="Logo image">
+			<img class="logo_image" src="images/linkuni_logo_blue.png" alt="Logo image">
 
 			<h1>Welcome</h1>
 
@@ -131,7 +131,42 @@ Also when you're adding images please can you use an alt tag just in case the im
 	</div>
 
 	<div id="footer">
+		<div class="footer_container">
+			<div class="row">
+				<div class="footer_col">
+					<h4>z7</h4>
+					<ul>
+						<li><a href="#"><img src="images/linkuni_logo_white.png" class="logo_footer"></a></li>
+						<!-- <li><a href="#">z7</a></li> -->
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Need help?</h4>
+					<ul>
+						<li><a href="#">william.asbery@student.manchester.ac.uk</a></li>
+						<li><a href="#">daniel.dobzinski@student.manchester.ac.uk</a></li>
+						<li><a href="#">frenciel.anggi@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Any suggestions</h4>
+					<ul>
+						<li><a href="#">sarah.almuhaythif@student.manchester.ac.uk</a></li>
+						<li><a href="#">amy.leigh-hyer@student.manchester.ac.uk</a></li>
+						<li><a href="#">euan.liew@student.manchester.ac.uk</a></li>
+						<li><a href="#">yuyao.chen@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Follow us</h4>
+					<div class="social_links">
+						<a href="#"><i class='bx bxl-instagram'></i></a>
+						<a href="#"><i class='bx bxl-twitter'></i></a>
+					</div>
+				</div>
 
+			</div>
+		</div>
 	</div>
 </body>
 </html>
