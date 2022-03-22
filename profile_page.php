@@ -47,11 +47,11 @@ if (isset($_POST["logout_button"])) {
 		
 	<div id="navbar">
 		<form method="post" id="logout_form">
-			<input id="logout_button" type="submit" name="logout_button" value="Logout">
+			<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
 		</form>
-		<a id="profile_page_link" href="profile_page.php">Go to profile</a>
-		<a id="chat_room_link" href="chat_room.php">Chatroom</a>
-		<a id="homepage_link" href="homepage.php">homepage</a>
+		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
+		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
+		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 	</div>
 	<form method="post" id="change_profile_form">
 		<div class="container">
@@ -319,6 +319,7 @@ if (isset($_POST["logout_button"])) {
 					<label for="private_account">Private</label>
 				</div>
 				<div class="bio tabShow">
+					<h1>Edit your course, accommodation and biography!</h1>
 					<label for="course">Course:</label><br>
 					<select name="course">
 						<option value="<?php echo $data['course'] ?>" selected>
@@ -526,8 +527,8 @@ if (isset($_POST["logout_button"])) {
 
 					<label for="biography">Bio:</label><br>
 					<textarea name="biography" type="text" id="biography"><?php echo $data['biography'] ?></textarea><br><br>
-					<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
 				</div>
+				<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
 			</form>
 		</div>
 	</div>

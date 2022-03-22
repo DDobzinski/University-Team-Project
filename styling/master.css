@@ -13,7 +13,7 @@
     /*scroll-behavior: smooth;*/
   }
   
-  html { overflow-y: scroll; }
+  /*html { overflow-y: scroll; }*/
   
   body{
     overflow-x: hidden;
@@ -27,36 +27,37 @@
     left: 0px;
     height: 8vh;
     background-color: #202A45;
-    z-index: 1;
+    z-index: 101;
     display: flex;
     flex-direction: row-reverse;
   }
-  
-  #navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
-    margin: 0.2em 1.5em;
-    width: 5em;
-    height: 80%;
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  #navbar #logout_button {
-    height: 2.2em;
-    background-color: #63B4CF;
-    border: 1px solid #63B4CF;
-  }
-  
-  #profile_page_link , #chat_room_link,#homepage_link{
+
+  #navbar .navbar_button {
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
     text-decoration: none;
-    width: 7em;
+    margin: auto 1.5em;
+    width: 8em;
+    height: 5.5vh;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    background-color: var(--light_blue);
+    color: white;
+    border: 1px solid var(--light_blue);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  #logout_form {
+    margin: auto 1.5em;
+  }
+
+  #logout_form .navbar_button {
+    height: ;
   }
   
+  /* obselete?  */
   #navbar #profile_page_button {
     position: absolute;
     right: 2%;
@@ -69,14 +70,18 @@
     border: 0px;
     cursor: pointer;
   }
+
+#main {
+    height: 120vh;
+}
+
   #footer {
     background-color: var(--dark_blue);
     color: white;
     height: 30vh;
     padding: 20px 0;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    /*position: absolute;*/
   }
   h1{
     color: var(--dark_blue);

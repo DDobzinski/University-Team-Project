@@ -47,10 +47,11 @@ if (isset($_POST["logout_button"])) {
 	
 	<div id="navbar">
 		<form method="post" id="logout_form">
-			<input id="logout_button" type="submit" name="logout_button" value="Logout">
+			<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
 		</form>
-		<a id="profile_page_link" href="profile_page.php">Go to profile</a>
-		<a id="chat_room_link" href="chat_room.php">Chatroom</a>
+		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
+		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
+		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 	</div>
 	
 
