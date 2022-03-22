@@ -270,6 +270,7 @@ function get_topic($topic_id) {
 
 					// add the reply in after the position of the new element in the array
 					array_splice($new_data, array_search($new_data_el, $new_data) + $added, 0, array($old_data_el_add));
+					// removing the old element from the list
 					$index_to_remove_2 = array_search($old_data_el, $data);
 					unset($data[$index_to_remove_2]);
 

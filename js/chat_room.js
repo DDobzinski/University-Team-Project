@@ -1,7 +1,7 @@
 function open_topic(section) {
 	var nav_pane = document.getElementById('navigation_pane');
 	var main_content = document.getElementById("basic_content");
-	
+
 	if (nav_pane.style.display == "none") {
 		nav_pane.style.display = "block";
 		main_content.style.width = "80%";
@@ -39,18 +39,3 @@ function open_reply(chat_id) {
 		reply.style.display = "none";
 	}
 }
-
-// $(document).ready(function() {
-// 	$("#add_topic").on("submit", (function(e) {
-// 		e.preventDefault();
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "php/add_topic.php",
-// 			data: $(this).serialize(),
-// 			success: function(response) {
-// 				console.log(response);
-// 				$("#text_area_add_topic").val("");
-// 			}
-// 		});
-// 	})
-// )});
