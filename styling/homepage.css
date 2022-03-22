@@ -135,7 +135,8 @@ body {
     line-height: 50px;
 }
 
-.sidebar ul li .tooltip{
+.sidebar ul li .tooltip {
+    display: none;
     position: absolute;
     height: 35px;
     width: 250px;
@@ -151,7 +152,7 @@ body {
     pointer-events: none;
 }
 
-.sidebar ul li:hover .tooltip{
+.sidebar ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
 }

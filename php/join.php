@@ -78,6 +78,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				'hashed_password' => $hashed_password,
 				'email_address' => $join_email
 			]);
+
+			$sql_get_info_after_joining = "SELECT user_id, username, email_address FROM user_info WHERE username = :username AND email_address = :email_address";
+
+			$stmt_get_info_after_joining = $pdo_join->prepare($sql_get_info_after_joining);
+			$stmt_get_info_after_joining->execute(['username' => $join_username, 'email_address' => $join_email]);
+
+			$data = $stmt_get_info_after_joining->fetchAll();
+
+			if (sizeof($data) > 1) {
+				header("Location: homepage.php");
+			} else {
+				session_start();
+
+				$_SESSION["logged_in"] = true;
+ 				$_SESSION["user_id"] = $data[0]["user_id"];
+ 				$_SESSION["username"] = $data[0]["username"];
+ 				$_SESSION["email_address"] = $data[0]["email_address"];
+
+ 				header("Location: profile_page.php");
+			}
 		}
 	}
 } 

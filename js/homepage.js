@@ -14,6 +14,18 @@ $(".checkbox__input").on('click', function(){
 	});
 });
 
+function tooltip_activation() {
+	var tooltips = document.getElementsByClassName("tooltip");
+	
+	for (var i = 0; i < tooltips.length; i++) {
+		if (document.querySelector(".sidebar").classList.value == "sidebar active") {
+			tooltips[i].style.display = "none";
+		} else {
+			tooltips[i].style.display = "block";
+		}
+	}
+}
+
 window.onload = function(){ 
     let btn = document.querySelector("#btn");
 	let sidebar = document.querySelector(".sidebar");
@@ -22,6 +34,7 @@ window.onload = function(){
 	btn.onclick = function(){
 		sidebar.classList.toggle("active");
 		current_content.classList.toggle("active");
+		tooltip_activation();
 
 	}
 	window.in_progress =  new progressBar(document.querySelector('.progress'),0);
@@ -88,7 +101,4 @@ class progressBar{
 			this.fillElem.style.width = (this.value/2) + 'em';
 			this.valueElem.textContent = precentage;
 		}
-
-
 }
-

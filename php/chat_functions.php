@@ -29,7 +29,6 @@ if(isset($_POST["add_topic"])) {
 		echo "<script>alert('Topic name cannot be empty');</script>";
 	} else {
 		add_topic($name);
-		echo "adding topic";
 	}
 }
 
@@ -255,7 +254,6 @@ function get_topic($topic_id) {
 
 		// for each element in the new_data array
 		foreach($new_data as $new_data_el) {
-
 			$chat_id = $new_data_el["chat_id"];
 			// counter to hold the number of items added to the replies
 			$added = 1;

@@ -8,10 +8,11 @@ Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Alm
 session_start();
 
 require("config.php");
-// if (!isset($_SESSION["logged_in"])) {
-// 	header("Location: index_page.php");
-// } else {
-// }
+
+if (!isset($_SESSION["logged_in"])) {
+	header("Location: index_page.php");
+} else {
+}
 
 // get all the information on the user
 require("php/profile_page_init.php");
@@ -34,7 +35,7 @@ if (isset($_POST["logout_button"])) {
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/profile_page.css">
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/profile_page.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">

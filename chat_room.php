@@ -17,6 +17,12 @@ if (!isset($_SESSION["logged_in"])) {
 	require("php/chat_functions.php");
 }
 
+if (isset($_POST["logout_button"])) {
+	$_SESSION = array();
+	session_destroy();
+	header("location: index_page.php");
+}
+
 ?>
 
 <!DOCTYPE html>

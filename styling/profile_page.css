@@ -321,8 +321,16 @@ body {
 #change_profile_form .child {
 	width: 50%;
 	height: 100vh;
-	margin-left: auto;
-	margin-right: auto
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+#change_profile_form .child input:not([type=checkbox]), #change_profile_form .child label, #change_profile_form .child select, #change_profile_form .child textarea {
+	width: 100%;
+}
+
+#change_profile_form .child .modal_content label {
+	width:  90%;
 }
 
 .profile_page_error {
