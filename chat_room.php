@@ -33,6 +33,7 @@ if (isset($_POST["logout_button"])) {
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/chat_room.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/chat_room.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,14 +44,12 @@ if (isset($_POST["logout_button"])) {
 
 <div id="main">
 	<div id="navbar">
-		<img src="" alt="">
-		<div id="navbar">
 		<form method="post" id="logout_form">
 			<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
 		</form>
 		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
+		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
-	</div>
 	</div>
 
 	<div id="main_content" class="main_home">
