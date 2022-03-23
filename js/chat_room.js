@@ -21,8 +21,8 @@ function open_topic(section) {
 	for (i = 0; i < sections.length; i++) {
 		if (section != sections[i]) {
 			document.getElementById(sections[i] + "_content").style.display = "none";
-			document.getElementById(sections[i]).style.backgroundColor = "white";
-			document.getElementById(sections[i]).children[0].style.color = "black";
+			document.getElementById(sections[i]).style.backgroundColor = "#202A45";
+			document.getElementById(sections[i]).children[0].style.color = "white";
 		} else {
 			current.style.display = "block";
 			document.getElementById(sections[i]).style.backgroundColor = "#63B4CF";

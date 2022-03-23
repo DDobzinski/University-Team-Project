@@ -274,17 +274,15 @@ body {
 }
 
 #save_changes_button {
-	width: 17%;
-  padding: 1em;
-  margin-top: 40em;
-	/*margin-top: 1em;
-	margin-right: 5em;*/
-	/*float: bottom;*/
-	color: white;
-	border: 1px solid var(--dark_blue);
-	border-radius: 5px;
-	background-color: var(--dark_blue);
-	cursor: pointer;
+    width: 15%;
+    height: 30%;
+    padding: 1em;
+    margin-top: 0em;
+    color: white;
+    border: 1px solid var(--dark_blue);
+    border-radius: 5px;
+    background-color: var(--dark_blue);
+    cursor: pointer;
 }
 
 #biography {
@@ -516,7 +514,7 @@ body {
   }
   .tabShow{
 	transition: all .5s ease-in;
-	width: 73%;
+	width: 100%;
 	height: 100%;
 	display: none;
 	padding: 25px;

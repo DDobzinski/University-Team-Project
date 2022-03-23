@@ -41,8 +41,6 @@ if (isset($_POST["logout_button"])) {
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div id="main">
 	<div id="navbar">
 		<form method="post" id="logout_form">
 			<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
@@ -51,48 +49,63 @@ if (isset($_POST["logout_button"])) {
 		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 	</div>
-
-	<div id="main_content" class="main_home">
-	<div id="navigation_pane" style="display:none">
-		<h2>Topics</h2>
-		<form method="post" class="add_topic" id="add_topic">
-			<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-			<input type="submit" name="add_topic" value="Create new topic">
-		</form>
-		<ul id="topics_list">
-			<?php
-				echo display_topics();
-			?>
-		</ul>
+<div id="main">
+	<div class="left">
+		<h1>Welcome to the chatroom!</h1>
+		<img src="images/friends.png" class="chat_pic" width="600em" height="600em">
+		<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
 	</div>
-	<div id="current_content">
-		<div id="basic_content">
-			<div id="intro_content">
-				<span align="center">
-					<h1>Welcome to the chatroom!</h1>
-					<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
-					<p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p>
-					<form method="post" class="add_topic add_topic_intro">
-						<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-						<input type="submit" name="add_topic" value="Create new topic">
-					</form>
-					<hr>
-				</span>
 
-				<h3>Topics:</h3>
-				<div id="topics_table_div">
+	<div class="right">
+		<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic</p> -->
+		<div id="main_content" class="main_home">
+			<div id="navigation_pane" style="display:none">
+				<h2>Topics</h2>
+				<form method="post" class="add_topic" id="add_topic">
+					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
+					<input type="submit" name="add_topic" value="Create new topic">
+				</form>
+				<ul id="topics_list">
 					<?php
-						echo display_topic_table();
+						echo display_topics();
+					?>
+				</ul>
+			</div>
+			<div id="current_content">
+				<div id="basic_content">
+					<div id="intro_content">
+						<span align="center">
+							<h1>Welcome to the chatroom!</h1>
+							<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
+							<p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p>
+							<form method="post" class="add_topic add_topic_intro">
+								<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
+								<input type="submit" name="add_topic" value="Create new topic">
+							</form>
+							<hr>
+						</span>
+
+						<h3>Topics:</h3>
+						<div id="topics_table_div">
+							<?php
+								echo display_topic_table();
+							?>
+						</div>
+					</div>
+				</div>
+					<?php
+						 echo display_content_divs();
 					?>
 				</div>
-			</div>
-		</div>
-			<?php
-				 echo display_content_divs();
-			?>
 		</div>
 	</div>
-	<div id="footer">
+	
+</div>
+
+<?php
+	include("php/reopen_content.php");
+?>
+<div id="footer">
 		<div class="footer_container">
 			<div class="row">
 				<div class="footer_col">
@@ -130,11 +143,5 @@ if (isset($_POST["logout_button"])) {
 			</div>
 		</div>
 	</div>
-</div>
-
-<?php
-	include("php/reopen_content.php");
-?>
-
 </body>
 </html>

@@ -46,7 +46,8 @@
 }
 
 #navbar #logout_button {
-  height: 2.2em;
+  /*position: sticky;
+  height: 2.2em;*/
   background-color: #63B4CF;
   border: 1px solid #63B4CF;
 }
@@ -95,11 +96,12 @@
     margin-bottom: 35px;
   }
   .footer_container{
-    max-width: 1170px;
+    max-width: 1190px;
     margin: auto;
   }
   .row{
     display: flex;
+    column-gap: 8em;
   
   }
   ul{
@@ -175,7 +177,7 @@
   }
   }
   .footer_col ul li a .logo_footer{
-    width: 30%;
+    width: 400%;
     /*margin-top: 5em;
     margin-bottom: 3em;
     margin-left: 3em;

@@ -33,8 +33,8 @@ if (isset($_POST["logout_button"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/master.css">
-	<link rel="stylesheet" type="text/css" href="styling/profile_page.css">
+	<link rel="stylesheet" type="text/css" href="styling/master.css"></link>
+	<link rel="stylesheet" type="text/css" href="styling/profile_page.css"></link>
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="js/profile_page.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
