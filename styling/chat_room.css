@@ -114,6 +114,8 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #main_content {
 	margin: 0em;
+	height: 98vh;
+	z-index: 100;
 }
 
 .main_home {
@@ -156,6 +158,20 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #current_content {
 	width: 100%;
+	height: 92vh;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#current_content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#current_content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 #current_content h2 {
