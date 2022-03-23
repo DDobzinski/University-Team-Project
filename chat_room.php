@@ -76,8 +76,8 @@ if (isset($_POST["logout_button"])) {
 					<div id="intro_content">
 						<span align="center">
 							<h1>Welcome to the chatroom!</h1>
-							<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
-							<p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p>
+							<h2>You can pick a topic from the list here, already created by other students, or make a new topic here:</h2>
+							<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p> -->
 							<form method="post" class="add_topic add_topic_intro">
 								<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
 								<input type="submit" name="add_topic" value="Create new topic">
