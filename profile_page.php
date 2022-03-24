@@ -33,8 +33,8 @@ if (isset($_POST["logout_button"])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>linkuni</title>
-	<link rel="stylesheet" type="text/css" href="styling/master.css">
-	<link rel="stylesheet" type="text/css" href="styling/profile_page.css">
+	<link rel="stylesheet" type="text/css" href="styling/master.css"></link>
+	<link rel="stylesheet" type="text/css" href="styling/profile_page.css"></link>
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="js/profile_page.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +64,10 @@ if (isset($_POST["logout_button"])) {
 						<i class='bx bx-book-content'></i>
 						<p>bio and additional info</p>
 					</a>
-					<a onclick="tabs(2)" class="tab">
+					<!-- <a onclick="tabs(2)" class="tab">
 						<i class='bx bx-question-mark' ></i>
 						<p>keep/delete</p>
-					</a>
+					</a> -->
 				</nav>
 			</div>
 			<div class="right_box">
@@ -528,10 +528,13 @@ if (isset($_POST["logout_button"])) {
 					<label for="biography">Bio:</label><br>
 					<textarea name="biography" type="text" id="biography"><?php echo $data['biography'] ?></textarea><br><br>
 				</div>
-				<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
-			</form>
+				<!-- <input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
+			</form> -->
+			</div>
+		
 		</div>
-	</div>
+	<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
+	</form>
 	<div id="footer">
 		<div class="footer_container">
 			<div class="row">

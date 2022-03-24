@@ -21,57 +21,64 @@
   }
   
   #navbar{
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    height: 8vh;
-    background-color: #202A45;
-    z-index: 101;
-    display: flex;
-    flex-direction: row-reverse;
-  }
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  height: 8vh;
+  background-color: #202A45;
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse;
+}
 
-  #navbar .navbar_button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-around;
-    text-decoration: none;
-    margin: auto 1.5em;
-    width: 8em;
-    height: 5.5vh;
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-    background-color: var(--light_blue);
-    color: white;
-    border: 1px solid var(--light_blue);
-    border-radius: 2px;
-    cursor: pointer;
-  }
+#navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
+  margin: 0.2em 1.5em;
+  width: 5em;
+  height: 80%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#login_button{
+  background-color: var(--light_blue);
+}
 
-  #logout_form {
-    margin: auto 1.5em;
-  }
+#navbar #logout_button {
+  /*position: sticky;
+  height: 2.2em;*/
+  background-color: #63B4CF;
+  border: 1px solid #63B4CF;
+}
 
-  #logout_form .navbar_button {
-    height: ;
-  }
-  
-  /* obselete?  */
-  #navbar #profile_page_button {
-    position: absolute;
-    right: 2%;
-    top: 0.25em;
-    height: 2.25em;
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-    background-color: #63B4CF;
-    color: white;
-    border: 0px;
-    cursor: pointer;
-  }
+#profile_page_link , #chat_room_link,#homepage_link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  width: 7em;
+}
 
+#navbar #profile_page_button {
+  position: absolute;
+  right: 2%;
+  top: 0.25em;
+  height: 2.25em;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  background-color: #63B4CF;
+  color: white;
+  border: 0px;
+  cursor: pointer;
+}
+#navbar a:hover{
+  background-color: var(--light_blue);
+  border-radius: 20px;
+  transition: all 0.5 ease;
+}
 #main {
-    height: 120vh;
+    height: 100vh;
 }
 
   #footer {
@@ -89,11 +96,12 @@
     margin-bottom: 35px;
   }
   .footer_container{
-    max-width: 1170px;
+    max-width: 1190px;
     margin: auto;
   }
   .row{
     display: flex;
+    column-gap: 8em;
   
   }
   ul{
@@ -169,7 +177,7 @@
   }
   
   .footer_col ul li a .logo_footer{
-    width: 30%;
+    width: 400%;
     /*margin-top: 5em;
     margin-bottom: 3em;
     margin-left: 3em;

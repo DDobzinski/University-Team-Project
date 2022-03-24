@@ -13,9 +13,14 @@ body {
 	font-family: "DM Sans", sans-serif;
 	font-size: 15px;
 	margin: 0px;
+	/*margin-bottom: 30vh;*/
+	/*height: 10vh;*/
+	background: linear-gradient(to right,var(--dark_blue),var(--light_blue));
 }
 
-
+#main{
+	height: 10vh;
+}
 
 
 /*#navbar #profile_page_button {
@@ -269,16 +274,15 @@ body {
 }
 
 #save_changes_button {
-	width: 40%;
-	padding: 1em;
-	margin-top: 1em;
-	margin-right: 5em;
-	float: right;
-	color: white;
-	border: 1px solid var(--dark_blue);
-	border-radius: 5px;
-	background-color: var(--dark_blue);
-	cursor: pointer;
+    width: 15%;
+    height: 30%;
+    padding: 1em;
+    margin-top: 0em;
+    color: white;
+    border: 1px solid var(--dark_blue);
+    border-radius: 5px;
+    background-color: var(--dark_blue);
+    cursor: pointer;
 }
 
 #biography {
@@ -504,12 +508,14 @@ body {
 	/*width: 60%;*/
 	margin-left: 3vw;
 	width: 100%;
+	overflow: hidden;
+  overflow-y: scroll;
+
   }
   .tabShow{
 	transition: all .5s ease-in;
-	width: 73%;
+	width: 100%;
 	height: 100%;
 	display: none;
-	overflow: hidden;
 	padding: 25px;
   }

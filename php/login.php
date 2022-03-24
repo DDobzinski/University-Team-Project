@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  				$stmt_login = $pdo_login->prepare($sql_login);
 
 				$stmt_login->execute([
-				 		'email_address' => $email_login
+				 		'email' => $email_login
 				]);
  			} elseif (isset($username_login)) {
  				$sql_login = "SELECT user_id, username, hashed_password, email_address FROM user_info WHERE username = :username";
