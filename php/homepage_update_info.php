@@ -1,5 +1,6 @@
 <?php
 require("../homepage.php");
+
 if (isset($_POST['task'])) {
 	$pdo_change_info = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 	$pdo_change_info->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

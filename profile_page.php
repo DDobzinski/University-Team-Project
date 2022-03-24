@@ -330,6 +330,7 @@ if (isset($_POST["logout_button"])) {
 									echo ucwords($data["course"]);
 								} 
 							?>
+						</option>
 							<option value="accounting">Accounting</option>
 							<option value="actuarial Science and Mathematics">Actuarial Science and Mathematics </option>
 							<option value="adult Nursing">Adult Nursing </option>
@@ -429,7 +430,6 @@ if (isset($_POST["logout_button"])) {
 							<option value="speech and Language Therapy">Speech and Language Therapy</option>
 							<option value="theological Studies in Philosophy and Ethics">Theological Studies in Philosophy and Ethics</option>
 							<option value="zoology">Zoology</option>
-						</option>
 					</select><br>
 					<input name="hobbies" onclick="toggle_modal('hobbies');" type="button" value="Hobbies" id="hobbies_button"><br>
 					<div id="hobbies_modal" class="modal">
