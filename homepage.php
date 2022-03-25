@@ -52,6 +52,8 @@ if (isset($_POST["logout_button"])) {
 		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
 		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
+		<a class="navbar_button" id="homepage_link" href="find_friends.php">Find Friends</a>
+
 	</div>
 	
 
