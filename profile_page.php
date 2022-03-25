@@ -52,8 +52,6 @@ if (isset($_POST["logout_button"])) {
 		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
 		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
-		<a class="navbar_button" id="homepage_link" href="find_friends.php">Find Friends</a>
-
 	</div>
 	<form method="post" id="change_profile_form">
 		<div class="container">
@@ -319,6 +317,10 @@ if (isset($_POST["logout_button"])) {
 					<br>
 					<input type="checkbox" name="private_account" value='1' id="private_account" <?php echo ($data['private_account'] == 1) ? 'checked="checked"' : '';?>>
 					<label for="private_account">Private</label>
+					<br>
+					<br>
+					<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
+
 				</div>
 				<div class="bio tabShow">
 					<h1>Edit your course, accommodation and biography!</h1>
@@ -529,14 +531,17 @@ if (isset($_POST["logout_button"])) {
 
 					<label for="biography">Bio:</label><br>
 					<textarea name="biography" type="text" id="biography"><?php echo $data['biography'] ?></textarea><br><br>
+										<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
+
 				</div>
 				<!-- <input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
 			</form> -->
 			</div>
-		
+
 		</div>
-	<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
+
 	</form>
+
 	<div id="footer">
 		<div class="footer_container">
 			<div class="row">

@@ -259,15 +259,22 @@ body {
 }
 
 #save_changes_button {
-    width: 15%;
-    height: 30%;
-    padding: 1em;
+    width: 10%;
+    height: 5%;
+  	padding: 1em;
     margin-top: 0em;
     color: white;
     border: 1px solid var(--dark_blue);
     border-radius: 5px;
     background-color: var(--dark_blue);
     cursor: pointer;
+    text-align: center;
+
+}
+;
+
+
+
 }
 
 #biography {
