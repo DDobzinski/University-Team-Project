@@ -1,12 +1,18 @@
 function get_vals() {
 	var course = document.getElementById("course_selector").value;
 
-	var accommodation_filter = document.getElementById('accommodation_filter').children;
+	var accommodation_filter_raw = document.getElementsByClassName("flex_row");
+	var accommodation_filter = new Array();
+
+	for (var i = 0; i < accommodation_filter_raw.length; i++) {
+		accommodation_filter.push(accommodation_filter_raw[i].children);
+	}
+
 	var checked_accommodation = Array("");
 
 	for (var i = 0; i < accommodation_filter.length; i++) {
-		if (accommodation_filter[i].checked == true && accommodation_filter[i].type == "checkbox") {
-			checked_accommodation.push(accommodation_filter[i].name);
+		if (accommodation_filter[i][0].checked == true && accommodation_filter[i][0].type == "checkbox") {
+			checked_accommodation.push(accommodation_filter[i][0].name);
 		}
 	}
 
@@ -29,16 +35,44 @@ function get_vals() {
 }
 
 
+function do_ajax() {
+	data = get_vals();
+	ajax_req(data)
+		.then((data) => {
+			$("#user_info").html(data);
+		})
+		.catch((error) => {
+			console.log(error);
+	})
+}
+
 $(document).ready(function() {
-	$("#filters").on('click', function() {
-		data = get_vals();
-		ajax_req(data)
-			.then((data) => {
-				$("#user_info").html(data);
-			})
-			.catch((error) => {
-				console.log(error);
-			})
+	$("#accommodation_boxes").on('click', function() {
+		do_ajax();
+	});
+	$("#course_selector").on('click', function() {
+		do_ajax();
+	});
+	$("#hobbies_filter").on('click', function() {
+		do_ajax();
+	});
+	$("#nationality_selector").on('click', function() {
+		do_ajax();
+	});
+	$("#dropdown_button_accommodation").on('click', function() {
+		if ($("#accommodation_boxes").css("display") == "none") {
+			$("#accommodation_boxes").css("display", "block");	
+		} else {
+			$("#accommodation_boxes").css("display", "none");
+		}
+	});
+
+	$("#dropdown_button_hobbies").on('click', function() {
+		if ($("#hobbies_boxes").css("display") == "none") {
+			$("#hobbies_boxes").css("display", "block");	
+		} else {
+			$("#hobbies_boxes").css("display", "none");
+		}
 	});
 });
 
