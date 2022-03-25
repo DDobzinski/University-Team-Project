@@ -15,26 +15,12 @@ body {
 	margin: 0px;
 	/*margin-bottom: 30vh;*/
 	/*height: 10vh;*/
-	background: linear-gradient(to right,var(--dark_blue),var(--light_blue));
+	/*background: linear-gradient(to right,var(--dark_blue),var(--white));*/
 }
 
 #main{
 	height: 10vh;
 }
-
-
-/*#navbar #profile_page_button {
-	position: absolute;
-	right: 2%;
-	top: 0.25em;
-	height: 2.25em;
-	font-family: "DM Sans", sans-serif;
-	font-size: 20px;
-	background-color: var(--light_blue);
-	color: white;
-	border: 0px;
-	cursor: pointer;
-}*/
 
 .modal {
 	display: none;
@@ -49,8 +35,7 @@ body {
 }
 
 .modal_animate {
-	-webkit-animation: animatezoom 0.6s;
-	animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s infinite;
 }
 
 @-webkit-keyframes animation {
@@ -508,9 +493,6 @@ body {
 	/*width: 60%;*/
 	margin-left: 3vw;
 	width: 100%;
-	overflow: hidden;
-  overflow-y: scroll;
-
   }
   .tabShow{
 	transition: all .5s ease-in;

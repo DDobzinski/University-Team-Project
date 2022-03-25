@@ -154,7 +154,9 @@ foreach($user_arr_fulfil as $user => $user_data) {
 	$hobbies = "";
 
 	foreach ($hobbies_exploded as $hobby) {
-		$hobbies .= $hobbies_array["$hobby"] . ", ";
+		if ($hobby != "") {
+			$hobbies .= $hobbies_array["$hobby"] . ", ";
+		}
 	}
 
 	$hobbies = substr($hobbies, 0, -2);

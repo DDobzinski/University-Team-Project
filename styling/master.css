@@ -52,7 +52,7 @@
   border: 1px solid #63B4CF;
 }
 
-#profile_page_link , #chat_room_link,#homepage_link{
+#profile_page_link , #chat_room_link, #homepage_link{
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
@@ -67,16 +67,18 @@
   height: 2.25em;
   font-family: "DM Sans", sans-serif;
   font-size: 20px;
-  background-color: #63B4CF;
   color: white;
   border: 0px;
   cursor: pointer;
 }
+
 #navbar a:hover{
   background-color: var(--light_blue);
   border-radius: 20px;
   transition: all 0.5 ease;
 }
+
+
 #main {
     height: 100vh;
 }
@@ -144,6 +146,11 @@
     color: #C0C0C0;
     display: block;
     transition: all 0.3s ease;
+  
+  }
+
+  .footer_col ul li a img {
+    width: 5em;
   }
   .footer_col ul li a:hover{
     color: white;
@@ -176,10 +183,10 @@
     width: 100%;
   }
   
-  .footer_col ul li a .logo_footer{
-    width: 400%;
-    /*margin-top: 5em;
+  /*.footer_col ul li a .logo_footer{
+    width: 100%;
+    margin-top: 5em;
     margin-bottom: 3em;
     margin-left: 3em;
-    /*float: left;*/
-  }
+    /*float: left;
+  }*/
