@@ -36,8 +36,8 @@ if (isset($_POST["logout_button"])) {
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript">
-	var loaded_progress = "<?php echo $loaded_progress; ?>";
-</script>
+		var loaded_progress = "<?php echo $loaded_progress; ?>";
+	</script>
 	<script type="text/javascript" src="js/homepage.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

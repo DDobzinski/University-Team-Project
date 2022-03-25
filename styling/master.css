@@ -170,12 +170,12 @@
     margin-bottom: 30px;
   
   }
-  }
+  
   @media(max-width: 574px){
     .footer_col{
     width: 100%;
   }
-  }
+  
   .footer_col ul li a .logo_footer{
     width: 400%;
     /*margin-top: 5em;

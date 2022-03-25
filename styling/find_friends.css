@@ -1,0 +1,26 @@
+#main_content {
+	display: flex;
+	flex-direction: row;
+}
+
+#sidebar {
+	width: 25vw;
+	border-right: 3px solid var(--dark_blue);
+}
+
+#accommodation_filter label, #accommodation_filter input {
+	float: left;
+}
+
+#accommodation_filter label, #accommodation_filter input {
+	display: inline-block;
+}
+
+#accommodation_filter label {
+	width: 70%;
+	float: left;
+}
+
+#accommodation_filter input {
+	width: 20%;
+}
