@@ -4,7 +4,24 @@ require("../config.php");
 
 $pdo = new PDO("mysql:host=$host;dbname=" . $db_name . "", $username_db, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
+$hobbies_array = [
+	"1" => "sports",
+	"2" => "baking",
+	"3" => "art",
+	"4" => "gaming",
+	"5" => "music",
+	"6" => "dance",
+	"7" => "photography",
+	"8" => "singing",
+	"9" => "electronics",
+	"10" => "biking",
+	"11" => "reading",
+	"12" => "fishing",
+	"13" => "traveling",
+	"14" => "cars",
+	"15" => "yoga",
+	"16" => "hiking"
+];
 // get all the user info from the database
 $user_info_arr = array();
 function get_user_info() {
@@ -141,6 +158,10 @@ foreach($user_arr_fulfil as $user => $user_data) {
 	}
 
 	$hobbies = substr($hobbies, 0, -2);
+
+	$nationality = ucfirst($nationality);
+	$course = ucfirst($course);
+	$accommodation = ucfirst($accommodation);
 
 	$html .= "
 	<div class='user_box'>

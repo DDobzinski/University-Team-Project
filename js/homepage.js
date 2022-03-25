@@ -43,6 +43,8 @@ window.onload = function(){
 };
 
 function open_content(section) {
+	document.getElementById("landing_page").style.display="none";
+	
 	var sections = document.getElementById("nav_list").children;
 	var section_ids = [];
 
@@ -54,8 +56,11 @@ function open_content(section) {
 	for (var j = 0; j < section_ids.length; j++) {
 		if (section_ids[j] != section) {
 			document.getElementById(prefix + section_ids[j]).style.display = "none";
+			document.getElementById(section_ids[j]).style.backgroundColor = "#202A45";
 		} else {
 			document.getElementById(prefix + section_ids[j]).style.display = "block";
+			document.getElementById('progress_bar').style.display = "flex";
+			document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF";
 		}
 	}
 }
@@ -81,12 +86,33 @@ class progressBar{
 
 	update_value(id){
 		let cb = document.getElementById('content_' + id).querySelector('#check_' + id);
+		var checkbox = document.getElementsByClassName('checkbox');
+		var dict = {
+			'gp': 0,
+			'bank': 1,
+			'accommodation': 2,
+			'brp': 3,
+			'police': 4,
+			'studentid': 5,
+			'society': 6,
+			'tour_campus': 7,
+			'blackboard_setup': 8,
+			'tuition_fees': 9,
+		  };
+
 		if (cb.checked){
 			this.value +=10;
+			console.log(cb.checked);
+			checkbox[dict[id]].style.backgroundColor = "#63B4CF";
+			checkbox[dict[id]].innerText = "Undone?";
+			console.log(cb.checked);
 
 		}
 		else if (!cb.checked){
 			this.value -=10;
+			checkbox[dict[id]].style.backgroundColor = "#202A45";
+			checkbox[dict[id]].innerText = "Done!";
+			console.log(cb.checked);
 		}
 
 		this.update();
