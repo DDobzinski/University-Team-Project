@@ -24,7 +24,7 @@ for ($i = 0; $i < 250; $i++) {
 
 	$hobbies = "";
 	for ($j = 0; $j < random_int(1, 10); $j++) {
-		$hobbies .= random_int(1, 20) . ",";
+		$hobbies .= random_int(1, 16) . ",";
 	}
 
 	$hobbies = substr($hobbies, 0, -1);
