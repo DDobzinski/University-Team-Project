@@ -402,7 +402,7 @@ function display_topic_table() {
 		$log_time = substr($date, 11, 5);
 		$log_date = substr($date, 5, 2) ."/". substr($date, 8, 2) ."/". substr($date, 2, 2);
 
-		$html .= "<tr><td><a onclick='open_topic(`$id`);'>" . str_replace("_", " ", $topic["topic"]) . "<p>Created: $log_date @ $log_time</p></a></td></tr>";
+		$html .= "<tr><td onclick='open_topic(`$id`);'><a>" . str_replace("_", " ", $topic["topic"]) . "<p>Created: $log_date @ $log_time</p></a></td></tr>";
 	}
 
 	$html .= "</table>";
