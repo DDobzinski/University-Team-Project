@@ -15,6 +15,63 @@ body {
     display: flex;
     flex-direction: column;
 }
+.modal_container/*.show*/{
+    pointer-events: auto;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    background-color:white;
+    opacity: 1;
+    padding: 20px;
+    border-radius: 2.5em;
+    width: 35em;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    color: var(--dark_blue);
+}
+/*.popup_bg{
+    height: 40%;
+    width: 100%;
+    z-index: 1;
+}*/
+.popup_image{
+    height: 40%;
+    width: 30%;
+    z-index: 3;
+}
+.popup h1{
+    color: var(--dark_blue);
+    padding: 0.3em;
+    font-size: 2em;
+}
+.popup h2{
+    color: var(--dark_blue);
+    font-size: 1.2em;
+    padding: 0.3em;
+}
+.popup h2 i{
+    color: var(--dark_blue);
+    font-size: 1.2em;
+}
+
+.close{
+   position: absolute;
+   top: 0;
+   right: 0.5em;
+   font-size: 3em;
+   transform: rotate(45deg);
+   cursor: pointer;
+}
+
 
 #main {
     display: flex;
@@ -148,13 +205,12 @@ body {
 }
 
 .sidebar ul li{
-    border-radius: 115px;
+    border-radius: 20px;
     width: 100%;
     margin-top: 1.4em;
     list-style: none;
     line-height: 50px;
     font-size: 20px;
-    /* padding-left: 0.36em; */
 }
 .sidebar ul {
     height: 100%;
@@ -242,7 +298,7 @@ body {
 #current_content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width:100%;
 }
 
 #current_content.active {
@@ -252,7 +308,7 @@ body {
 #current_content h1{
     font-size: 2em;
     text-align: center;
-    padding-top: 1em;
+    padding-top: 4em;
     margin-bottom: 0px;
     padding-right: 2%;
 }
@@ -261,10 +317,10 @@ body {
     visibility: hidden;
 }
 
-#current_content .inside_content .card_info .checkbox {
+#current_content .inside_content .card_info input[type="checkbox"]:not(:checked) + label {
     margin: auto;
     padding: 0.8em 1.6em;
-    background-color: rgb(32, 42, 69);
+    background-color: #202A45;
     color: white;
     font-size: 1.5em;
     border-radius: 5px;
@@ -283,16 +339,27 @@ body {
     padding-bottom: 0.2em;
     text-decoration: underline;
 }
+.checkbox__input:checked + label{
+    background-color: var(--light_blue);
+    margin: auto;
+    padding: 0.8em 1.6em;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
 
 #progress_bar {
-    position: sticky;
-    /* width: 100%; */
+    /*position: sticky;*/
+    width: 50%; 
     display: flex;
     height: 17vh;
     flex-direction: column;
     justify-content: center;
+    top: 0;
+    left: 0;
     background: white;
     margin: 2em;
+    margin-left: 24em;
     border-radius: 10px;
     padding: 2em;
     box-shadow: rgb(32 42 69 / 60%) 0em 15px 2em 3px;
@@ -309,6 +376,7 @@ body {
 .progress{
     /*margin: 100px 20px 150px 700px;*/
     width: 50em;
+    margin: auto;
     background: #8ac7db ;
     border-radius: 25px;
 }
@@ -372,7 +440,7 @@ body {
 
 .card_img {
     margin: auto;
-    position: relative;
+    /*position: relative;*/
     width: 100%;
     display: block;
     margin-left: auto;
