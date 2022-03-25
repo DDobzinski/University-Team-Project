@@ -59,7 +59,7 @@ session_start();
 					<li id="course_filter">
 						<h3>Course</h3>
 						<select name="course" id="course_selector">
-							<option value="none">Do not filter by nationality</option>
+							<option value="none">Do not filter by course</option>
 							<option value="accounting">Accounting</option>
 							<option value="actuarial Science and Mathematics">Actuarial Science and Mathematics </option>
 							<option value="adult Nursing">Adult Nursing </option>
