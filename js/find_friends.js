@@ -61,4 +61,3 @@ function ajax_req(data) {
 		})
 	})
 }
-

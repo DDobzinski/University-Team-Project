@@ -104,27 +104,57 @@ foreach($user_info_arr as $user => $user_data) {
 	}
 }
 
+$hobbies_array = [
+	"1" => "sports",
+	"2" => "baking",
+	"3" => "art",
+	"4" => "gaming",
+	"5" => "music",
+	"6" => "dance",
+	"7" => "photography",
+	"8" => "singing",
+	"9" => "electronics",
+	"10" => "biking",
+	"11" => "reading",
+	"12" => "fishing",
+	"13" => "traveling",
+	"14" => "cars",
+	"15" => "yoga",
+	"16" => "hiking"
+];
 
 $html = "";
 foreach($user_arr_fulfil as $user => $user_data) {
 	$username = $user;
 	$firstname = $user_data["firstname"];
 	$lastname = $user_data["lastname"];
-	$nationality = $user_data["nationality"];
-	$course = $user_data["course"];
-	$accommodation = $user_data["accommodation"];
-	$biography = $user_data["biography"];
-	$hobbies = $user_data["hobbies"];
+	$nationality = ucwords($user_data["nationality"]);
+	$course = ucwords($user_data["course"]);
+	$accommodation = ucwords($user_data["accommodation"]);
+	$biography = ucwords($user_data["biography"]);
+
+	$hobbies_exploded = explode(",", $user_data["hobbies"]);
+	$hobbies = "";
+
+	foreach ($hobbies_exploded as $hobby) {
+		$hobbies .= $hobbies_array["$hobby"] . ", ";
+	}
+
+	$hobbies = substr($hobbies, 0, -2);
 
 	$html .= "
 	<div class='user_box'>
-		<h3>$username</h3>
-		<p>Name: $firstname $lastname</p>
-		<p>Nationality: $nationality</p>
-		<p>Course: $course</p>
-		<p>Accommodation: $accommodation</p>
-		<p>Biography: $biography</p>
-		<p>Hobbies: $hobbies</p>
+		<div class='left_side'>
+			<h3>$username</h3>
+			<p class='name'>Name: $firstname $lastname</p>
+			<p class='nationality'>Nationality: $nationality</p>
+			<p class='accommodation'>Accommodation: $accommodation</p>
+		</div>
+		<div class='right_side'>
+			<p class='course'>Course: $course</p>
+			<p class='hobbies'>Hobbies: $hobbies</p>
+			<p class='biography'>Biography: $biography</p>
+		</div>
 	</div>";
 }
 

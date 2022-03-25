@@ -139,7 +139,6 @@ if (isset($_POST["logout_button"])) {
 						<a href="#"><i class='bx bxl-twitter'></i></a>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

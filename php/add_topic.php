@@ -9,4 +9,4 @@ if (isset($_POST)) {
 	add_topic($topic_name);
 }
 
-?>t
+?>
