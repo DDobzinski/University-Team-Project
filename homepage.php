@@ -146,7 +146,8 @@ if (isset($_POST["logout_button"])) {
 
 		<div id="current_content">
 			<div id="progress_bar" style="display:none;">
-				<span>Completion Rate:</span>
+				<h3 style="color: dimgrey;">Your progress</h3>
+				<h2 style="color: #202A45; padding-bottom:11px" id="task_remaining">10 tasks left to be completed</h2>
 				<div class="progress">
 					<div class="progress_fill">
 					<div class="progress_value">65%</div>

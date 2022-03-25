@@ -60,7 +60,7 @@ function open_content(section) {
 		} else {
 			document.getElementById(prefix + section_ids[j]).style.display = "block";
 			document.getElementById('progress_bar').style.display = "flex";
-			document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF";
+			document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF";			
 		}
 	}
 }
@@ -102,17 +102,14 @@ class progressBar{
 
 		if (cb.checked){
 			this.value +=10;
-			console.log(cb.checked);
 			checkbox[dict[id]].style.backgroundColor = "#63B4CF";
 			checkbox[dict[id]].innerText = "Undone?";
-			console.log(cb.checked);
 
 		}
 		else if (!cb.checked){
 			this.value -=10;
 			checkbox[dict[id]].style.backgroundColor = "#202A45";
 			checkbox[dict[id]].innerText = "Done!";
-			console.log(cb.checked);
 		}
 
 		this.update();
@@ -123,6 +120,8 @@ class progressBar{
 	// 	this.valueElem.textContent = this.value + '%';
 	// }
 		update(){
+			const tasks = (100 - this.value) / 10;
+			document.getElementById("task_remaining").innerText = tasks + " tasks left to be completed";
 			const precentage = this.value + '%';
 			this.fillElem.style.width = (this.value/2) + 'em';
 			this.valueElem.textContent = precentage;
