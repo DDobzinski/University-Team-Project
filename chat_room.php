@@ -65,7 +65,7 @@ if (isset($_POST["logout_button"])) {
 				<h2>Topics</h2>
 				<form method="post" class="add_topic" id="add_topic">
 					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-					<input type="submit" name="add_topic" value="Create new topic">
+					<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
 				</form>
 				<ul id="topics_list">
 					<?php
@@ -82,7 +82,7 @@ if (isset($_POST["logout_button"])) {
 							<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p> -->
 							<form method="post" class="add_topic add_topic_intro">
 								<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-								<input type="submit" name="add_topic" value="Create new topic">
+								<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
 							</form>
 							<hr>
 						</span>

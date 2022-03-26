@@ -32,7 +32,7 @@
   flex-direction: row-reverse;
 }
 
-#navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link {
+#navbar #login_button, #navbar #logout_button, #homepage_link, #profile_page_link, #chat_room_link, #find_friends_link{
   margin: 0.2em 1.5em;
   width: 5em;
   height: 80%;
@@ -53,7 +53,7 @@
   border: 1px solid #63B4CF;
 }
 
-#profile_page_link , #chat_room_link, #homepage_link{
+#profile_page_link , #chat_room_link, #homepage_link,#find_friends_link {
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
@@ -77,6 +77,7 @@
   background-color: var(--light_blue);
   border-radius: 20px;
   transition: all 0.5 ease;
+  color: white;
 }
 
 
