@@ -220,7 +220,23 @@ var() around the name such as var(--grey) in place of any colour. */
 	border: 1px solid var(--light_blue);
 	border-radius: 3px;
 }*/
-
+#chat_room_link_highlight{
+	color: var(--light_blue);
+	font-weight: 900;
+	font-style: italic;
+	margin: 0.2em 1.5em;
+  width: 5em;
+  height: 80%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  width: 7em;
+}
 #homepage_link a {
 	text-decoration: none;
 	color: white;

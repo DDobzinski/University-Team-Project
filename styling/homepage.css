@@ -515,3 +515,21 @@ body {
 .footer_col ul li a .logo_footer{
     width: 100%;
 }
+
+  #homepage_link_highlight{
+    color: var(--light_blue);
+    font-weight: 900;
+    font-style: italic;
+    margin: 0.2em 1.5em;
+    width: 5em;
+    height: 80%;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    width: 7em;
+}
