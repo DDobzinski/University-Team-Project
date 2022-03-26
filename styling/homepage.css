@@ -88,10 +88,12 @@ body {
     background: #202A45;
     padding: 6px 14px;
     transition: all 0.5s ease;
+    position: fixed;
+    z-index: 1000;
 }
 
 .sidebar.active {
-    width: 20em;
+    width: 15vw;
     height: 100em;
 }
 
@@ -103,12 +105,19 @@ body {
     }
 }
 
+#landing_page, .info {
+    display: block;
+    /*left: 15vw;*/
+    width: 85vw;
+    position: relative;
+
+}
+
 #landing_page .landing_content {
     background-color: white;
     box-shadow: 0px 0px 3em 0.7em rgb(0 0 0 / 20%);
     color: #202A45;
-    margin: 100px;
-    width: 83%;
+    margin: 5em;
     border-radius: 10px;
     /* height: 100%; */
     padding: 2em;
@@ -181,7 +190,7 @@ body {
 .sidebar #nav_list {
     margin-left: 1em;
    /* height: 100em;*/
-   padding-top: 3em;
+   padding-top: 1em;
 }
 
 .sidebar #btn {
@@ -207,7 +216,7 @@ body {
 .sidebar ul li{
     border-radius: 20px;
     width: 100%;
-    margin-top: 1.4em;
+    margin-top: 1em;
     list-style: none;
     line-height: 50px;
     font-size: 20px;
@@ -296,9 +305,10 @@ body {
 /* Main page styling for homepage and chatroom */
 
 #current_content {
+    left: 15vw;
+    position: relative;
     display: flex;
     flex-direction: column;
-    width:100%;
 }
 
 #current_content.active {
@@ -349,17 +359,17 @@ body {
 }
 
 #progress_bar {
-    /*position: sticky;*/
-    width: 50%; 
+    position: relative;
+    width: 50vw;
+    /*left: 15vw;*/ 
     display: flex;
     height: 17vh;
     flex-direction: column;
     justify-content: center;
     top: 0;
-    left: 0;
     background: white;
-    margin: 2em;
-    margin-left: 24em;
+    margin: 2em auto;
+    /*margin-left: 24em;*/
     border-radius: 10px;
     padding: 2em;
     box-shadow: rgb(32 42 69 / 60%) 0em 15px 2em 3px;

@@ -61,17 +61,25 @@ $(document).ready(function() {
 	});
 	$("#dropdown_button_accommodation").on('click', function() {
 		if ($("#accommodation_boxes").css("display") == "none") {
-			$("#accommodation_boxes").css("display", "block");	
+			$("#accommodation_boxes").css("display", "block");
+			$("#dropdown_button_accommodation").removeClass("bx-expand-vertical");
+			$("#dropdown_button_accommodation").addClass("bx-collapse-vertical");
 		} else {
 			$("#accommodation_boxes").css("display", "none");
+			$("#dropdown_button_accommodation").removeClass("bx-collapse-vertical");
+			$("#dropdown_button_accommodation").addClass("bx-expand-vertical");
 		}
 	});
 
 	$("#dropdown_button_hobbies").on('click', function() {
 		if ($("#hobbies_boxes").css("display") == "none") {
-			$("#hobbies_boxes").css("display", "block");	
+			$("#hobbies_boxes").css("display", "block");
+			$("#dropdown_button_hobbies").removeClass("bx-expand-vertical");
+			$("#dropdown_button_hobbies").addClass("bx-collapse-vertical");
 		} else {
 			$("#hobbies_boxes").css("display", "none");
+			$("#dropdown_button_hobbies").removeClass("bx-collapse-vertical");
+			$("#dropdown_button_hobbies").addClass("bx-expand-vertical");	
 		}
 	});
 });

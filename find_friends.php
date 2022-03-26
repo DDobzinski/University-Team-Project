@@ -19,6 +19,7 @@ if (!isset($_SESSION["logged_in"])) {
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/find_friends.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/find_friends.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +33,7 @@ if (!isset($_SESSION["logged_in"])) {
 			<form method="post" id="logout_form">
 					<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
 			</f	orm>
-			<a class="navbar_button" id=`"profile_page_link" href="profile_page.php">Go to profile</a>
+			<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
 			<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 			<a class="navbar_button" id="homepage_link" href="find_friends.php">Find Friends</a>
@@ -41,7 +42,6 @@ if (!isset($_SESSION["logged_in"])) {
 		<div id="main_content" align="center">
 			<div id="sidebar">
 				<h2 id="filters_title">Filters</h2>
-				<hr>
 				<ul id="filters">
 					<li id="course_filter">
 						<h3 class="filter_name">Course</h3>
@@ -150,7 +150,7 @@ if (!isset($_SESSION["logged_in"])) {
 					</li>
 
 					<li id="accommodation_filter">
-						<h3 class="filter_name">Accommodation<span id="dropdown_button_accommodation">↓</span></h3>
+						<h3 class="filter_name">Accommodation<i id="dropdown_button_accommodation" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3>
 						<div id="accommodation_boxes">
 							<div class="flex_row">
 								<input type="checkbox" name="ashburne Hall">
@@ -235,7 +235,7 @@ if (!isset($_SESSION["logged_in"])) {
 						</div>
 					</li>
 					<li id="hobbies_filter">
-						<h3 class="filter_name">Hobbies<span id="dropdown_button_hobbies">↓</span></h3>
+						<h3 class="filter_name">Hobbies<i id="dropdown_button_hobbies" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3>
 						<div id="hobbies_boxes">
 							<div class="flex_row">
 								<input type="checkbox" name="hobbies_sports" value='1'>

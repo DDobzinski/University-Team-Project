@@ -4,29 +4,16 @@
 }
 
 #sidebar {
-	width: 25vw;
+	width: 20vw;
+	max-height: 92vh;
+	position: fixed;
 	border-right: 3px solid var(--dark_blue);
 }
 
-#accommodation_filter label, #accommodation_filter input {
-	float: left;
-}
-
-#accommodation_filter label, #accommodation_filter input {
-	display: inline-block;
-}
-
-#accommodation_filter label {
-	width: 70%;
-	float: left;
-}
-
-#accommodation_filter input {
-	width: 20%;
-}
-
 #inside_content {
-	width: 100%;
+	width: 80vw;
+	left: 20vw;
+	position: relative;
 }
 
 .user_box {
@@ -35,6 +22,7 @@
 	margin: 1em;
 	display: flex;
 	flex-direction: row;
+	width: 80%;
 }
 
 .user_box .left_side, .user_box .right_side {
@@ -60,10 +48,22 @@
 	margin-left: 1em;
 }
 
+#filters_title {
+	padding: 1em 3em;
+	width: 80%;
+	text-align: center;
+	letter-spacing: 0.1em;
+	border-bottom: 2px solid var(--dark_blue);
+}
+
+
 .filter_name {
+	position: relative;
 	float: left;
 	margin-top: 1em;
+	padding-left: 2em;
 	width: 100%;
+	text-align: left;
 }
 
 #course_selector, #nationality_selector {
@@ -76,44 +76,52 @@
 	margin-top: 1em;
 }
 
-#accommodation_filter {
+#accommodation_filter, #hobbies_filter {
 	display: flex;
 	flex-direction: column;
 }
 
-#dropdown_button {
-	font-size: 1.5em;
-	font-weight: 700;
+#accommodation_filter:hover, #hobbies_filter:hover {
+	color: var(--dark_blue);
 	cursor: pointer;
 }
 
-#accommodation_boxes {
+
+#dropdown_button_accommodation, #dropdown_button_hobbies {
+	position: relative;
+	font-weight: bold;
+	cursor: pointer;
+	float: right;
+	right: 2em;
+}
+
+#accommodation_boxes, #hobbies_boxes {
 	display: flex;
 	flex-direction: column;
 	display: none;
+	margin-top: 1em;
+	padding-left: 1em;
 }
 
-#hobbies_filter {
-	display: flex;
-	flex-direction: column;
-}
-
-#hobbies_boxes {
-	display: flex;
-	flex-direction: column;
-	display: none;
-}
 
 .flex_row {
 	display: flex;
 	flex-direction: row;
 }
 
+.flex_row label, .flex_row input {
+	float: left;
+	display: inline-block;
+}
+
 .flex_row input {
 	margin: auto 1em;
+	width: 20%;
 }
 
 .flex_row label {
 	text-align: left;
 	margin-left: 1em;
+	width: 70%;
+	float: left;
 }
