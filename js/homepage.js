@@ -41,7 +41,26 @@ window.onload = function(){
 		current_content.classList.toggle("active");
 		tooltip_activation();
 
+		var sections = document.getElementById("nav_list").children;
+		var section_ids = [];
+
+		for (var i = 0; i < sections.length; i++) {
+			section_ids.push(sections[i].id);
+		}
+
+		for (var j = 0; j < section_ids.length; j++) {
+			if(document.getElementsByClassName("sidebar")[0].classList.value == "sidebar active") {
+				console.log("sidebar active, trying to make the label background colour");
+				if (document.getElementById(section_ids[j]).children[0].children[0].style.backgroundColor == 'rgb(99, 180, 207)') {
+
+					document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF";
+				}
+			} else {
+				document.getElementById(section_ids[j]).style.backgroundColor = "#202A45";
+			}
+		}
 	}
+
 	window.in_progress =  new progressBar(document.querySelector('.progress'),0);
 	var checked_checkboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
 	window.in_progress.setValue(checked_checkboxes * 10);
@@ -63,11 +82,23 @@ function open_content(section) {
 	for (var j = 0; j < section_ids.length; j++) {
 		if (section_ids[j] != section) {
 			document.getElementById(prefix + section_ids[j]).style.display = "none";
-			document.getElementById(section_ids[j]).style.backgroundColor = "#202A45";
+			console.log(document.getElementsByClassName("sidebar")[0].classList.value);
+			if (document.getElementsByClassName("sidebar")[0].classList.value == "sidebar active") {
+				document.getElementById(section_ids[j]).style.backgroundColor = "#202A45";
+				document.getElementById(section_ids[j]).children[0].children[0].style.backgroundColor = "#202A45";
+			} else {
+				document.getElementById(section_ids[j]).children[0].children[0].style.backgroundColor = "#202A45";
+			} 
 		} else {
 			document.getElementById(prefix + section_ids[j]).style.display = "block";
 			document.getElementById('progress_bar').style.display = "flex";
-			document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF";
+
+			if (document.getElementsByClassName("sidebar")[0].classList.value == "sidebar active") {
+				document.getElementById(section_ids[j]).style.backgroundColor = "#63B4CF"
+				document.getElementById(section_ids[j]).children[0].children[0].style.backgroundColor = "#63B4CF";
+			} else {
+				document.getElementById(section_ids[j]).children[0].children[0].style.backgroundColor = "#63B4CF";
+			}
 		}
 	}
 }
@@ -134,7 +165,13 @@ class progressBar{
 			this.fillElem.style.width = (this.value/2) + 'em';
 			this.valueElem.textContent = precentage;
 			let tasks = (100 - this.value) / 10;
-			document.getElementById("task_remaining").innerText = tasks + " tasks left to be completed";
+
+			if (tasks == 1 ) {
+				document.getElementById("task_remaining").innerText = tasks + " task left to be completed";
+			} else {
+				document.getElementById("task_remaining").innerText = tasks + " tasks left to be completed";
+			}
+			
 			
 			if (this.value == 100){
 				document.getElementById('modal_container').style.display = 'inherit';

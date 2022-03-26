@@ -83,7 +83,7 @@ body {
 }
 
 .sidebar {
-    width: 5.5em;
+    width: 5vw;
     height: 100em;
     background: #202A45;
     padding: 6px 14px;
@@ -106,11 +106,11 @@ body {
 }
 
 #landing_page, .info {
-    display: block;
-    /*left: 15vw;*/
     width: 85vw;
-    position: relative;
+}
 
+#current_content.active #landing_page, #current_content.active .info {
+    width: 95vw;
 }
 
 #landing_page .landing_content {
@@ -119,10 +119,8 @@ body {
     color: #202A45;
     margin: 5em;
     border-radius: 10px;
-    /* height: 100%; */
     padding: 2em;
     text-align: center;
-    line-height: max-content;
     animation: 1s ease 0s 1 load_content;
 }
 
@@ -188,9 +186,14 @@ body {
 }*/
 
 .sidebar #nav_list {
-    margin-left: 1em;
+    margin-left: 0.3em;
    /* height: 100em;*/
    padding-top: 1em;
+   margin-top: -1em;
+}
+
+.sidebar.active #nav_list {
+    margin-top: 2em;
 }
 
 .sidebar #btn {
@@ -264,7 +267,7 @@ body {
     text-decoration: none;
     transition: all 0.4s ease;
     border-radius: 12px;
-    padding-left: 0.5em;
+    /*padding-left: 0.5em;*/
     padding-right: 0.5em;
     border-radius: 10px;
 }
@@ -272,7 +275,7 @@ body {
 .sidebar ul li a i{
     color: #fff;
     display: flex;
-    align-items: center;
+    justify-content: center;
     text-decoration: none;
     transition: all 0.4s ease;
     border-radius: 12px;
@@ -312,7 +315,8 @@ body {
 }
 
 #current_content.active {
-    width: 95%;
+    width: 95vw;
+    left: 5vw;
 }
 
 #current_content h1{
