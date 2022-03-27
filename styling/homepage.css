@@ -190,6 +190,9 @@ body {
    /* height: 100em;*/
    padding-top: 1em;
    margin-top: -1em;
+   /*overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;*/
 }
 
 .sidebar.active #nav_list {

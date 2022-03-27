@@ -1,24 +1,6 @@
 /* These are the variables to use for the colours so if we change the colour scheme
 we can easily change every element in the stylesheet, to use each colour, just place
 var() around the name such as var(--grey) in place of any colour. */
-:root {
-	--grey: #343434;
-	--dark_blue: #202A45;
-	--light_blue: #63B4CF;
-	--white: #FFFFFF;
-}
-
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	font-family: "DM Sans", sans-serif;
-	font-size: 15px;
-	margin: 0px;
-}
 
 
 .modal {

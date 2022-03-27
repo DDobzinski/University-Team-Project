@@ -218,7 +218,7 @@ body {
 }
 
 #change_profile_form {
-	margin: 6em 20em;
+	margin: 12em 20em;
 	display: flex;
 	flex-direction: row;
 }
@@ -259,8 +259,8 @@ body {
 }
 
 #save_changes_button {
-    width: 10%;
-    height: 5%;
+   	width: 20%;
+		height: 9%;
   	padding: 1em;
     margin-top: 0em;
     color: white;
@@ -447,8 +447,8 @@ body {
 
 .container{
 	background: white;
-	width: 80%;
-	height: 70vh;
+	width: 100%;
+	height: 90vh;
 	margin: 0 auto;
 	position: relative;
 	/*margin-top: 10%;*/
@@ -457,7 +457,7 @@ body {
 	flex-direction: row;
   }
   .left_box{
-	height: 80vh;
+	height: 100vh;
 	width: 12vw;
     z-index: 10;
     background-color: var(--light_blue);
