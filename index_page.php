@@ -90,11 +90,11 @@ Also when you're adding images please can you use an alt tag just in case the im
 				<ul>
 					<li><a style="font-size:50px" id="animation1"><b>What is linkuni about?</b></a></li>
 					<li><a id="animation2">Linkuni is a social platform which aims to connect University of Manchester students across the globe</a></li>
-					<li><a style="font-size:50px" id="animation3"><b>We have...</b></a></li>
-					<li><a id="animation4">A to-do-list contains what you need to do after you arrive in the UK.</a></li>
-					<li><a id="animation5">A personal profile contains information that you can choose to make public.</a></li>
-					<li><a id="animation6">A friend finder for making new friends with the same hobbies.</a></li>
-					<li><a id="animation7">A chatroom to discuss trending topics and the latest news with other users.</a></li>
+					<li><a style="font-size:50px" id="animation3"><b>We have a...</b></a></li>
+					<li><a id="animation4">to-do-list to ensure a smooth transition into university life</a></li>
+					<li><a id="animation5">customisable profile page</a></li>
+					<li><a id="animation6">search friend page which allows users of similar interests to connect</a></li>
+					<li><a id="animation7">chatroom for users to collaborate</a></li>
 				</ul>
 			</div>
 
