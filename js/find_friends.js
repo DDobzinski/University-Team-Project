@@ -16,15 +16,26 @@ function get_vals() {
 		}
 	}
 
-	var hobbies_filter = document.getElementById("hobbies_filter").children;
+	var hobbies_filter_raw = document.getElementsByClassName("flex_row_hobby");
+	var hobbies_filter = new Array();
 	var checked_hobbies = Array("");
-
-	for (var j = 0; j < hobbies_filter.length; j++) {
-		if (hobbies_filter[j].checked == true && hobbies_filter[j].type == "checkbox") {
-			checked_hobbies.push(hobbies_filter[j].value);
-		}
+	
+	for (var i = 0; i < hobbies_filter_raw.length; i++) {
+		hobbies_filter.push(hobbies_filter_raw[i].children);
 	}
 
+	for (var j = 0; j < hobbies_filter.length; j++) {
+		
+		
+			if (hobbies_filter[j][0].checked == true && hobbies_filter[j][0].type == "checkbox") {
+				
+				checked_hobbies.push(hobbies_filter[j][0].value);
+				
+			}
+		
+		
+	}
+	
 	var nationality = document.getElementById("nationality_selector").value;
 
 	var data = Array(course, checked_accommodation, checked_hobbies, nationality);

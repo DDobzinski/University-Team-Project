@@ -87,10 +87,32 @@ foreach($user_info_arr as $user => $user_data) {
 		$could_add_hobby = false;
 
 		foreach($hobbies as $hobby) {
-			if ($hobby != "") {
-				if (strpos($user_data["hobbies"], $hobby) != false and $hobby != "") {
-					$could_add_hobby = true;
+			if ($hobby != "" and $user_data["hobbies"] != "") {
+				if (strlen($hobby) == 1) {
+					if(!is_numeric(substr($user_data["hobbies"], strpos($user_data["hobbies"], $hobby) - 1, 1)))
+					{
+						if(strpos($user_data["hobbies"], $hobby) + 1 < strlen($user_data["hobbies"]))
+						{
+							if(!is_numeric(substr($user_data["hobbies"], strpos($user_data["hobbies"], $hobby) + 1, 1)))
+							{
+							$could_add_hobby = true;
+							}
+						}else
+						{
+							$could_add_hobby = true;
+						}
+						
+					}
+					
+						
 				}
+				else
+				{
+					if (strpos($user_data["hobbies"], $hobby) != false and $hobby != "") {
+						$could_add_hobby = true;
+					}
+				}
+				
 			}
 		}
 
