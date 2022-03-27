@@ -1,4 +1,6 @@
 #main_content {
+	position: relative;
+	top: 8vh;
 	display: flex;
 	flex-direction: row;
 }

@@ -31,7 +31,7 @@
   left: 0px;
   height: 8vh;
   background-color: #202A45;
-  z-index: 1;
+  z-index: 1000;
   display: flex;
   flex-direction: row-reverse;
 }
