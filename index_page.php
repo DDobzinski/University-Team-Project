@@ -86,12 +86,20 @@ Also when you're adding images please can you use an alt tag just in case the im
 			<!-- Can insert an image here of the logo -->
 			<img class="logo_image" src="images/linkuni_logo_blue.png" alt="Logo image">
 
-			<h1>Welcome</h1>
-
 			<div id="main_information">
-				<h2> What is linkuni about?</h2>
-				<p>Linkuni is a social platform which aims to connect University of Manchester students across the globe</p>
+				<ul>
+					<li><a style="font-size:50px" id="animation1"><b>What is linkuni about?</b></a></li>
+					<li><a id="animation2">Linkuni is a social platform which aims to connect University of Manchester students across the globe</a></li>
+					<li><a style="font-size:50px" id="animation3"><b>We have...</b></a></li>
+					<li><a id="animation4">A to-do-list contains what you need to do after you arrive in the UK.</a></li>
+					<li><a id="animation5">A personal profile contains information that you can choose to make public.</a></li>
+					<li><a id="animation6">A friend finder for making new friends with the same hobbies.</a></li>
+					<li><a id="animation7">A chatroom to discuss trending topics and the latest news with other users.</a></li>
+				</ul>
 			</div>
+
+
+
 
 			<div id="join_area">
 				<h2>Get started</h2>
