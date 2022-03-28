@@ -83,6 +83,13 @@ if (isset($_POST["logout_button"])) {
 			</div>
 					
 			<ul id="nav_list">
+				<li id="landing_page"> 
+					<a onclick="open_content('landing_page')">
+						<i class='bx bx-home-smile'></i>
+						<span class="links_GP" alt="GP">Home</span>
+					</a> 
+					<span class="tooltip">General Practitioner</span>
+				</li>
 				<li id="gp"> 
 					<a onclick="open_content('gp')">
 						<i class='bx bx-clinic'></i>
@@ -169,7 +176,7 @@ if (isset($_POST["logout_button"])) {
 				</div>
 			</div>
 
-			<div id="landing_page" style="display:block;">
+			<div id="content_landing_page" >
 				<div class="landing_content">
 					<div class="row">
 						<div class="column_left">
@@ -185,45 +192,45 @@ if (isset($_POST["logout_button"])) {
 						<h2> Your tasks: </h2>
 					</div>
 					<div class="row">
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['1'] == '1') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Sign up for GP</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['2'] == '2') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Sign up for UK Bank</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['3'] == '3') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Find Accommodation</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['4'] == '4') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Collect BRP</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['5'] == '5') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Register with the police</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['6'] == '6') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Student ID Collection</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['7'] == '7') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Join a society</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['8'] == '8') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Tour Campus</p>
 						</div>
-						<div class="column">
+						<div class="column" style="<?php echo ($tasks_array['9'] == '9') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Set up Blackboard</p>
 						</div>
-						<div class="column" style="font-size: 0.90em;">
+						<div class="column" style="font-size: 0.90em;<?php echo ($tasks_array['10'] == '10') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
 							<p>Set up payment for tuition fees</p>
 						</div>

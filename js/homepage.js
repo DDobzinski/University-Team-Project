@@ -69,7 +69,6 @@ window.onload = function(){
 }
 
 function open_content(section) {
-	document.getElementById("landing_page").style.display="none";
 	
 	var sections = document.getElementById("nav_list").children;
 	var section_ids = [];
