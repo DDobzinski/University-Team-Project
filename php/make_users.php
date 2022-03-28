@@ -35,7 +35,7 @@ for ($i = 0; $i < 250; $i++) {
 	$accommodation = $accommodations[random_int(0, sizeof($accommodations)-1)];
 	$course = $courses[random_int(0, sizeof($courses))];
 	$nationality = $nationlities[random_int(0, sizeof($nationlities)-1)];
-	$bio = "Hey, my name is $firstname $lastname, I am studying $course, and I am going to live at $accommodation. Any fellow . " $nationality . "s want to meet up?";
+	$bio = "Hey, my name is $firstname $lastname, I am studying $course, and I am going to live at $accommodation. Any fellow " . $nationality . "s want to meet up?";
 
 	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
