@@ -62,11 +62,12 @@ if (isset($_POST["logout_button"])) {
 		<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic</p> -->
 		<div id="main_content" class="main_home">
 			<div id="navigation_pane" style="display:none">
-				<h2>Topics</h2>
+				
 				<form method="post" class="add_topic" id="add_topic">
 					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
 					<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
 				</form>
+				<h2>Topics</h2>
 				<ul id="topics_list">
 					<?php
 						echo display_topics();
