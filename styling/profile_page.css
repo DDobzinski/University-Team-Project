@@ -178,8 +178,8 @@ body {
 }
 
 #current_content h2 {
-	/*position: relative;
-	left: 5%;*/
+	position: relative;
+	/* left: 5%; */
 }
 
 #current_content .info {
@@ -463,7 +463,7 @@ body {
 	width: 12vw;
 	z-index: 10;
 	background-color: var(--light_blue);
-	position position: relative;
+	position: relative;
 	margin-top: -5vh;
 	margin-left: 3vw;
 	box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);

@@ -59,11 +59,11 @@ if (isset($_POST["logout_button"])) {
 		<div class="container">
 			<div class="left_box">
 				<nav style="margin-top: 5m;">
-					<a onclick="tabs(0)" class="tab active">
+					<a onclick="tabs(0)" id="main_profile" class="tab active">
 						<i class='bx bxs-user'></i>
 						<p>Main profile information.</p>
 					</a>
-					<a onclick="tabs(1)" class="tab">
+					<a onclick="tabs(1)" id="changes" class="tab">
 						<i class='bx bx-book-content'></i>
 						<p>Change your biography, course and accommodation.</p>
 					</a>
@@ -594,6 +594,15 @@ if (isset($_POST["logout_button"])) {
 
 		})
 		tab[panelIndex].style.display = "block";
+
+		if (panelIndex == 0) {
+			document.getElementById("changes").classList.remove("active");
+			document.getElementById("main_profile").classList.add("active");
+		}
+		else if (panelIndex == 1) {
+			document.getElementById("changes").classList.add("active");
+			document.getElementById("main_profile").classList.remove("active");
+		}
 	}
 	tabs(0);
 </script>
