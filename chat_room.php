@@ -54,7 +54,7 @@ if (isset($_POST["logout_button"])) {
 <div id="main">
 	<div class="left">
 		<h1>Welcome to the chatroom!</h1>
-		<img src="images/friends.png" class="chat_pic" width="600em" height="600em">
+		<img src="images/friends.png" class="chat_pic" width="400em" height="400em">
 		<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
 	</div>
 
@@ -77,21 +77,25 @@ if (isset($_POST["logout_button"])) {
 				<div id="basic_content">
 					<div id="intro_content">
 						<span align="center">
-							<h1>Welcome to the chatroom!</h1>
-							<h2>You can pick a topic from the list here, already created by other students, or make a new topic here:</h2>
-							<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic here:</p> -->
+							<h2>You can pick a topic from the list here, already created by other students, or make a new topic here <i class='bx bx-down-arrow-alt'></i></h2>
 							<form method="post" class="add_topic add_topic_intro">
 								<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
 								<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
 							</form>
-							<hr>
+							<!-- <hr> -->
 						</span>
 
-						<h3>Topics:</h3>
-						<div id="topics_table_div">
-							<?php
-								echo display_topic_table();
-							?>
+						<div class="choose_topic">
+							<h3>Available Topics</h3>
+
+							<div id="topics_table_div">
+								<div class="table_content">
+								
+								<?php
+									echo display_topic_table();
+								?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

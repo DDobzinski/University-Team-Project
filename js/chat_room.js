@@ -1,3 +1,8 @@
+// function scrolldown(){ window.setInterval(function() {
+//   var elem = document.getElementById('box');
+//   elem.scrollTop = elem.scrollHeight;
+// }, 500);}
+
 function open_topic(section) {
 	var nav_pane = document.getElementById('navigation_pane');
 	var main_content = document.getElementById("basic_content");
@@ -39,3 +44,4 @@ function open_reply(chat_id) {
 		reply.style.display = "none";
 	}
 }
+

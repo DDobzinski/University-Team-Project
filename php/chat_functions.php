@@ -92,19 +92,26 @@ function display_content_divs() {
 		$topic_get_return = get_topic($topics[$i]["id"]);
 
 		if ($topic_get_return == "") {
-			$topic_get_return = "<h3>There are no posts, add the first above!</h3>";
+			$topic_get_return = "<h3>There are no posts, be the first to say hello!</h3>";
 		}
 
 		$html .= "
-		<div id='$content_id' style='display:none;' class='forum chat'>
-			<form method='post'> 
-				<label for='text_box'>Add a post to the chat:</label>
-				<textarea name='text_box' type='text' id='text_box'></textarea>
-				<input type='submit' name='$form_name' value='Submit post'>
-			</form>
-			<div class='forum_section chat_section'>
-				$topic_get_return
+		<div  id='$content_id' style='display:none;' class='forum chat'>
+			<div class='boxout' id='boxout'>
+				<div class='box' id='box'>
+					<div class='forum_section chat_section'>
+						$topic_get_return
+					</div>
+				</div>
 			</div>
+			<div class='chat_footer'>
+				<form method='post'> 
+					<label for='text_box' id='form_label'>Add a post to the chat:</label>
+					<textarea name='text_box' type='text' id='text_box'></textarea>
+					<label><i class='bx bx-send'><input type='submit' name='$form_name' value=''></i></label>
+				</form>
+			</div>
+			
 		</div>";
 	}
 
