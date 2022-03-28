@@ -495,7 +495,10 @@ if (isset($_POST["logout_button"])) {
 											<input class="hobbies_checkbox" type='checkbox' id='hobbies_hiking' name='users_hobbies[]' value='16' <?php echo ($hobbies_user_array['16'] == '16') ? 'checked="checked"' : '';?>>
 											<label for="hobbies_hiking">Hiking</label>
 										</div>
-							
+							<div> 
+								<!-- This button does not do anything, just adding one to make it more intuitive -->
+								<input type="button" onclick="" class="confirm_button" value="Confirm">
+							</div>
 						</div>
 					</div>
 					<!-- make a modal here !-->
