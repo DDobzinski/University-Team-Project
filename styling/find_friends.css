@@ -157,7 +157,7 @@
 }
 
 #intro_content {
-	position: relative;
+	position: sticky;
 	top: 20vh;
 	width: 80%;
 	color: var(--dark_blue);
@@ -178,4 +178,15 @@
 	position: relative;
 	float: left;
 	margin-top: 1em;
+}
+
+.image {
+	padding-top: 1em;
+	width: 100%;
+	height: 100%;
+}
+
+h1 {
+    font-size: 2.7em;
+    margin-top: 35px;
 }
