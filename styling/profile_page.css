@@ -218,7 +218,7 @@ body {
 }
 
 #change_profile_form {
-	margin: 12em 20em;
+	margin: 8em 20em;
 	display: flex;
 	flex-direction: row;
 }
@@ -246,6 +246,19 @@ body {
 	width:  80%;
 }
 
+#change_profile_form textarea {
+	box-sizing: border-box;
+	border: 1px solid var(--dark_blue);
+	border-radius: 10px;
+	height: 18vh;
+	padding: 1em;
+	border: none;
+	background-color: #E8E8E8;
+	font-family: "DM Sans", sans-serif;
+	font-size: 13px;
+}
+
+
 #hobbies_button {
 	font-family: "DM Sans", sans-serif;
 	background-color: var(--light_blue);
@@ -259,34 +272,23 @@ body {
 }
 
 #save_changes_button {
-   	width: 20%;
-		height: 9%;
-  	padding: 1em;
-    margin-top: 0em;
-    color: white;
-    border: 1px solid var(--dark_blue);
-    border-radius: 5px;
-    background-color: var(--dark_blue);
-    cursor: pointer;
-    text-align: center;
-
-}
-;
-
-
-
-}
-
-#biography {
-	box-sizing: border-box;
-	height: 18vh;
-	width: 60%;
+	width: 20%;
+	height: 9%;
 	padding: 1em;
-	border: none;
-	background-color: #E8E8E8;
-	font-family: "DM Sans", sans-serif;
-	font-size: 13px;
+	margin-top: 0em;
+	color: white;
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	background-color: var(--dark_blue);
+	cursor: pointer;
+	text-align: center;
+
 }
+
+.modal {
+	padding-top: 10em;
+}
+
 
 #change_profile_form .child {
 	width: 50%;
@@ -327,17 +329,17 @@ body {
 	background:#f7f7f7;
 	border-radius:2px;
 	text-align: center;
-  	padding: 3px 0;
- 	display: block;
+	padding: 3px 0;
+	display: block;
 }
 .hobbies_checkbox
 {
-  opacity: 0;
+	opacity: 0;
 }
 /* sets how selected hobbie is modified*/
 .hobbies_checkbox:checked + label {
 	border-color: rgb(0, 140, 255);
-  }
+}
 .dividier {
 	text-align: center;
 	width: 90%;
@@ -448,27 +450,32 @@ body {
 .container{
 	background: white;
 	width: 100%;
-	height: 90vh;
+	height: 80vh;
 	margin: 0 auto;
 	position: relative;
 	/*margin-top: 10%;*/
 	box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
 	display: flex;
 	flex-direction: row;
-  }
-  .left_box{
-	height: 100vh;
+}
+.left_box{	
+	height: 90vh;
 	width: 12vw;
-    z-index: 10;
-    background-color: var(--light_blue);
-    position position: relative;
-    margin-top: -5vh;
-    margin-left: 3vw;
+	z-index: 10;
+	background-color: var(--light_blue);
+	position position: relative;
+	margin-top: -5vh;
+	margin-left: 3vw;
 	box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
 	border: .1em solid #fff;
-  }
-  
-  nav a{
+}
+
+.left_box nav {
+	position: relative;
+	top: 10vh;
+}
+
+nav a{
 	list-style: none;
 	padding: 35px;
 	color: #fff;
@@ -476,53 +483,53 @@ body {
 	font-size: 2em;
 	display: block;
 	transition: all .3 ease-in-out;
-  
-  }
-  
-  nav a p {
-  	font-size: 15px;
-  }
 
-  nav a:hover {
+}
+
+nav a p {
+	font-size: 15px;
+}
+
+nav a:hover {
 	color: black;
 	cursor: pointer;
 	transform: scale(1.2);
-  }
-  nav a:first-child{
+}
+nav a:first-child{
 	margin-top: 7px;
 	font-size: 6em;
-  
-  }
-  nav a.active{
+
+}
+nav a.active{
 	color: black;
-  }
-  .right_box{
+}
+.right_box{
 	/*width: 60%;*/
 	margin-left: 3vw;
 	width: 100%;
-  }
-  .tabShow{
+}
+.tabShow{
 	transition: all .5s ease-in;
 	width: 100%;
 	height: 100%;
 	display: none;
 	padding: 25px;
-  }
+}
 
-  #profile_page_link_highlight{
+#profile_page_link_highlight{
 	color: var(--light_blue);
 	font-weight: 900;
 	font-style: italic;
 	margin: 0.2em 1.5em;
-  width: 5em;
-  height: 80%;
-  font-family: "DM Sans", sans-serif;
-  font-size: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-around;
-  text-decoration: none;
-  width: 7em;
+	width: 5em;
+	height: 80%;
+	font-family: "DM Sans", sans-serif;
+	font-size: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	text-decoration: none;
+	width: 7em;
 }

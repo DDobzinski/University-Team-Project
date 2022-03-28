@@ -58,13 +58,14 @@ if (isset($_POST["logout_button"])) {
 	<form method="post" id="change_profile_form">
 		<div class="container">
 			<div class="left_box">
-				<nav>
+				<nav style="margin-top: 5m;">
 					<a onclick="tabs(0)" class="tab active">
 						<i class='bx bxs-user'></i>
+						<p>Main profile information.</p>
 					</a>
 					<a onclick="tabs(1)" class="tab">
 						<i class='bx bx-book-content'></i>
-						<p>bio and additional info</p>
+						<p>Change your biography, course and accommodation.</p>
 					</a>
 					<!-- <a onclick="tabs(2)" class="tab">
 						<i class='bx bx-question-mark' ></i>
@@ -318,7 +319,7 @@ if (isset($_POST["logout_button"])) {
 					</select>
 					<br>
 					<input type="checkbox" name="private_account" value='1' id="private_account" <?php echo ($data['private_account'] == 1) ? 'checked="checked"' : '';?>>
-					<label for="private_account">Private</label>
+					<label for="private_account">I want my account to be private, checking this means your profile does not show up on the find friends feature.</label>
 					<br>
 					<br>
 					<input type="submit" value="Save Changes" name="save_changes_button" id="save_changes_button">
@@ -437,7 +438,7 @@ if (isset($_POST["logout_button"])) {
 							<option value="theological Studies in Philosophy and Ethics">Theological Studies in Philosophy and Ethics</option>
 							<option value="zoology">Zoology</option>
 					</select><br>
-					<input name="hobbies" onclick="toggle_modal('hobbies');" type="button" value="Hobbies" id="hobbies_button"><br>
+					<input name="hobbies" onclick="toggle_modal('hobbies');" type="button" value="Click me to choose hobbies!" id="hobbies_button"><br>
 					<div id="hobbies_modal" class="modal">
 						<div class="modal_content modal_animate modal_content_hobbies">
 							<p onclick="toggle_modal('hobbies');" class="close" title="login_modal_close">&times;</p>
