@@ -86,20 +86,31 @@ Also when you're adding images please can you use an alt tag just in case the im
 			<!-- Can insert an image here of the logo -->
 			<img class="logo_image" src="images/linkuni_logo_blue.png" alt="Logo image">
 
-			<div id="main_information">
-				<ul>
-					<li><a style="font-size:50px" id="animation1"><b>What is linkuni about?</b></a></li>
-					<li><a id="animation2">Linkuni is a social platform which aims to connect University of Manchester students across the globe</a></li>
-					<li><a style="font-size:50px" id="animation3"><b>We have a...</b></a></li>
-					<li><a id="animation4">to-do-list to ensure a smooth transition into university life</a></li>
-					<li><a id="animation5">customisable profile page</a></li>
-					<li><a id="animation6">search friend page which allows users of similar interests to connect</a></li>
-					<li><a id="animation7">chatroom for users to collaborate</a></li>
+			<div id="main_information" class="bg_animation">
+				<ul id="info_list">
+					<li>
+						<a id="animation1"><b>What is linkuni about?</b></a>
+					</li>
+					<li>
+						<a id="animation2" class="supp_text">Linkuni is a social platform which aims to connect prospective University of Manchester students from across the globe. Use it to make sure you are prepared for University life, and to connect with people in a similar situation to you!</a>
+					</li>
+					<li>
+						<a id="animation3"><b>Features of the site include</b></a>
+					</li>
+					<li>
+						<a id="animation4" class="supp_text">A to-do-list to ensure a smooth transition into university life;</a>
+					</li>
+					<li>
+						<a id="animation5" class="supp_text">Customisable profile page;</a>
+					</li>
+					<li>
+						<a id="animation6" class="supp_text">The ability to search for people who are on similar courses, in the same accommodation as you, or who share the same interests as you;</a>
+					</li>
+					<li>
+						<a id="animation7" class="supp_text">A chat room where you can communicate with anyone, about anything.</a>
+					</li>
 				</ul>
 			</div>
-
-
-
 
 			<div id="join_area">
 				<h2>Get started</h2>
