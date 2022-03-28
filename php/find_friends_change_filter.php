@@ -145,23 +145,44 @@ $hobbies_array = [
 	"16" => "hiking"
 ];
 
+
 $html = "";
 foreach($user_arr_fulfil as $user => $user_data) {
 	$username = $user;
 	$firstname = $user_data["firstname"];
 	$lastname = $user_data["lastname"];
-	$nationality = ucwords($user_data["nationality"]);
-	$course = ucwords($user_data["course"]);
-	$accommodation = ucwords($user_data["accommodation"]);
-	$biography = ucwords($user_data["biography"]);
+
+	if ($user_data["nationality"] == $_POST["data"][3]) {
+		$nationality = "<b>" . ucwords($user_data["nationality"]) . "</b>";
+	} else {
+		$nationality = ucwords($user_data["nationality"]);
+	}
+
+	if ($user_data["course"] == $_POST["data"][0]) {
+		$course = "<b>" . ucwords($user_data["course"]) . "</b>";
+	} else {
+		$course = ucwords($user_data["course"]);
+	}
+
+	if ($user_data["accommodation"] == $_POST["data"][1]) {
+		$accommodation = "<b>" . ucwords($user_data["accommodation"]) . "</b>";
+	} else {
+		$accommodation = ucwords($user_data["accommodation"]);
+	}
+	
+	$biography = $user_data["biography"];
 
 	$hobbies_exploded = explode(",", $user_data["hobbies"]);
 	$hobbies = "";
 
 	foreach ($hobbies_exploded as $hobby) {
 		if ($hobby != "") {
-			$hobbies .= $hobbies_array["$hobby"] . ", ";
-		}
+			if (in_array($hobby, $_POST["data"][2])) {
+				$hobbies .= "<b>" . $hobbies_array["$hobby"] . "</b>" . ", ";
+			} else {
+				$hobbies .= $hobbies_array["$hobby"] . ", ";
+			}
+		}	
 	}
 
 	$hobbies = substr($hobbies, 0, -2);

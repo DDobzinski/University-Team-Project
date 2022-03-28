@@ -2,7 +2,6 @@
 we can easily change every element in the stylesheet, to use each colour, just place
 var() around the name such as var(--grey) in place of any colour. */
 
-
 .modal {
 	display: none;
 	position: fixed;
@@ -46,11 +45,15 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 
 .modal .modal_content h3 {
-	font-size: 1.2em;
+	font-size: 20px;
 }
 
 .modal .modal_content form {
 	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	font-size: 18px;
 }
 
 .modal .modal_content .close {
@@ -74,10 +77,16 @@ var() around the name such as var(--grey) in place of any colour. */
 	margin-top: 5px;
 	margin-bottom: 15px;
 	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid var(--dark_blue);
+	background-color: white;
+	padding-left: 10px;
 }
 
 .modal .modal_content form input[type=submit] {
-	float: right;
+	margin-left: auto;
+	/*margin-right: 1em;*/
+	width: 30%;
 	font-size: 18px;
 	background-color: var(--light_blue);
 	border: 1px solid white;
@@ -91,7 +100,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	color: black;
 }
 
-#join_button {
+#join_button, #login_button {
 	border: 1px solid white;
 	border-radius: 20px;
 	background-color: var(--light_blue);
@@ -99,7 +108,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	color: white;
 	font-family: "DM Sans", sans-serif;
 	font-size: 25px;
-	width: 8%;
+	width: 10vw;
 	cursor: pointer;
 }
 
@@ -237,11 +246,20 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 
 #join_area {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	justify-content: center;
+	position: relative;
 	margin-top: 1em;
-	margin-bottom: 5em;
+	margin-bottom: 2em;
 	font-size: 32px;
 	user-select: none;
 	animation: join_animation 5.4s;
+}
+
+#left_side, #right_side {
+	width: 30vw;
 }
 
 #join_area h2 {

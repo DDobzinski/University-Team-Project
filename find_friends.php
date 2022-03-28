@@ -9,6 +9,12 @@ session_start();
 if (!isset($_SESSION["logged_in"])) {
 	header("Location: index_page.php");
 } 
+
+if (isset($_POST["logout_button"])) {
+	$_SESSION = array();
+	session_destroy();
+	header("location: index_page.php");
+} 
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +38,11 @@ if (!isset($_SESSION["logged_in"])) {
 		<div id="navbar">
 			<form method="post" id="logout_form">
 					<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
-			</f	orm>
+			</form>
 			<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
 			<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
 			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
-			<a class="navbar_button" id="homepage_link" href="find_friends.php">Find Friends</a>
+			<a class="navbar_button" id="find_friends_link_highlight" href="find_friends.php">Find Friends</a>
 		</div>
 
 		<div id="main_content" align="center">
@@ -503,10 +509,15 @@ if (!isset($_SESSION["logged_in"])) {
 						</select>
 					</li>
 				</ul>
+				<p id="apply">Apply search filters</p>
 			</div>
 
 			<div id="inside_content">
-				<h1>This page is dedicated to help you find friends!</h1>
+				<div id="intro_content">
+					<h1>This page is dedicated to help you find friends!</h1>
+					<h3>Search for friends by using the filters on the left, if you want to search for everybody then just add no filters!</h3><br>
+					<h3>This page is designed to help you meet people in a similar position to you, we do not have 1-on-1 chatrooms but feel free to put any of your social medias in your biography so you can contact other users!</h3>
+				</div>
 				<div id="user_info">
 				</div>
 			</div>

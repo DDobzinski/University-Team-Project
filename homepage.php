@@ -88,7 +88,7 @@ if (isset($_POST["logout_button"])) {
 						<i class='bx bx-home-smile'></i>
 						<span class="links_GP" alt="GP">Home</span>
 					</a> 
-					<span class="tooltip">General Practitioner</span>
+					<span class="tooltip">Home</span>
 				</li>
 				<li id="gp"> 
 					<a onclick="open_content('gp')">

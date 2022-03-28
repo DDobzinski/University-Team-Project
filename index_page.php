@@ -36,50 +36,6 @@ Also when you're adding images please can you use an alt tag just in case the im
 <body onload="check_modals();">
 
 	<div id="main">
-		<div id="navbar">
-			<?php
-
-			if (isset($_SESSION["logged_in"])) {
-				if ($_SESSION["logged_in"] == true) {
-					echo '<button id="profile_page_button" onclick="window.location.href = `profile_page.php`;">Go to profile</button>';
-				} else {
-					echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
-				}
-			} else {
-				echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
-			}
-
-			?>
-
-			<div id="login_modal" class="modal">
-				<div class="modal_content modal_animate">
-					<form method="post">
-						<p onclick="toggle_modal('login');" class="close" title="login_modal_close">&times;</p>
-
-						<h3>Login</h3>
-						
-						<?php
-						if (isset($error_message_login)) {
-							echo "<label class='error_message' for='login'>" .$error_message_login . "</label>";
-						}
-						?>
-
-						<label for="username_login">Username / email:</label>
-						<input type="text" name="username_login" placeholder="Enter your username:" autocomplete="off">
-
-						<label for="password_login">Password:</label>
-						<input type="password" name="password_login" placeholder="Enter your password:" autocomplete="off">
-						<a href="forgot_password.php">Forgot your password?</a>
-
-						<input type="submit" value="Login" name="login_button">
-					</form>
-				</div>
-			</div>
-
-
-			<!-- If logged in change login button to profile button -->
-		</div>
-
 		<div id="main_content" align="center">
 			<!-- This is the main page so here we can include the explanation of linkuni and then the join button -->
 
@@ -113,13 +69,19 @@ Also when you're adding images please can you use an alt tag just in case the im
 			</div>
 
 			<div id="join_area">
-				<h2>Get started</h2>
-				<button id="join_button" onclick="toggle_modal('join');">Join</button>
+				<div id="left_side">
+					<h2>Get started</h2>
+					<button id="join_button" onclick="toggle_modal('join');">Join</button>
+				</div>
+				<div id="right_side">
+					<h2>Already got an account?</h2>
+					<button id="login_button" onclick="toggle_modal(`login`);">Login</button>
 			</div>
+
 
 			<div id="join_modal" class="modal" align="left">
 				<div class="modal_content modal_animate">
-					<form method="post">
+					<form method="post" autocomplete="new-password">
 						<p onclick="toggle_modal('join');" class="close" title="join_modal_close">&times;</p>
 
 						<h3>Join</h3>
@@ -147,6 +109,30 @@ Also when you're adding images please can you use an alt tag just in case the im
 				</div>
 			</div>
 
+			<div id="login_modal" class="modal">
+				<div class="modal_content modal_animate">
+					<form method="post" autocomplete="new-password">
+						<p onclick="toggle_modal('login');" class="close" title="login_modal_close">&times;</p>
+
+						<h3>Login</h3>
+						
+						<?php
+						if (isset($error_message_login)) {
+							echo "<label class='error_message' for='login'>" .$error_message_login . "</label>";
+						}
+						?>
+
+						<label for="username_login">Username / email:</label>
+						<input type="text" name="username_login" placeholder="Enter your username:" autocomplete="off">
+
+						<label for="password_login">Password:</label>
+						<input type="password" name="password_login" placeholder="Enter your password:" autocomplete="off">
+						<!-- <a href="forgot_password.php">Forgot your password?</a> -->
+
+						<input type="submit" value="Login" name="login_button">
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -188,5 +174,9 @@ Also when you're adding images please can you use an alt tag just in case the im
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		clear_inputs();
+	</script>
 </body>
 </html>

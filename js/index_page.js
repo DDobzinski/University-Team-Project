@@ -110,3 +110,12 @@ function open_reply(chat_id) {
 	document.getElementById("reply_box_" + chat_id).style.display = "block";
 }
 
+function clear_inputs() {
+    inputs = document.getElementsByTagName('input');
+
+    console.log(inputs);
+
+    for (var i = 0; i < inputs.length; i++) {
+    	inputs[i].value('');
+    }
+}

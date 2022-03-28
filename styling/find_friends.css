@@ -1,26 +1,28 @@
 #main_content {
 	position: relative;
 	top: 8vh;
+	height: 92vh;
 	display: flex;
 	flex-direction: row;
 }
 
 #sidebar {
 	width: 20vw;
-	max-height: 92vh;
+	height: 100vh;
 	position: fixed;
 	border-right: 3px solid var(--dark_blue);
 }
 
 #inside_content {
 	width: 80vw;
-	left: 20vw;
-	position: relative;
+    height: 92vh;
+    left: 20vw;
+    position: relative;
 }
 
 .user_box {
-	border: 1px solid var(--dark_blue);
-	border-radius: 5px;
+	border: 2px solid var(--dark_blue);
+	border-radius: 8px;
 	margin: 1em;
 	display: flex;
 	flex-direction: row;
@@ -31,6 +33,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	padding: 10px;
 }
 
 .user_box .right_side {
@@ -144,4 +147,35 @@
   	justify-content: space-around;
   	text-decoration: none;
   	width: 7em;
+}
+
+.biography {
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	padding: 8px;
+	margin: 2px 2px 2px 0px;
+}
+
+#intro_content {
+	position: relative;
+	top: 20vh;
+	width: 80%;
+	color: var(--dark_blue);
+}
+
+#apply {
+	background: var(--dark_blue);
+	font-size: 1.1em;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	width: 60%;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+#results {
+	position: relative;
+	float: left;
+	margin-top: 1em;
 }

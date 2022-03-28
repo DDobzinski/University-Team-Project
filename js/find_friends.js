@@ -47,6 +47,10 @@ function get_vals() {
 
 
 function do_ajax() {
+	if ($("#intro_content").css("display") == "block") {
+		$("#intro_content").css("display", "none"); 
+	}
+
 	data = get_vals();
 	ajax_req(data)
 		.then((data) => {
@@ -70,7 +74,10 @@ $(document).ready(function() {
 	$("#nationality_selector").on('click', function() {
 		do_ajax();
 	});
-	$("#dropdown_button_accommodation").on('click', function() {
+	$("#apply").on('click', function() {
+		do_ajax();
+	})
+	$("#accommodation_filter").on('click', function() {
 		if ($("#accommodation_boxes").css("display") == "none") {
 			$("#accommodation_boxes").css("display", "block");
 			$("#dropdown_button_accommodation").removeClass("bx-expand-vertical");
@@ -82,7 +89,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#dropdown_button_hobbies").on('click', function() {
+	$("#hobbies_filter").on('click', function() {
 		if ($("#hobbies_boxes").css("display") == "none") {
 			$("#hobbies_boxes").css("display", "block");
 			$("#dropdown_button_hobbies").removeClass("bx-expand-vertical");
