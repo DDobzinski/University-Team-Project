@@ -1,7 +1,6 @@
 $(document).ready(function(){
 $(".checkbox__input").on('click', function(){
 	
-	var checked = $(this).attr('checked');
 	
 	var value = $(this).val();
 	
@@ -9,8 +8,19 @@ $(".checkbox__input").on('click', function(){
 			url: "php/homepage_update_info.php",
 			type: "POST",
 			data:{"task":value}
-		  });
-	
+			});
+		  
+			if($(this).prop("checked") == true)
+			{
+				
+				$("#" + value).css("background-color", '#fbb66d');
+				
+			}else if($(this).prop("checked") == false)
+			{
+				
+				$("#" + value).css('background-color', "#fddbb7");				
+				//document.getElementById(value).style.backgroundColor = "#fddbb7";
+			}
 	});
 
 document.querySelector('.close').addEventListener('click', function(){
