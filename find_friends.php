@@ -2,22 +2,14 @@
 <!-- Coded by: Amy Leigh-Hyer, Daniel Dobzinski, Euan Liew, Frenciel Anggi, Sarah Almuhaythif, Will Asbery, and Yuyao Chen -->
 
 <?php
-
 require("config.php");
 
 session_start();
 
-// require("fake_login_init.php");
-
-// if (!isset($_SESSION["logged_in"])) {
-// 	header("Location: index_page.php");
-// } else {
-// 	require("php/find_friends_functions.php");
-// }
-
-
+if (!isset($_SESSION["logged_in"])) {
+	header("Location: index_page.php");
+} 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +19,7 @@ session_start();
 	<title>linkuni</title>
 	<link rel="stylesheet" type="text/css" href="styling/master.css">
 	<link rel="stylesheet" type="text/css" href="styling/find_friends.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/find_friends.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,35 +30,21 @@ session_start();
 	
 	<div id="main">
 		<div id="navbar">
-			<!-- <?php
-
-			// if (isset($_SESSION["logged_in"])) {
-			// 	if ($_SESSION["logged_in"] == true) {
-			// 		echo '<button id="profile_page_button" onclick="window.location.href = `profile_page.php`;">Go to profile</button>';
-			// 	} else {
-			// 		echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
-			// 	}
-			// } else {
-			// 	echo '<button id="login_button" onclick="toggle_modal(`login`);">Login</button>';
-			// }
-
-			?>-->
-
-		<form method="post" id="logout_form">
-			<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
-		</form>
-		<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
-		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
-		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
-		<a class="navbar_button" id="find_friends_link_highlight" href="find_friends.php">Find Friends</a>
+			<form method="post" id="logout_form">
+					<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
+			</f	orm>
+			<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
+			<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
+			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
+			<a class="navbar_button" id="homepage_link" href="find_friends.php">Find Friends</a>
 		</div>
 
 		<div id="main_content" align="center">
 			<div id="sidebar">
-				Search via these categories:
+				<h2 id="filters_title">Filters</h2>
 				<ul id="filters">
 					<li id="course_filter">
-						<h3>Course</h3>
+						<h3 class="filter_name">Course</h3>
 						<select name="course" id="course_selector">
 							<option value="none">Do not filter by course</option>
 							<option value="accounting">Accounting</option>
@@ -171,86 +150,162 @@ session_start();
 					</li>
 
 					<li id="accommodation_filter">
-						<h3>Accommodation</h3>
-						<input type="checkbox" name="ashburne Hall">
-						<label for="shburne Hall">Ashburne Hall</label>
-						<input type="checkbox" name="brook Hall">
-						<label for="brook Hall">Brook Hall</label>
-						<input type="checkbox" name="burkhardt House">
-						<label for="burkhardt House">Burkhardt House</label>
-						<input type="checkbox" name="canterbury Court">
-						<label for="canterbury Court">Canterbury Court</label>
-						<input type="checkbox" name="dalton-Ellis Hall">
-						<label for="dalton-Ellis Hall">Dalton-Ellis Hall</label>
-						<input type="checkbox" name="denmark Road">
-						<label for="denmark Road">Denmark Road</label>
-						<input type="checkbox" name="george Kenyon Hall">
-						<label for="george Kenyon Hall">George Kenyon Hall</label>
-						<input type="checkbox" name="horniman House">
-						<label for="horniman House">Horniman House</label>
-						<input type="checkbox" name="hulme Hall">
-						<label for="hulme Hall">Hulme Hall</label>
-						<input type="checkbox" name="oak House">
-						<label for="oak House">Oak House</label>
-						<input type="checkbox" name="richmond Park">
-						<label for="richmond Park">Richmond Park</label>
-						<input type="checkbox" name="rusholme Place">
-						<label for="rusholme Place">Rusholme Place</label>
-						<input type="checkbox" name="sheavyn House">
-						<label for="sheavyn House">Sheavyn House</label>
-						<input type="checkbox" name="st Anselm Hall">
-						<label for="st Anselm Hall">St Anselm Hall</label>
-						<input type="checkbox" name="unsworth Park">
-						<label for="unsworth Park">Unsworth Park</label>
-						<input type="checkbox" name="uttley House">
-						<label for="uttley House">Uttley House</label>
-						<input type="checkbox" name="weston Hall">
-						<label for="weston Hall">Weston Hall</label>
-						<input type="checkbox" name="whitworth Park">
-						<label for="whitworth Park">Whitworth Park</label>
-						<input type="checkbox" name="wilmslow Park">
-						<label for="wilmslow Park">Wilmslow Park</label>
-						<input type="checkbox" name="woolton Hall">
-						<label for="woolton Hall">Woolton Hall</label>
+						<h3 class="filter_name">Accommodation<i id="dropdown_button_accommodation" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3>
+						<div id="accommodation_boxes">
+							<div class="flex_row">
+								<input type="checkbox" name="ashburne Hall" id="ashburne Hall">
+								<label for="ashburne Hall">Ashburne Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="brook Hall" id="brook Hall">
+								<label for="brook Hall">Brook Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="burkhardt House" id="burkhardt House">
+								<label for="burkhardt House">Burkhardt House</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="canterbury Court" id="canterbury Court">
+								<label for="canterbury Court">Canterbury Court</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="dalton-Ellis Hall" id="dalton-Ellis Hall">
+								<label for="dalton-Ellis Hall">Dalton-Ellis Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="denmark Road" id="denmark Road">
+								<label for="denmark Road">Denmark Road</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="george Kenyon Hall" id="george Kenyon Hall">
+								<label for="george Kenyon Hall">George Kenyon Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="horniman House" id="horniman House">
+								<label for="horniman House">Horniman House</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="hulme Hall" id="hulme Hall">
+								<label for="hulme Hall">Hulme Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="oak House" id="oak House">
+								<label for="oak House">Oak House</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="richmond Park" id="richmond Park">
+								<label for="richmond Park">Richmond Park</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="rusholme Place" id="rusholme Place">
+								<label for="rusholme Place">Rusholme Place</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="sheavyn House" id="sheavyn House">
+								<label for="sheavyn House">Sheavyn House</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="st Anselm Hall" id="st Anselm Hall">
+								<label for="st Anselm Hall">St Anselm Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="unsworth Park" id="unsworth Park">
+								<label for="unsworth Park">Unsworth Park</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="uttley House" id="uttley House">
+								<label for="uttley House">Uttley House</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="weston Hall" id="weston Hall">
+								<label for="weston Hall">Weston Hall</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="whitworth Park" id="whitworth Park">
+								<label for="whitworth Park">Whitworth Park</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="wilmslow Park" id="wilmslow Park">
+								<label for="wilmslow Park">Wilmslow Park</label>
+							</div>
+							<div class="flex_row">
+								<input type="checkbox" name="woolton Hall" id="woolton Hall">
+								<label for="woolton Hall">Woolton Hall</label>
+							</div>
+						</div>
 					</li>
 					<li id="hobbies_filter">
-						<h3>Hobbies</h3>
-						<input type="checkbox" name="hobbies_sports" value='1'>
-						<label for="hobbies_sports">Sports</label>
-						<input type='checkbox' name='hobbies_baking' value='2'> 
-						<label for="hobbies_baking">Baking</label>
-						<input type='checkbox' name='hobbies_art' value='3'>
-						<label for="hobbies_art">Art</label>
-						<input type='checkbox' name='hobbies_gaming' value='4'>
-						<label for="hobbies_gaming">Gaming</label>
-						<input type='checkbox' name='hobbies_music' value='5'>
-						<label for="hobbies_music">Music</label>
-						<input type='checkbox' name='hobbies_dance' value='6'>
-						<label for="hobbies_dance">Dance</label>
-						<input type='checkbox' name='hobbies_photography' value='7'>
-						<label for="hobbies_photography">Photography</label>
-						<input type='checkbox' name='hobbies_singing' value='8'>
-						<label for="hobbies_singing">Singing</label>
-						<input type='checkbox' name='hobbies_electronics' value='9'>
-						<label for="hobbies_electronics">Electronics</label>
-						<input type='checkbox' name='hobbies_biking' value='10'>
-						<label for="hobbies_biking">Biking</label>
-						<input type='checkbox' name='hobbies_reading' value='11'>
-						<label for="hobbies_reading">Reading</label>
-						<input type='checkbox' name='hobbies_fishing' value='12'>
-						<label for="hobbies_fishing">Fishing</label>
-						<input type='checkbox' name='hobbies_traveling' value='13'>
-						<label for="hobbies_traveling">Traveling</label>
-						<input type='checkbox' name='hobbies_cars' value='14'>
-						<label for="hobbies_cars">Cars</label>
-						<input type='checkbox' name='hobbies_yoga' value='15'>
-						<label for="hobbies_yoga">Yoga</label>
-						<input type='checkbox' name='hobbies_hiking' value='16'>
-						<label for="hobbies_hiking">Hiking</label>
+						<h3 class="filter_name">Hobbies<i id="dropdown_button_hobbies" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3>
+						<div id="hobbies_boxes">
+							<div class="flex_row_hobby">
+								<input type="checkbox" name="hobbies_sports" id="hobbies_sports" value='1'>
+								<label for="hobbies_sports">Sports</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_baking' id='hobbies_baking' value='2'> 
+								<label for="hobbies_baking">Baking</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_art' id='hobbies_art' value='3'>
+								<label for="hobbies_art">Art</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_gaming' id='hobbies_gaming' value='4'>
+								<label for="hobbies_gaming">Gaming</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_music' id='hobbies_music' value='5'>
+								<label for="hobbies_music">Music</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_dance' id='hobbies_dance' value='6'>
+								<label for="hobbies_dance">Dance</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_photography' id='hobbies_photography' value='7'>
+								<label for="hobbies_photography">Photography</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_singing' id='hobbies_singing' value='8'>
+								<label for="hobbies_singing">Singing</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_electronics' id='hobbies_electronics' value='9'>
+								<label for="hobbies_electronics">Electronics</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_biking' id='hobbies_biking' value='10'>
+								<label for="hobbies_biking">Biking</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_reading' id='hobbies_reading' value='11'>
+								<label for="hobbies_reading">Reading</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_fishing' id='hobbies_fishing' value='12'>
+								<label for="hobbies_fishing">Fishing</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_traveling' id='hobbies_traveling' value='13'>
+								<label for="hobbies_traveling">Traveling</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_cars' id='hobbies_cars' value='14'>
+								<label for="hobbies_cars">Cars</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_yoga' id='hobbies_yoga' value='15'>
+								<label for="hobbies_yoga">Yoga</label>
+							</div>
+							<div class="flex_row_hobby">
+								<input type='checkbox' name='hobbies_hiking' id='hobbies_hiking' value='16'>
+								<label for="hobbies_hiking">Hiking</label>
+							</div>
+						</div>
 					</li>
 
 					<li id="nationality_filter">
-						<h3>Nationality</h3>
+						<h3 class="filter_name">Nationality</h3>
 						<select name="nationality_selector" id="nationality_selector">
 							<option value="none">Do not filter by nationality</option>
 							<option value="afghan">Afghan</option>
@@ -455,8 +510,6 @@ session_start();
 				<div id="user_info">
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 

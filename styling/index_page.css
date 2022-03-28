@@ -12,7 +12,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	width: 100%;
 	height: 100%;
 	padding-top: 60px;
-	background-color: rgba(0, 0, 0, 0.1); /* This lets you set the opacity as the 4th argument, so this is grey */
+	background-color: rgba(0, 0, 0, 0.2); /* This lets you set the opacity as the 4th argument, so this is grey */
 }
 
 .modal_animate {
@@ -33,7 +33,13 @@ var() around the name such as var(--grey) in place of any colour. */
 .modal > .modal_content {
 	background-color: white;
 	position: relative;
-	margin: 5px auto;
+	margin: 2em auto;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
 	width: 40%;
 	border: 3px solid var(--dark_blue);
 	border-radius: 3px;
@@ -89,21 +95,35 @@ var() around the name such as var(--grey) in place of any colour. */
 	border: 1px solid white;
 	border-radius: 20px;
 	background-color: var(--light_blue);
-	padding: 20px;
+	padding: 10px;
 	color: white;
 	font-family: "DM Sans", sans-serif;
-	font-size: 40px;
-	width: 10%;
+	font-size: 25px;
+	width: 8%;
 	cursor: pointer;
 }
 
 .logo_image {
-	max-width: 50em;
-	width: 60%;
-	margin-top: 6em;
-	margin-bottom: 6em;
-	animation: logo_animation 2s;
+	position: relative;
+	width: 30vw;
+	margin-top: 5em;
+	margin-bottom: 1em;
+	animation: logo_animation 1s;
 	user-select: none;
+}
+
+#info_list li a {
+	font-size: 20px;
+}
+
+.bg_animation {
+	animation: bg_animation 2.1s;
+}
+
+@keyframes bg_animation {
+	0% {opacity: 0;}
+	50% {opacity: 0; transform: scale(0);}
+	100% {opacity: 1; transform: scale(1);}
 }
 
 @keyframes logo_animation{
@@ -112,14 +132,24 @@ var() around the name such as var(--grey) in place of any colour. */
 
 }
 
+.supp_text {
+	margin-left: 1em;
+}
+
+#animation1, #animation2, #animation3, #animation4, #animation5, #animation6, #animation7 {
+	position: relative;
+	display: inline-block;
+}
+
 #animation1 {
 	animation: animation_1 2.2s;
 }
 
 @keyframes animation_1 {
 	0% {opacity: 0;}
-	90.9% {opacity: 0;}
-	100% {opacity: 1;}
+	50% {transform: translateX(-50%);}
+	90.9% {opacity: 0; }
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation2 {
@@ -128,8 +158,9 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_2 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	91.6% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation3 {
@@ -138,8 +169,9 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_3 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	92.3% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation4 {
@@ -148,8 +180,9 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_4 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	92.8% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation5 {
@@ -158,8 +191,9 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_5 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	93.3% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation6 {
@@ -168,8 +202,9 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_6 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	93.8% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 #animation7 {
@@ -178,17 +213,19 @@ var() around the name such as var(--grey) in place of any colour. */
 
 @keyframes animation_7 {
 	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
 	94.1% {opacity: 0;}
-	100% {opacity: 1;}
+	100% {opacity: 1; transform: translateX(0%);}
 }
 
 
 #main_information {
 	background-color: var(--dark_blue);
 	color: white;
+	width: 60vw;
+	border-radius: 20px;
 	padding: 1em 0em 1em 0em;
 	margin: auto;
-	font-size: 27px;
 	user-select: none;
 }
 
@@ -201,9 +238,14 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #join_area {
 	margin-top: 1em;
-	font-size: 40px;
+	margin-bottom: 5em;
+	font-size: 32px;
 	user-select: none;
 	animation: join_animation 5.4s;
+}
+
+#join_area h2 {
+	font-size: 1em;
 }
 
 @keyframes join_animation {
@@ -214,307 +256,4 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #main_content {
 	margin: 0em;
-}
-
-.main_home {
-	display: flex;
-	flex-direction: row;
-}
-
-#navigation_pane {
-	position: sticky;
-	width:  20%;
-	height: 100%;
-	border-right: 3px solid var(--dark_blue);
-	font-size: 1.1em;
-}
-
-#navigation_pane ul {
-	position: relative;
-	margin-top: 0em;
-	list-style: none;
-	padding-left: 0em;
-}
-
-#navigation_pane li {
-	margin: 0em 2em;
-	padding: 1em;
-}
-
-#navigation_pane ul li a {
-	cursor: pointer;
-}
-
-#navigation_pane ul li a:active {
-	color: var(--light_blue);
-}
-
-#navigation_pane h2 {
-	margin-left: 1em;
-	text-decoration: underline;
-}
-
-#current_content {
-	width: 80%;
-}
-
-#current_content h2 {
-	/*position: relative;
-	left: 5%;*/
-}
-
-#current_content .info {
-	padding-left: 3em;
-}
-
-#current_content .info h2 {
-	padding-bottom: 0.2em;
-	text-decoration: underline;
-}
-
-.info {
-	margin: 2em 4em 4em 4em;
-	padding: 1em 0em 0em 0em;
-	border: 0.1em solid var(--dark_blue);
-}
-
-
-
-#homepage_link a {
-	text-decoration: none;
-	color: white;
-}
-
-#change_profile_form {
-	margin: 10em 20em;
-	display: flex;
-	flex-direction: row;
-}
-
-#change_profile_form input[type=text] {
-	box-sizing: border-box;
-	padding: 1em;
-	margin-bottom: 2em;
-	background-color: #E8E8E8;
-	border: none;
-	width: 60%;
-}
-
-#change_profile_form select {
-	box-sizing: border-box;
-	padding: 1em;
-	margin-bottom: 2em;
-	background-color: #E8E8E8;
-	border: none;
-	width: 60%;
-	cursor: pointer;
-}
-
-#hobbies_button {
-	font-family: "DM Sans", sans-serif;
-	background-color: var(--light_blue);
-	font-size: 20px;
-	color: white;
-	border: none;
-	cursor: pointer;
-	margin-bottom: 1.2em;
-	padding: 0.3em;
-	width: 60%;
-}
-
-#save_changes_button {
-	width: 60%;
-	padding: 1em;
-	color: white;
-	border: none;
-	background-color: var(--dark_blue);
-}
-
-#biography {
-	box-sizing: border-box;
-	height: 18vh;
-	width: 60%;
-	padding: 1em;
-	border: none;
-	background-color: #E8E8E8;
-	font-family: "DM Sans", sans-serif;
-	font-size: 13px;
-}
-
-#change_profile_form .child {
-	width: 50%;
-	height: 100vh;
-	margin-left: auto;
-	margin-right: auto
-}
-
-.profile_page_error {
-	color: red;
-}
-
-.modal_content_hobbies {
-	display: flex;
-	flex-direction: row;
-	padding: 2em;
-}
-
-.hobbies_child {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.hobbies_child input {
-	width: 80%;
-	height: 100%;
-	margin: 5%;
-}
-
-.dividier {
-	text-align: center;
-	width: 90%;
-	background-color: var(--dark_blue);
-}
-
-/*#hobbies_modal {
-	top: none;
-	left: none;
-	display: flex;
-	flex-direction: row;
-	margin: auto;
-}
-
-#hobbies_modal .hobbies_child input {
-	width: 80%;
-	margin: 5%;
-}*/
-
-
-/* forum styling */
-.forum {
-	display: flex;
-	flex-direction: column;
-}
-
-.forum h2 {
-	margin-left: 1em;
-	text-decoration: none;
-}
-
-.forum form {
-	border: 3px solid var(--dark_blue);
-	border-radius: 10px;
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.forum form label {
-	font-size: 1.2em;
-	margin: 1em 1em 0.5em 1em;
-}
-
-.forum form textarea {
-	width: 90%;
-	margin: 0em 1.2em;
-	padding: 1em;
-	font-family: "DM Sans", sans-serif;
-}
-
-.forum form input[type=submit] {
-	width: 15%;
-	margin: 0.5em 1em;
-	font-size: 1.1em;
-	background-color: var(--dark_blue);
-	border: 1px solid var(--dark_blue);
-	border-radius: 5px;
-	color: white;
-}
-
-.forum_section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-}
-
-.forum_h3 {
-	float: left;
-	margin-left: 1em;
-}
-
-.forum_box {
-	border: 1px solid var(--dark_blue);
-	margin-bottom: 1em;
-	border-radius: 3px;
-	width: 80%;
-}
-
-.forum_box_details {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-}
-
-.forum_box_details p {
-	padding-top: 0.2em;
-}
-
-.forum_box .date {
-	order: 2;
-	margin-left: auto;
-	margin-right: 1em;
-}
-
-.forum_box h3 {
-	margin-left: 1em;
-}
-
-.forum_box .text_content {
-	margin-top: 0;
-	margin-left: 2em;
-}
-
-/* Chat room styling  */
-#chat_room_link, #homepage_link {
-	display: inline-flex;
-	align-items: center;
-	justify-content: space-around;
-	text-decoration: none;
-	width: 7em;
-	color:  white;
-}
-
-.chat {
-	margin-top: 1em;
-}
-
-.chat_section {
-	margin-top: 1em;
-}
-
-.chat .reply {
-
-}
-
-.reply_link {
-	float: right;
-	margin-right: 1em;
-	margin-bottom: 1em;
-	background-color: var(--light_blue);
-	color: white;
-	padding: 0.5em;
-	border: 1px solid var(--light_blue);
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.reply_box {
-	display: none;
-	float: right;
-	width: 90%;
-	margin-bottom: 1em;
 }

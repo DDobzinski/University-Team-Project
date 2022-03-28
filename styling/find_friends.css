@@ -1,4 +1,6 @@
 #main_content {
+	position: relative;
+	top: 8vh;
 	display: flex;
 	flex-direction: row;
 }
@@ -104,22 +106,22 @@
 }
 
 
-.flex_row {
+.flex_row, .flex_row_hobby {
 	display: flex;
 	flex-direction: row;
 }
 
-.flex_row label, .flex_row input {
+.flex_row label, .flex_row input, .flex_row_hobby label, .flex_row_hobby input {
 	float: left;
 	display: inline-block;
 }
 
-.flex_row input {
+.flex_row input, .flex_row_hobby input  {
 	margin: auto 1em;
 	width: 20%;
 }
 
-.flex_row label {
+.flex_row label, .flex_row_hobby label {
 	text-align: left;
 	margin-left: 1em;
 	width: 70%;

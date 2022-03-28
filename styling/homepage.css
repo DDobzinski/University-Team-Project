@@ -311,6 +311,7 @@ body {
 /* Main page styling for homepage and chatroom */
 
 #current_content {
+    top:  8vh;
     left: 15vw;
     position: relative;
     display: flex;
