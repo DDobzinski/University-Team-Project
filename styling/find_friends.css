@@ -47,7 +47,7 @@
 	background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("../images/friends_bg.jpeg");
 	background-size: cover;
 	background-position: center;
-	animation: 1s ease /*1s*/ 1 load_content;
+	animation: 1s ease forwards load_content;
 }
 
 .user_box .left_side, .user_box .right_side {
