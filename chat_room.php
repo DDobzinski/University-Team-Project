@@ -52,22 +52,21 @@ if (isset($_POST["logout_button"])) {
 
 	</div>
 <div id="main">
-	<div class="left">
+	<div class="left" id="left">
 		<h1>Welcome to the chatroom!</h1>
-		<img src="images/friends.png" class="chat_pic" width="400em" height="400em">
+		<a href="https://storyset.com/social-media"><!-- Social media illustrations by Storyset --><img src="images/friends.png" class="chat_pic" width="400em" height="400em"></a>
 		<h2>This page is dedicated to help you communicate with other students who are in a similar situation to you!</h2>
 	</div>
 
-	<div class="right">
+	<div class="right" id="right">
 		<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic</p> -->
 		<div id="main_content" class="main_home">
 			<div id="navigation_pane" style="display:none">
-				
+				<h2>Topics</h2>
 				<form method="post" class="add_topic" id="add_topic">
 					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-					<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
+					<label class="topic_label"><i class='bx bx-plus'><input type="submit" id="create_topic_button" name="add_topic" value=""></i></label>
 				</form>
-				<h2>Topics</h2>
 				<ul id="topics_list">
 					<?php
 						echo display_topics();
@@ -81,7 +80,7 @@ if (isset($_POST["logout_button"])) {
 							<h2>You can pick a topic from the list here, already created by other students, or make a new topic here <i class='bx bx-down-arrow-alt'></i></h2>
 							<form method="post" class="add_topic add_topic_intro">
 								<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
-								<input type="submit" id="create_topic_button" name="add_topic" value="Create new topic">
+								<input type="submit" name="add_topic" value="+" >
 							</form>
 							<!-- <hr> -->
 						</span>
@@ -100,15 +99,34 @@ if (isset($_POST["logout_button"])) {
 						</div>
 					</div>
 				</div>
-					<?php
-						 echo display_content_divs();
-					?>
+				
 				</div>
 		</div>
 	</div>
 	
-</div>
 
+	<div class="chat_page" id="chat_page">
+		<div class="box1">
+			<div id="navigation_pane">
+				<form method="post" class="add_topic" id="add_topic">
+					<textarea name="add_topic_name" type="text" id="text_area_add_topic" placeholder="Add New Topic"></textarea>
+					<input type="submit" id="create_topic_button" name="add_topic" value="+" >
+				</form>
+				<h2>Topics</h2>
+				<ul id="topics_list">
+					<?php
+						echo display_topics();
+					?>
+				</ul>
+			</div>		</div>
+		<div class="box2">
+
+			<?php
+				 echo display_content_divs();
+			?>
+		</div>
+	</div>
+</div>
 <?php
 	include("php/reopen_content.php");
 ?>

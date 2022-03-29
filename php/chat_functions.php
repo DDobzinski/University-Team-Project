@@ -92,7 +92,7 @@ function display_content_divs() {
 		$topic_get_return = get_topic($topics[$i]["id"]);
 
 		if ($topic_get_return == "") {
-			$topic_get_return = "<h3>There are no posts, be the first to say hello!</h3>";
+			$topic_get_return = "<h3 class='hello'>There are no posts, be the first to say hello!</h3>";
 		}
 
 		$html .= "
@@ -106,7 +106,6 @@ function display_content_divs() {
 			</div>
 			<div class='chat_footer'>
 				<form method='post'> 
-					<label for='text_box' id='form_label'>Add a post to the chat:</label>
 					<textarea name='text_box' type='text' id='text_box'></textarea>
 					<label><i class='bx bx-send'><input type='submit' name='$form_name' value=''></i></label>
 				</form>
@@ -358,7 +357,7 @@ function get_topic($topic_id) {
 				<input type='hidden' name='chat_id' value='$chat_id_from_db'>
 				<label for='text_box'>Add a reply to this chat:</label>
 				<textarea name='text_box' type='text' id='text_box'></textarea>
-				<input type='submit' name='add_chat_reply_$topic_name_from_db' value='Submit post'>
+				<input id='reply_button' type='submit' name='add_chat_reply_$topic_name_from_db' value='Submit post'>
 			</form>
 		</div>";
 

@@ -113,7 +113,6 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 
 #main_content {
-	background:var(--dark_blue);
 	margin: 0em;
 	height: 100%;
 	z-index: 100;
@@ -127,26 +126,24 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #navigation_pane {
 	position: sticky;
-	width:  20%;
+	width:  80%;
 	height: 100%;
-	border-right: transparent;
-	font-size: 1.1em;
+	font-size: 1.2em;
+	color: white;
 	
 }
 
 #navigation_pane ul {
 	width: 100%;
-	height: 50%;
+	height: 65%;
 	position: relative;
-	margin-top: 0.5em;
+	margin: 1em;
 	list-style: none;
-	padding-left: 0.5em;
 	overflow: hidden;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	border: 0.2em solid white;
 	border-radius: 2.5em;
-	margin-left: 0.9em;
 }
 #navigation_pane ul::-webkit-scrollbar {
   display: none;
@@ -167,10 +164,9 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 
 #navigation_pane h2 {
+	height: 5%;
 	text-align: center;
-	margin-top: 2.5em;
-	text-decoration: underline;
-	padding-bottom: 1em;
+	/*margin-top: 1em;*/
 }
 
 #current_content {
@@ -223,13 +219,15 @@ var() around the name such as var(--grey) in place of any colour. */
 	border-radius: 3px;
 }*/
 #create_topic_button{
-/*	margin: auto;
-  margin-left: 2.5em;
-  margin-top: 1em;*/
-	background-color: var(--light_blue);
-  border-radius: 20px;
-  transition: all 0.5 ease;
-  color: white;
+	width: 15%;
+	border: none;
+	float: right;
+	margin-top: 0em;
+	font-family: "DM Sans", sans-serif;
+	background-color: transparent;
+	color: white;
+	border-radius: 2em;
+	font-size: 2em;
   cursor: pointer;
 
 }
@@ -383,40 +381,51 @@ var() around the name such as var(--grey) in place of any colour. */
 	margin-right: auto;
 }*/
 .chat_footer {
-    /* background-color: var(--dark_blue); */
+    
     right: 0;
     width: 80%;
     height: 20%; 
-    max-width: 80%;
-    left:0;
+    max-width: 75%;
     margin-bottom: 2em; 
     font-size: 16px;
     position: absolute;
     bottom: 0
 }
 .forum .chat_footer #form_label{
+	background-color: #303f68;
 	display: inline;
 	margin-top: 1em;
 	width: 30%;
 	height: 10%;
 	font-size: 1.2em;
 	margin: 1em 1em 0.5em 1em;
+	color: white;
+}
+.intro_content.navigation_pane .form_label{
+	background-color: #303f68;
+	display: inline;
+	margin-top: 1em;
+	width: 30%;
+	height: 10%;
+	font-size: 1.2em;
+	margin: 1em 1em 0.5em 1em;
+	color: white;
 }
 
 .forum form textarea {
-	width: 90%;
-	height: 10%;
-	border-radius: 2.5em;
-	margin-top: 2em;
-	padding: 1em;
-	font-family: "DM Sans", sans-serif;
+  width: 90%;
+  height: 35%;
+  border-radius: 2.5em;
+  margin-top: 2em;
+  padding: 1em;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 20px;
 }
-
 .forum form i {
  /* margin: 0.5em 1em;*/
   font-size: 3em;
   background-color: var(--light_blue);
-  border: 1px solid var(--light_blue);
+  /*border: 1px solid var(--light_blue);*/
   border-radius: 0.5em;
   color: white;
 }
@@ -442,18 +451,21 @@ var() around the name such as var(--grey) in place of any colour. */
 .box{
 	width: 100%;
 	height: 70vh;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	overflow: hidden;
 	overflow-y: auto;
 }
 .box::-webkit-scrollbar{
 	width: 10px;
+	height: 50%;
 }
 .box::-webkit-scrollbar-track {
-  background:#63B4CF;
+  background:lightgray;
   border-radius: 2.5em;
 }
 .box::-webkit-scrollbar-thumb {
-  background:white;
+  background:var(--light_blue);
   border-radius: 2.5em;
 }
 .forum_h3 {
@@ -513,6 +525,7 @@ var() around the name such as var(--grey) in place of any colour. */
 */
 .chat_section {
 	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 .chat .reply {
@@ -554,6 +567,7 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 
 .reply_box {
+	color: white;
 	display: none;
 	float: right;
 	position: relative;
@@ -570,30 +584,34 @@ var() around the name such as var(--grey) in place of any colour. */
 
 .add_topic {
 	display: flex;
-	flex-direction: column;
-	margin: 2em;
-	padding: 1em;
-	border: 3px solid var(--dark_blue);
+	height: 15%;
+	/*display: flex;
+	flex-direction: column;*/
+	margin: 1em;
+	margin-left: 1.5em;
 	border-radius: 5px;
 }
 
 .add_topic textarea {
+	width: 90%;
+	height: 70%;
+	padding: 1em;
 	/*margin: auto;
   margin-left: 1.6em;*/
 	font-family: "DM Sans", sans-serif;
-	font-size: 1em;
 	border-radius: 2.5em;
 }
 
 .add_topic input[type=submit] {
-	width: 100%;
-	margin-top: 1em;
-	padding: 0.25em;
+	padding: 0em;
+	width: 10%;
+	margin-top: 0em;
 	font-family: "DM Sans", sans-serif;
-	background-color: var(--dark_blue);
+	background-color: transparent;
 	color: white;
-	border: 1px solid var(--dark_blue);
-	border-radius: 3px;
+	border: 1px solid transparent;
+	border-radius: 2.5em;
+	font-size: 2em;
 }
 
 .add_topic_intro {
@@ -695,7 +713,8 @@ var() around the name such as var(--grey) in place of any colour. */
 	/*float: left;*/
 	width: 30%;
 	margin:5px; 
-  padding: 1em; 
+  padding: 1em;
+  display: block; 
 }
 
 .left h1 {
@@ -706,8 +725,9 @@ var() around the name such as var(--grey) in place of any colour. */
   margin-top: 2em;
   margin-bottom: 0;
 }
-.right {	
-	background-color: var(--dark_blue);
+.right {
+	display: block;	
+	background-color:#303f68;
 	height: 100vh;
 	width: 70%;
 	margin-top: 5em;
@@ -740,4 +760,44 @@ tr{
 }
 .left h2{
 	text-align: center;
+}
+.chat_page{
+	display: none;
+	width: 100%;
+	height: 100vh;
+	background-color:white;
+	margin-top: 3em;
+}
+.box1{
+
+	width: 20%;
+	height: 80%;
+	background-color:#303f68;
+	margin: 1em;
+	margin-top:5em ;
+	border-radius: 2em;
+}
+.box2{
+	width: 80%;
+	height: 80%;
+	background-color: #303f68;
+	margin: 1em;
+	margin-top:5em ;
+	border-radius: 2em;
+}
+ /*.right form i{
+	font-size: 30px;
+}*/
+.forum_section .hello{
+	color: white;
+	font-size: 2em;
+}
+#reply_button{
+	display: flex;
+	background-color: var(--light_blue);
+	color: white;
+	padding: 0.5em;
+	border: 1px solid var(--light_blue);
+	border-radius: 5px;
+	cursor: pointer;
 }
