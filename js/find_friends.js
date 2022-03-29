@@ -25,15 +25,9 @@ function get_vals() {
 	}
 
 	for (var j = 0; j < hobbies_filter.length; j++) {
-		
-		
 			if (hobbies_filter[j][0].checked == true && hobbies_filter[j][0].type == "checkbox") {
-				
 				checked_hobbies.push(hobbies_filter[j][0].value);
-				
 			}
-		
-		
 	}
 	
 	var nationality = document.getElementById("nationality_selector").value;
@@ -65,13 +59,13 @@ $(document).ready(function() {
 	$("#accommodation_boxes").on('click', function() {
 		do_ajax();
 	});
-	$("#course_selector").on('click', function() {
+	$("#course_selector").change(function() {
 		do_ajax();
 	});
 	$("#hobbies_filter").on('click', function() {
 		do_ajax();
 	});
-	$("#nationality_selector").on('click', function() {
+	$("#nationality_selector").change(function() {
 		do_ajax();
 	});
 	$("#apply").on('click', function() {

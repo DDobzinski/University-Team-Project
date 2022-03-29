@@ -39,10 +39,10 @@ if (isset($_POST["logout_button"])) {
 			<form method="post" id="logout_form">
 					<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
 			</form>
-			<a class="navbar_button" id="profile_page_link" href="profile_page.php">Go to profile</a>
+			<a class="navbar_button" id="profile_page_link" href="profile_page.php">My Profile</a>
 			<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
-			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 			<a class="navbar_button" id="find_friends_link_highlight" href="find_friends.php">Find Friends</a>
+			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
 		</div>
 
 		<div id="main_content" align="center">
@@ -517,7 +517,7 @@ if (isset($_POST["logout_button"])) {
 					<h1>This page is dedicated to help you find friends!</h1>
 					<h3>Search for friends by using the filters on the left, if you want to search for everybody then just add no filters!</h3><br>
 					<h3>This page is designed to help you meet people in a similar position to you, we do not have 1-on-1 chatrooms but feel free to put any of your social medias in your biography so you can contact other users!</h3>
-					<img src="images/find_friends.jpeg" alt="" class="image">
+					<img src="images/find_friends.png" alt="" class="image">
 				</div>
 				<div id="user_info">
 				</div>
