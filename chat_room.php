@@ -62,7 +62,7 @@ if (isset($_POST["logout_button"])) {
 		<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic</p> -->
 		<div id="main_content" class="main_home">
 			<div id="navigation_pane" style="display:none">
-				<h2>Topics</h2>
+				<h2>Browse topics:</h2>
 				<form method="post" class="add_topic" id="add_topic">
 					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
 					<label class="topic_label"><i class='bx bx-plus'><input type="submit" id="create_topic_button" name="add_topic" value=""></i></label>
@@ -99,8 +99,7 @@ if (isset($_POST["logout_button"])) {
 						</div>
 					</div>
 				</div>
-				
-				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -109,10 +108,10 @@ if (isset($_POST["logout_button"])) {
 		<div class="box1">
 			<div id="navigation_pane">
 				<form method="post" class="add_topic" id="add_topic">
-					<textarea name="add_topic_name" type="text" id="text_area_add_topic" placeholder="Add New Topic"></textarea>
+					<textarea name="add_topic_name" type="text" id="text_area_add_topic" placeholder="Add new topic..."></textarea>
 					<input type="submit" id="create_topic_button" name="add_topic" value="+" >
 				</form>
-				<h2>Topics</h2>
+				<h2>Browse topics:</h2>
 				<ul id="topics_list">
 					<?php
 						echo display_topics();

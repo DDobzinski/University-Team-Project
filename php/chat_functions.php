@@ -110,7 +110,6 @@ function display_content_divs() {
 					<label><i class='bx bx-send'><input type='submit' name='$form_name' value=''></i></label>
 				</form>
 			</div>
-			
 		</div>";
 	}
 
@@ -349,8 +348,10 @@ function get_topic($topic_id) {
 				<p>&nbsp@ $log_time</p>
 				<p class='date'>$log_date</p>
 			</div>
-			<p class='text_content'>$text_content_from_db</p>
-			<a class='reply_link' onclick='open_reply(`$chat_id_from_db`);'>Reply</a>
+			<div class='text_area'>
+				<p class='text_content'>$text_content_from_db</p>
+				<a class='reply_link' onclick='open_reply(`$chat_id_from_db`);'>Reply</a>
+			</div>
 		</div>
 		<div id='reply_box_$chat_id_from_db' class='reply_box'>
 			<form method='post'>
