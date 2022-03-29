@@ -608,7 +608,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	margin-top: 0em;
 	font-family: "DM Sans", sans-serif;
 	background-color: transparent;
-	color: white;
+	color: var(--dark_blue);
 	border: 1px solid transparent;
 	border-radius: 2.5em;
 	font-size: 2em;
@@ -630,33 +630,52 @@ var() around the name such as var(--grey) in place of any colour. */
 	font-size: 20px;
 }
 .choose_topic{
-	border: 1em solid white;
-	border-radius: 2.5em;
+	border: 0.2em solid #303f68;
+	height:40vh ;
+	border-radius: 1.5em;
+	background-image: url('bg_chat.png');
+  background-size: 200%;
 }
-#topics_table_div {
+}
+#topics_table_div{
 	/*margin: auto;*/
 	margin-left: 2em;
 	margin-top: 1.5em;
 	height: 40vh;
+	
+
 
 	
 }
 .table_content{
 	margin: auto;
 	width: 80%;
-	height: 100%;
+	height: 25vh;
 	overflow: hidden;
 	overflow-y: scroll;
 }
-.table_content::-webkit-scrollbar {
-  display: none;
+.table_content::-webkit-scrollbar{
+	width: 10px;
+	height: 50%;
 }
+.table_content::-webkit-scrollbar-track {
+  background:lightgray;
+  border-radius: 2.5em;
+}
+.table_content::-webkit-scrollbar-thumb {
+  background:var(--light_blue);
+  border-radius: 2.5em;
+}
+/*.table_content::-webkit-scrollbar {
+  display: none;
+}*/
 
 
 #topics_table {
 	margin: 0;
 	width: 100%;
 	border-spacing: 0em 1em;
+
 }
 
 #topics_table td {
@@ -711,10 +730,12 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 .left{
 	/*float: left;*/
-	width: 30%;
-	margin:5px; 
+	width: 40%;
+	margin-top: 3em; 
   padding: 1em;
   display: block; 
+  background-image: url('bg_chat.png');
+  background-size: 97%;
 }
 
 .left h1 {
@@ -727,15 +748,15 @@ var() around the name such as var(--grey) in place of any colour. */
 }
 .right {
 	display: block;	
-	background-color:#303f68;
+	background-color:white;
 	height: 100vh;
-	width: 70%;
+	width: 55%;
 	margin-top: 5em;
 	margin-bottom: 5em;
 	margin-right: 5em;
 	border-radius: 2.5em;
 	padding: 1em;
-	color: white;
+	color:var(--dark_blue);
   
 }
 /*img{
@@ -767,6 +788,14 @@ tr{
 	height: 100vh;
 	background-color:white;
 	margin-top: 3em;
+	animation: 1s ease 0s 1 load_content;
+}
+@keyframes load_content {
+    0% {
+        transform: translateX(50%);
+    } 100% {
+        transform: translateX(0%);
+    }
 }
 .box1{
 

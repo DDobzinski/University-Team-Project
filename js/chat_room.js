@@ -21,7 +21,7 @@ function open_topic(section) {
 
 	}
 
-	document.getElementById("basic_content").style.display = "none";
+	// document.getElementById("basic_content").style.display = "none";
 
 	var current = document.getElementById(section + "_content");
 	var sections = [];
@@ -32,10 +32,10 @@ function open_topic(section) {
 	}
 	
 	for (i = 0; i < sections.length; i++) {
+		console.log(sections[i])
 		if (section != sections[i]) {
-
+			
 			document.getElementById(sections[i] + "_content").style.display = "none";
-			console.log(sections[i])
 			document.getElementById(sections[i]).style.backgroundColor = "#303f68";
 			document.getElementById(sections[i]).children[0].style.color = "white";
 		} else {
