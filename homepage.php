@@ -137,7 +137,7 @@ if (isset($_POST["logout_button"])) {
 						<i class='bx bxs-group' ></i>
 						<span class="links_name">Join Society</span>
 					</a> 
-					<span class="tooltip">Join a society</span>
+					<span class="tooltip">Join a Society</span>
 				</li>
 
 				<li id="tour_campus"> 
@@ -150,7 +150,7 @@ if (isset($_POST["logout_button"])) {
 				<li id="blackboard_setup"> 
 					<a onclick="open_content('blackboard_setup')">
 						<i class='bx bxs-book-content'></i>
-						<span class="links_name">Blackboard setup</span>
+						<span class="links_name">Blackboard Setup</span>
 					</a> 
 					<span class="tooltip">Setting up Blackboard</span>
 				</li>
@@ -160,7 +160,7 @@ if (isset($_POST["logout_button"])) {
 						<i class='bx bx-money-withdraw'></i>
 						<span class="links_name">Tuition Fees</span>
 					</a> 
-					<span class="tooltip">Set up payment for tuiton fees</span>
+					<span class="tooltip">Set up Payment for Tuiton Fees</span>
 				</li>
 			</ul>
 		</div>
@@ -189,7 +189,7 @@ if (isset($_POST["logout_button"])) {
 						</div>
 					</div>
 					<div class="row">
-						<h2> Your tasks: </h2>
+						<h2> Your Tasks: </h2>
 					</div>
 					<div class="row">
 						<div class="column" id="1" style="<?php echo ($tasks_array['1'] == '1') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
@@ -210,7 +210,7 @@ if (isset($_POST["logout_button"])) {
 						</div>
 						<div class="column" id="5" style="<?php echo ($tasks_array['5'] == '5') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
-							<p>Register with the police</p>
+							<p>Register with the Police</p>
 						</div>
 					</div>
 					<div class="row">
@@ -232,7 +232,7 @@ if (isset($_POST["logout_button"])) {
 						</div>
 						<div class="column" id="10" style="font-size: 0.90em;<?php echo ($tasks_array['10'] == '10') ? 'background-color: #FBB66D;' : 'background-color: #fddbb7;';?>">
 							<i class='bx bxs-check-circle' ></i><br>
-							<p>Set up payment for tuition fees</p>
+							<p>Set up Payment for Tuition Fees</p>
 						</div>
 					</div>
 				</div>
@@ -270,7 +270,7 @@ if (isset($_POST["logout_button"])) {
 						</div>
 						<div class="column_right">
 							<h1>
-								Sign up for a UK bank account
+								Sign up for a UK Bank Account
 							</h1>
 							<div class="text_content"> <!-- card content -->
 								<h3>
@@ -303,7 +303,7 @@ if (isset($_POST["logout_button"])) {
 											Interest-free overdraft limit of up to £1,000 in your first year, which could rise to £3,000 by year 3</p> 
 										</li>
 										<li>
-											<a href="https://www.santander.co.uk/">Saintanders</a><br>
+											<a href="https://www.santander.co.uk/">Santander</a><br>
 											<p>A free 4-year Santander 16-25 Railcard to save 1/3 on rail travel in Great Britain<br>
 										Earn up to 15% cashback with Retailer Offers<br>
 											interest-free arranged overdraft of £1,500 in years 1-3, £1,800 in year 4 and £2,000 if you stay on to year 5</p> 
@@ -330,7 +330,7 @@ if (isset($_POST["logout_button"])) {
 							<img src="images/accom.jpg" alt="" class="card_img">
 						</div>
 						<div class="column_right">
-							<h1>Find your accommodation</h1>
+							<h1>Find your Accommodation</h1>
 							<div class="text_content"> <!-- card content -->
 								<h3>Student accommodation can be categorised into private student halls and the university's own student halls.</h3>
 								<h2>
@@ -344,7 +344,7 @@ if (isset($_POST["logout_button"])) {
 								</h4>
 
 								<h2>
-									<b>Private student accommodations</b>
+									<b>Private Student Accommodations</b>
 								</h2>
 								<h4>
 									There are quite a lot of private accommodation in Manchester ranging from £170 to £250 per week. Private accommodation often charge a higher price than university student halls. However, for this extra cost, you can expect better facilities, private kitchens and a great location in the centre of the city.
@@ -427,7 +427,7 @@ if (isset($_POST["logout_button"])) {
 									<br>
 									<br>
 								</h3>
-								<h2> <b> Who need to register? </b> </h2>
+								<h2> <b> Who needs to register? </b> </h2>
 								
 								<h4> 
 								If you are required to register with the police, it will be stated on your Student visa vignette or BRP Collection letter.<br><br>
@@ -643,7 +643,7 @@ if (isset($_POST["logout_button"])) {
 							</ul>
 						</div>
 						<div class="footer_col">
-							<h4>Need help?</h4>
+							<h4>Need Help?</h4>
 							<ul>
 								<li><a href="#">william.asbery@student.manchester.ac.uk</a></li>
 								<li><a href="#">daniel.dobzinski@student.manchester.ac.uk</a></li>
@@ -651,7 +651,7 @@ if (isset($_POST["logout_button"])) {
 							</ul>
 						</div>
 						<div class="footer_col">
-							<h4>Any suggestions</h4>
+							<h4>Any Suggestions</h4>
 							<ul>
 								<li><a href="#">sarah.almuhaythif@student.manchester.ac.uk</a></li>
 								<li><a href="#">amy.leigh-hyer@student.manchester.ac.uk</a></li>
@@ -660,7 +660,7 @@ if (isset($_POST["logout_button"])) {
 							</ul>
 						</div>
 						<div class="footer_col">
-							<h4>Follow us</h4>
+							<h4>Follow Us</h4>
 							<div class="social_links">
 								<a href="#"><i class='bx bxl-instagram'></i></a>
 								<a href="#"><i class='bx bxl-twitter'></i></a>
