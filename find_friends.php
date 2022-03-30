@@ -175,6 +175,10 @@ if (isset($_POST["logout_button"])) {
 								<label for="canterbury Court">Canterbury Court</label>
 							</div>
 							<div class="flex_row">
+								<input type="checkbox" name="daisy bank Hall" id="daisy bank Hall">
+								<label for="daisy bank Hall">Daisy Bank Hall</label>
+							</div>
+							<div class="flex_row">
 								<input type="checkbox" name="dalton-Ellis Hall" id="dalton-Ellis Hall">
 								<label for="dalton-Ellis Hall">Dalton-Ellis Hall</label>
 							</div>

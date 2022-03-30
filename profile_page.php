@@ -517,6 +517,7 @@ if (isset($_POST["logout_button"])) {
 						<option value="brook Hall">Brook Hall</option>
 						<option value="burkhardt House">Burkhardt House</option>
 						<option value="canterbury Court">Canterbury Court</option>
+						<option value="daisy bank Hall">Daisy Bank Hall</option>
 						<option value="dalton-Ellis Hall">Dalton-Ellis Hall</option>
 						<option value="denmark Road">Denmark Road</option>
 						<option value="george Kenyon Hall">George Kenyon Hall</option>
