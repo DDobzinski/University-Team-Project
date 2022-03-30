@@ -549,7 +549,7 @@ if (isset($_POST["logout_button"])) {
 									Now that you have finally arrived in Manchester, it is time to explore Manchester. But, before that, you might want to explore and tour around 
 									the campus of the University of Manchester first. <br> 
 									We have over 200 buildings in our city campus placed just right next to the city centre. Places which most frequently visit are Student Union's Building, Alan Gilberts Learning Commons and the Main Library.
-									You can either follow your feelings and go to where your heart brings, or download this Visit UOM app on <a href="https://apps.apple.com/gb/app/uom-open-days/id1389829402#?platform=iphone">IOS</a> and <a href="https://play.google.com/store/apps/details?id=com.guidebook.apps.uom.android&hl=en&gl=US">Android</a> for self-guided tour.
+									You can either follow your feelings and go to where your heart brings, or download and Visit UOM app on <a href="https://apps.apple.com/gb/app/uom-open-days/id1389829402#?platform=iphone">IOS</a> and <a href="https://play.google.com/store/apps/details?id=com.guidebook.apps.uom.android&hl=en&gl=US">Android</a> for self-guided tour.
 								</h3>
 								
 							</div>
