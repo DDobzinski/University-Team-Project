@@ -193,6 +193,7 @@ foreach($user_arr_fulfil as $user => $user_data) {
 
 	$html .= "
 	<div class='user_box'>
+		<div id='user_logo'><i class='bx bxs-user-circle'></i></div>
 		<div class='left_side'>
 			<h3>$username</h3>
 			<p class='name'>Name: $firstname $lastname</p>
