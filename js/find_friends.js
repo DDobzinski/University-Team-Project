@@ -43,9 +43,9 @@ function get_vals() {
 function do_ajax() {
 	if ($("#glass").css("display") == "block") {
 		$("#glass").css("display", "none"); 
-		$("#friends_img").css("position", "absolute");
-		$("#friends_img").css("width", "40%");
-		 $("#user_info").css("display", "block");
+		$(".friends_img").addClass("friends_img_change");
+		$("#user_info").css("display", "flex");
+		$("#right").css("width", "0");
 	}
 
 	data = get_vals();

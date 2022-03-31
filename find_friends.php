@@ -34,18 +34,16 @@ if (isset($_POST["logout_button"])) {
 </head>
 <body>
 	<div id="navbar">
-			<form method="post" id="logout_form">
-					<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
-			</form>
-			<a class="navbar_button" id="profile_page_link" href="profile_page.php">My Profile</a>
-			<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
-			<a class="navbar_button" id="find_friends_link_highlight" href="find_friends.php">Find Friends</a>
-			<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
-		</div>
+		<form method="post" id="logout_form">
+				<input id="logout_button" type="submit" name="logout_button" class="navbar_button" value="Logout">
+		</form>
+		<a class="navbar_button" id="profile_page_link" href="profile_page.php">My Profile</a>
+		<a class="navbar_button" id="chat_room_link" href="chat_room.php">Chatroom</a>
+		<a class="navbar_button" id="find_friends_link_highlight" href="find_friends.php">Find Friends</a>
+		<a class="navbar_button" id="homepage_link" href="homepage.php">Homepage</a>
+	</div>
 	<div id="main">
-		
 		<div class="sidebar active">
-			
 			<h1>Filters</h1>
 			<ul id="nav_list">
 				<li id="course_filter">
@@ -510,60 +508,57 @@ if (isset($_POST["logout_button"])) {
 				</li>
 				<li id="apply"><p >Apply search filters</p></li>
 			</ul>
-			
 		</div>
 
 		<div id="inside_content">
-			
 			<div id="glass">
 				<h1 id="intro_header">This page is dedicated to help you find friends!</h1>
 				<h4>Search for friends by using the filters on the left, if you want to search for everybody then just add no filters!</h4>
-				<p>ps: This page is designed to help you meet people in a similar position to you, we do not have 1-on-1 chatrooms but feel free to put any of your social medias in your biography so you can contact other users!</p>
+				<p>This page is designed to help you meet people in a similar position to you, we do not have 1-on-1 chatrooms but feel free to put any of your social media information in your biography so you can contact other users!</p>
 			</div>
 			<div id="right">
-			<img id='friends_img' src="styling/friends2.png"> 
+				<img class='friends_img' src="styling/friends2.png"> 
 			</div>
 			<div id="user_info">
 			</div>
 		</div>
-		
 	</div>
-<div id="footer">
-	<div class="footer_container">
-		<div class="row">
-			<div class="footer_col">
-				<h4>z7</h4>
-				<ul>
-					<li><a href="#"><img src="images/linkuni_logo_white.png" class="logo_footer"></a></li>
-					<!-- <li><a href="#">z7</a></li> -->
-				</ul>
-			</div>
-			<div class="footer_col">
-				<h4>Need help?</h4>
-				<ul>
-					<li><a href="#">william.asbery@student.manchester.ac.uk</a></li>
-					<li><a href="#">daniel.dobzinski@student.manchester.ac.uk</a></li>
-					<li><a href="#">frenciel.anggi@student.manchester.ac.uk</a></li>
-				</ul>
-			</div>
-			<div class="footer_col">
-				<h4>Any suggestions</h4>
-				<ul>
-					<li><a href="#">sarah.almuhaythif@student.manchester.ac.uk</a></li>
-					<li><a href="#">amy.leigh-hyer@student.manchester.ac.uk</a></li>
-					<li><a href="#">euan.liew@student.manchester.ac.uk</a></li>
-					<li><a href="#">yuyao.chen@student.manchester.ac.uk</a></li>
-				</ul>
-			</div>
-			<div class="footer_col">
-				<h4>Follow us</h4>
-				<div class="social_links">
-					<a href="#"><i class='bx bxl-instagram'></i></a>
-					<a href="#"><i class='bx bxl-twitter'></i></a>
+
+	<div id="footer">
+		<div class="footer_container">
+			<div class="row">
+				<div class="footer_col">
+					<h4>z7</h4>
+					<ul>
+						<li><a href="#"><img src="images/linkuni_logo_white.png" class="logo_footer"></a></li>
+						<!-- <li><a href="#">z7</a></li> -->
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Need help?</h4>
+					<ul>
+						<li><a href="#">william.asbery@student.manchester.ac.uk</a></li>
+						<li><a href="#">daniel.dobzinski@student.manchester.ac.uk</a></li>
+						<li><a href="#">frenciel.anggi@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Any suggestions</h4>
+					<ul>
+						<li><a href="#">sarah.almuhaythif@student.manchester.ac.uk</a></li>
+						<li><a href="#">amy.leigh-hyer@student.manchester.ac.uk</a></li>
+						<li><a href="#">euan.liew@student.manchester.ac.uk</a></li>
+						<li><a href="#">yuyao.chen@student.manchester.ac.uk</a></li>
+					</ul>
+				</div>
+				<div class="footer_col">
+					<h4>Follow us</h4>
+					<div class="social_links">
+						<a href="#"><i class='bx bxl-instagram'></i></a>
+						<a href="#"><i class='bx bxl-twitter'></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
 </body>
