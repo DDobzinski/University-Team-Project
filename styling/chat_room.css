@@ -126,7 +126,14 @@ var() around the name such as var(--grey) in place of any colour. */
 	display: flex;
 	flex-direction: row;
 }
-
+#navigation_pane li {
+	width: 100%;
+	margin: 0.2em 0em;
+	padding: 0.5em;
+	border: 1px solid var(--dark_blue);
+	border-radius: 0.2em;
+	/*background-color: transparent;*/
+}
 #navigation_pane {
 	position: sticky;
 	margin: 0 auto;
@@ -156,13 +163,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	display: none;
 }
 
-#navigation_pane li {
-	width: 100%;
-	margin: 0.2em 0em;
-	padding: 0.5em;
-	border: 1px solid var(--dark_blue);
-	border-radius: 0.2em;
-}
+
 
 #navigation_pane ul li a {
 	cursor: pointer;

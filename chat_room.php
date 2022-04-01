@@ -61,7 +61,7 @@ if (isset($_POST["logout_button"])) {
 	<div class="right" id="right">
 		<!-- <p>You can pick a topic from the list here, already created by other students, or make a new topic</p> -->
 		<div id="main_content" class="main_home">
-			<div id="navigation_pane" style="display:none">
+			<!-- <div id="navigation_pane" style="display:none">
 				<h2>Browse topics:</h2>
 				<form method="post" class="add_topic" id="add_topic">
 					<textarea name="add_topic_name" type="text" id="text_area_add_topic"></textarea>
@@ -72,7 +72,7 @@ if (isset($_POST["logout_button"])) {
 						echo display_topics();
 					?>
 				</ul>
-			</div>
+			</div> -->
 			<div id="current_content">
 				<div id="basic_content">
 					<div id="intro_content">
