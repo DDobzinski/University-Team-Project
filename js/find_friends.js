@@ -65,7 +65,7 @@ $(document).ready(function() {
 	$("#course_selector").change(function() {
 		do_ajax();
 	});
-	$("#hobbies_filter").on('click', function() {
+	$("#hobbies_boxes").on('click', function() {
 		do_ajax();
 	});
 	$("#nationality_selector").change(function() {
@@ -73,8 +73,9 @@ $(document).ready(function() {
 	});
 	$("#apply").on('click', function() {
 		do_ajax();
-	})
-	$("#accommodation_filter").on('click', function() {
+	});
+
+	$("#open_accom").on('click', function() {
 		if ($("#accommodation_boxes").css("display") == "none") {
 			$("#accommodation_boxes").css("display", "block");
 			$("#dropdown_button_accommodation").removeClass("bx-expand-vertical");
@@ -86,7 +87,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#hobbies_filter").on('click', function() {
+	$("#open_hobbies").on('click', function() {
 		if ($("#hobbies_boxes").css("display") == "none") {
 			$("#hobbies_boxes").css("display", "block");
 			$("#dropdown_button_hobbies").removeClass("bx-expand-vertical");

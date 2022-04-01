@@ -153,7 +153,9 @@ if (isset($_POST["logout_button"])) {
 					</select>
 				</li>
 				<li id="accommodation_filter">
-					<i class='bx bx-building-house'><h3 class="filter_name">Accommodation<i id="dropdown_button_accommodation" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3></i>
+					<span id="open_accom">
+						<i class='bx bx-building-house'><h3 class="filter_name">Accommodation<i id="dropdown_button_accommodation" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3></i>
+					</span>
 					
 					<div id="accommodation_boxes">
 						<div class="flex_row">
@@ -239,7 +241,11 @@ if (isset($_POST["logout_button"])) {
 					</div>
 				</li>
 				<li id="hobbies_filter">
-					<i class='bx bx-music'><h3 class="filter_name">Hobbies<i id="dropdown_button_hobbies" class='bx bx-expand-vertical bx-flip-horizontal' ></i></h3></i>
+					<span id="open_hobbies">
+						<i class='bx bx-music'>
+						<h3 class="filter_name">Hobbies<i id="dropdown_button_hobbies" class='bx bx-expand-vertical bx-flip-horizontal'></i></h3>
+						</i>
+					</span>
 					<div id="hobbies_boxes">
 						<div class="flex_row_hobby">
 							<input type="checkbox" name="hobbies_sports" id="hobbies_sports" value='1'>
