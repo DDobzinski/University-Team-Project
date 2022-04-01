@@ -32,12 +32,15 @@ function open_topic(section) {
 	}
 	
 	for (i = 0; i < sections.length; i++) {
+		console.log(sections[i], section);
 		if (section != sections[i]) {
+			console.log(sections[i], section, "are not equal");
 			document.getElementById(sections[i] + "_content").style.display = "none";
 			console.log(document.getElementById(sections[i]));
 			document.getElementById(sections[i]).style.backgroundColor = "#303f68";
 			document.getElementById(sections[i]).children[0].style.color = "white";
 		} else {
+			console.log(sections[i], section, "are equal");
 			current.style.display = "block";
 			console.log(document.getElementById(sections[i]));
 			document.getElementById(sections[i]).style.backgroundColor = "#63B4CF";

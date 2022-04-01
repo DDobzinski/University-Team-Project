@@ -132,9 +132,8 @@ var() around the name such as var(--grey) in place of any colour. */
 	margin: 0 auto;
 	width:  80%;
 	height: 100%;
-	font-size: 1.2em;
+	font-size: 1.2em;	
 	color: var(--dark_blue);
-	
 }
 
 #navigation_pane ul {
@@ -148,6 +147,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	margin: 0 auto;
+	z-index: 10000;
 	/*border: 0.2em solid white;*/
 	/*border-radius: 2.5em;*/
 }
@@ -166,10 +166,15 @@ var() around the name such as var(--grey) in place of any colour. */
 
 #navigation_pane ul li a {
 	cursor: pointer;
+	color: var(--dark_blue);
 }
 
-#navigation_pane ul li a:active {
-	color: var(--light_blue);
+#navigation_pane ul li:hover {
+	background-color: var(--light_blue);
+}
+
+#navigation_pane ul li:hover a {
+	color: white;
 }
 
 #navigation_pane h2 {
