@@ -8,8 +8,6 @@ $data = array();
 
 function start() {
 	global $pdo_get_info, $user_id, $data;
-
-
 	$get_info_sql = "SELECT user_id, username, hashed_password, email_address, firstname, lastname, phone_number, nationality, course, accommodation, biography, private_account FROM user_info WHERE user_id = :user_id";
 
 	$stmt_get_info = $pdo_get_info->prepare($get_info_sql);

@@ -16,19 +16,28 @@ $accommodations = array("ashburne Hall","brook Hall","burkhardt House","canterbu
 $nationlities = array("afghan","albanian","algerian","american","andorran","angolan","antiguans","argentinean","armenian","australian","austrian","azerbaijani","bahamian","bahraini","bangladeshi","barbadian","barbudans","batswana","belarusian","belgian","belizean","beninese","bhutanese","bolivian","bosnian","brazilian","british","bruneian","bulgarian","burkinabe","burmese","burundian","cambodian","cameroonian","canadian","cape verdean","central african","chadian","chilean","chinese","colombian","comoran","congolese","costa rican","croatian","cuban","cypriot","czech","danish","djibouti","dominican","dutch","east timorese","ecuadorean","egyptian","emirian","equatorial guinean","eritrean","estonian","ethiopian","fijian","filipino","finnish","french","gabonese","gambian","georgian","german","ghanaian","greek","grenadian","guatemalan","guinea-bissauan","guinean","guyanese","haitian","herzegovinian","honduran","hungarian","icelander","indian","indonesian","iranian","iraqi","irish","israeli","italian","ivorian","jamaican","japanese","jordanian","kazakhstani","kenyan","kittian and nevisian","kuwaiti","kyrgyz","laotian","latvian","lebanese","liberian","libyan","liechtensteiner","lithuanian","luxembourger","macedonian","malagasy","malawian","malaysian","maldivan","malian","maltese","marshallese","mauritanian","mauritian","mexican","micronesian","moldovan","monacan","mongolian","moroccan","mosotho","motswana","mozambican","namibian","nauruan","nepalese","new zealander","ni-vanuatu","nicaraguan","nigerien","north korean","northern irish","norwegian","omani","pakistani","palauan","panamanian","papua new guinean","paraguayan","peruvian","polish","portuguese","qatari","romanian","russian","rwandan","saint lucian","salvadoran","samoan","san marinese","sao tomean","saudi","scottish","senegalese","serbian","seychellois","sierra leonean","singaporean","slovakian","slovenian","solomon islander","somali","south african","south korean","spanish","sri lankan","sudanese","surinamer","swazi","swedish","swiss","syrian","taiwanese","tajik","tanzanian","thai","togolese","tongan","trinidadian or tobagonian","tunisian","turkish","tuvaluan","ugandan","ukrainian","uruguayan","uzbekistani","venezuelan","vietnamese","welsh","yemenite","zambian","zimbabwean");
 
 for ($i = 0; $i < 250; $i++) {
-	$username = uniqid("user_");
-	$firstname = $firstnames[random_int(0, sizeOf($firstnames))];
-	$lastname = $lastnames[random_int(0, sizeOf($lastnames))];
+	$firstname = $firstnames[random_int(0, sizeOf($firstnames)-1)];
+	$lastname = $lastnames[random_int(0, sizeOf($lastnames)-1)];
+
+	$username = $firstname . "_" . $lastname . random_int(1,100);
 
 	$password = "password";
 
 	$hobbies = "";
-	for ($j = 0; $j < random_int(1, 10); $j++) {
-		$hobbies .= random_int(1, 16) . ",";
+	$hobby_vals = array();
+	for ($j = 0; $j < random_int(1, 5); $j++) {
+		$hobby_val = random_int(1,16);
+
+		while (in_array($hobby_val, $hobby_vals)) {
+			$hobby_val = random_int(1,16);
+		}
+
+		$hobby_vals[] = $hobby_val;
+
+		$hobbies .= $hobby_val . ",";
 	}
 
 	$hobbies = substr($hobbies, 0, -1);
-
 
 	$email_address = $username . "@gmail.com";
 

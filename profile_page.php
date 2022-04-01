@@ -15,9 +15,10 @@ if (!isset($_SESSION["logged_in"])) {
 }
 
 // get all the information on the user
+require("php/get_hobbies.php");
 require("php/profile_page_init.php");
 require("php/profile_page_update_info.php");	
-require("php/get_hobbies.php");
+
 
 if (isset($_POST["logout_button"])) {
 	$_SESSION = array();

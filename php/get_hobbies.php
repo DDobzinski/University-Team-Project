@@ -35,14 +35,14 @@ $stmt_get_hobbies->execute([
 
 $stmt_get_hobbies->setFetchMode(PDO::FETCH_ASSOC);
 
-if ($row = $stmt_get_hobbies->fetch()) 
-{
+if ($row = $stmt_get_hobbies->fetch()) {
 	$hobbies_user = $row["hobbies"];
 }
+
 #creates copy of hobbies array
 $hobbies_user_array = $hobbies_array;
 
-if($hobbies_user != null)
+if(isset($hobbies_user) && $hobbies_user != null)
 {
 	$hobbies_user = explode(",", $hobbies_user);
 	foreach($hobbies_user as $user)
