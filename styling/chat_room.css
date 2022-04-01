@@ -133,7 +133,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	width:  80%;
 	height: 100%;
 	font-size: 1.2em;
-	color: white;
+	color: var(--dark_blue);
 	
 }
 
@@ -160,7 +160,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	width: 100%;
 	margin: 0.2em 0em;
 	padding: 0.5em;
-	border: 1px solid white;
+	border: 1px solid var(--dark_blue);
 	border-radius: 0.2em;
 }
 
@@ -234,7 +234,7 @@ var() around the name such as var(--grey) in place of any colour. */
 	margin-top: 0em;
 	font-family: "DM Sans", sans-serif;
 	background-color: transparent;
-	color: white;
+	color: var(--dark_blue);
 	border-radius: 2em;
 	font-size: 2em;
 	cursor: pointer;
@@ -399,12 +399,12 @@ var() around the name such as var(--grey) in place of any colour. */
 	z-index: 1000;
 	width: 90%;
 	margin: 0 auto 0em auto;
-	background-color: var(--dark_blue);
+/*	background: linear-gradient(to top, white 10%,#63b4cf 90%);*/
 	/*padding: 1em 0em 0em 0em;*/
 }
 
 .chat_footer form {
-	background-color: var(--dark_blue);
+	margin-top:2em ;
 }
 
 .forum .chat_footer #form_label{
@@ -844,9 +844,11 @@ tr {
 	top: 8vh;
 	display: none;
 	width: 100%;
-	height: 100vh;
-	background-color:white;
+	height: 130vh;
+	margin-bottom: 3.5em;
+/*	background-color:white;*/
 	animation: 1s ease 0s 1 load_content;
+	background: linear-gradient(to right top, white,#63b4cf);
 }
 
 @keyframes load_content {
@@ -861,7 +863,8 @@ tr {
 .box1{
 	width: 20%;
 	height: 80%;
-	background-color: var(--dark_blue);
+	background: white;
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.1));
 	margin: 1em;
 	margin-top: 3em;
 	border-radius: 2em;
@@ -870,7 +873,8 @@ tr {
 .box2{
 	width: 80%;
 	height: 80%;
-	background-color: var(--dark_blue);
+	background: white;
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.1));
 	margin: 1em;
 	margin-top: 3em;
 	border-radius: 2em;
