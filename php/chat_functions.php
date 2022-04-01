@@ -103,12 +103,12 @@ function display_content_divs() {
 						$topic_get_return
 					</div>
 				</div>
-			</div>
-			<div class='chat_footer'>
-				<form method='post'> 
-					<textarea name='text_box' type='text' id='text_box'></textarea>
-					<label><i class='bx bx-send'><input type='submit' name='$form_name' value=''></i></label>
-				</form>
+				<div class='chat_footer'>
+					<form method='post'> 
+						<textarea name='text_box' type='text' id='text_box'></textarea>
+						<label><i class='bx bx-send'><input type='submit' name='$form_name' value=''></i></label>
+					</form>
+				</div>
 			</div>
 		</div>";
 	}

@@ -395,6 +395,7 @@ var() around the name such as var(--grey) in place of any colour. */
 .chat_footer {
 	margin-bottom: 2em; 
 	position: relative;
+	top: -5vh;
 	font-size: 16px;
 	z-index: 1000;
 	width: 90%;
@@ -600,9 +601,6 @@ var() around the name such as var(--grey) in place of any colour. */
 	cursor: pointer;
 	text-align: center;
 }
-
-
-
 
 @keyframes open_reply {
 	from {top: -160px;}
@@ -862,7 +860,7 @@ tr {
 
 .box1{
 	width: 20%;
-	height: 80%;
+	height: 80vh;
 	background: white;
 	background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.1));
 	margin: 1em;
@@ -872,7 +870,7 @@ tr {
 
 .box2{
 	width: 80%;
-	height: 80%;
+	height: 80vh;
 	background: white;
 	background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.1));
 	margin: 1em;
@@ -899,7 +897,7 @@ tr {
 }
 
 .reply_box {
-	color: white;
+	color: var(--dark_blue);
 	display: none;
 	float: right;
 	position: relative;
