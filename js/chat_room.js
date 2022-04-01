@@ -30,12 +30,15 @@ function open_topic(section) {
 	}
 	
 	for (i = 0; i < sections.length; i++) {
+		console.log(sections[i], section);
 		if (section != sections[i]) {
+			console.log(sections[i], section, "are not equal");
 			document.getElementById(sections[i] + "_content").style.display = "none";
 			document.getElementById(sections[i]).style.backgroundColor = "transparent";
 			document.getElementById(sections[i]).children[0].style.color = "var(--dark_blue)";
 			console.log(document.getElementById(sections[i]));
 		} else {
+			console.log(sections[i], section, "are equal");
 			current.style.display = "block";
 			document.getElementById(sections[i]).style.backgroundColor = "#63B4CF";
 			document.getElementById(sections[i]).children[0].style.color = "white";
