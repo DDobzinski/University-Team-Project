@@ -250,6 +250,7 @@ function get_topic($topic_id) {
 			unset($data[$index_to_remove]);
 		}
 	}
+	// echo "length of chats is" . sizeof($data);
 
 	// i used for the indent counter
 	$i = 0;
