@@ -164,7 +164,7 @@ foreach($user_arr_fulfil as $user => $user_data) {
 		$course = ucwords($user_data["course"]);
 	}
 
-	if ($user_data["accommodation"] == $_POST["data"][1]) {
+	if (in_array($user_data["accommodation"],$_POST["data"][1])) {
 		$accommodation = "<b>" . ucwords($user_data["accommodation"]) . "</b>";
 	} else {
 		$accommodation = ucwords($user_data["accommodation"]);

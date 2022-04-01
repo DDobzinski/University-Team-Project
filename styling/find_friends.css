@@ -196,7 +196,7 @@
 	animation: 1s ease forwards load_content;
 }
 
-.user_box .left_side,{
+.user_box .left_side{
 	display: flex;
 	flex-direction: column;
 	width: 40%;
